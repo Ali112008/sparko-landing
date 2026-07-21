@@ -69,7 +69,7 @@ export default function ProblemsFeaturesSection() {
           </div>
 
           {/* ========== PART 2 — WHITE BOTTOM PANEL ========== */}
-          <div className="bg-white px-8 sm:px-14 lg:px-24 pt-8 sm:pt-12 lg:pt-14 pb-10 sm:pb-14 lg:pb-16 relative overflow-hidden">
+          <div className="bg-white px-8 sm:px-14 lg:px-24 pt-8 sm:pt-12 lg:pt-14 pb-10 sm:pb-14 lg:pb-16 relative">
             {/* Orange Heading */}
             <h2 className="font-[family-name:var(--font-tajawal)] text-3xl sm:text-5xl lg:text-6xl font-bold text-sparko-orange text-center leading-tight mb-2">
               هنا كل شيء محسوب
@@ -83,18 +83,18 @@ export default function ProblemsFeaturesSection() {
               كل خطوة لها هدف ... وكل تجربة لها نتيجة
             </p>
 
-            {/* 6 Feature Cards + Phone Mockup */}
-            <div className="flex items-start justify-center gap-4 sm:gap-6 lg:gap-7 relative">
-              {/* Cards Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5 lg:gap-6 flex-1">
+            {/* Desktop: Cards on right, Phone on left (RTL: cards=first=right, phone=last=left) */}
+            <div className="hidden lg:flex items-center gap-6 xl:gap-8 relative">
+              {/* Cards Grid — first in DOM = RIGHT side in RTL */}
+              <div className="grid grid-cols-6 gap-5 xl:gap-6 flex-1">
                 {bottomFeatures.map((card, index) => (
                   <div
                     key={index}
-                    className="bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 lg:p-7 flex flex-col items-center text-center min-h-[220px] sm:min-h-[260px] lg:min-h-[340px] justify-center"
+                    className="bg-white border border-gray-200 rounded-2xl p-5 xl:p-6 flex flex-col items-center text-center min-h-[320px] xl:min-h-[360px] justify-center"
                     style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}
                   >
                     {/* Orange Icon */}
-                    <div className="w-[72px] h-[72px] sm:w-20 sm:h-20 lg:w-24 lg:h-24 flex items-center justify-center mb-4 sm:mb-5 lg:mb-6">
+                    <div className="w-20 h-20 xl:w-24 xl:h-24 flex items-center justify-center mb-4 xl:mb-5">
                       <Image
                         src={card.icon}
                         alt={card.ar}
@@ -104,38 +104,70 @@ export default function ProblemsFeaturesSection() {
                       />
                     </div>
                     {/* Arabic Title */}
-                    <p className="font-[family-name:var(--font-tajawal)] text-sm sm:text-base lg:text-lg font-bold text-[#0B1A3E] leading-snug mb-2">
+                    <p className="font-[family-name:var(--font-tajawal)] text-sm xl:text-base font-bold text-[#0B1A3E] leading-snug mb-2">
                       {card.ar}
                     </p>
                     {/* English Subtitle */}
-                    <p className="text-gray-400 font-[family-name:var(--font-ibm-plex)] text-[10px] sm:text-xs lg:text-sm leading-snug">
+                    <p className="text-gray-400 font-[family-name:var(--font-ibm-plex)] text-[10px] xl:text-xs leading-snug">
                       {card.en}
                     </p>
                   </div>
                 ))}
               </div>
 
-              {/* Phone Mockup — right side, overlapping, positioned higher */}
-              <div className="hidden lg:block flex-shrink-0 relative -mr-6 xl:-mr-10 -mt-4">
+              {/* Phone Mockup — last in DOM = LEFT side in RTL, extends above cards */}
+              <div className="flex-shrink-0 relative -mt-24 xl:-mt-32">
                 <Image
                   src="/phone-mockup.png"
                   alt="Sparko App"
                   width={440}
                   height={880}
-                  className="w-[340px] lg:w-[380px] xl:w-[420px] h-auto object-contain"
+                  className="w-[360px] xl:w-[400px] h-auto object-contain"
                 />
               </div>
             </div>
 
-            {/* Phone on mobile — centered below cards */}
-            <div className="lg:hidden flex justify-center mt-8">
-              <Image
-                src="/phone-mockup.png"
-                alt="Sparko App"
-                width={280}
-                height={560}
-                className="w-[240px] sm:w-[280px] h-auto object-contain"
-              />
+            {/* Mobile/Tablet: Cards grid + phone below */}
+            <div className="lg:hidden">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-5">
+                {bottomFeatures.map((card, index) => (
+                  <div
+                    key={index}
+                    className="bg-white border border-gray-200 rounded-2xl p-4 sm:p-5 flex flex-col items-center text-center min-h-[180px] sm:min-h-[220px] justify-center"
+                    style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}
+                  >
+                    {/* Orange Icon */}
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mb-3 sm:mb-4">
+                      <Image
+                        src={card.icon}
+                        alt={card.ar}
+                        width={56}
+                        height={56}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    {/* Arabic Title */}
+                    <p className="font-[family-name:var(--font-tajawal)] text-xs sm:text-sm font-bold text-[#0B1A3E] leading-snug mb-1.5">
+                      {card.ar}
+                    </p>
+                    {/* English Subtitle */}
+                    <p className="text-gray-400 font-[family-name:var(--font-ibm-plex)] text-[9px] sm:text-[10px] leading-snug">
+                      {card.en}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Phone on mobile — centered below cards */}
+              <div className="flex justify-center mt-8">
+                <Image
+                  src="/phone-mockup.png"
+                  alt="Sparko App"
+                  width={280}
+                  height={560}
+                  className="w-[240px] sm:w-[280px] h-auto object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>
