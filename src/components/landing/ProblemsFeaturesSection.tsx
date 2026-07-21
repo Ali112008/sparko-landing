@@ -22,13 +22,13 @@ const bottomFeatures = [
 export default function ProblemsFeaturesSection() {
   return (
     <section className="relative py-6 sm:py-10 lg:py-14">
-      <div className="max-w-[95%] lg:max-w-[93%] mx-auto">
+      <div className="max-w-[88%] lg:max-w-[86%] mx-auto">
         {/* Single Large Rounded Container */}
         <div className="rounded-[20px] sm:rounded-[24px] lg:rounded-[28px] overflow-hidden shadow-2xl border-2 border-white/20">
 
           {/* ========== PART 1 — DARK BLUE TOP PANEL ========== */}
           <div
-            className="px-8 sm:px-14 lg:px-24 pt-10 sm:pt-14 lg:pt-16 pb-8 sm:pb-10 lg:pb-12"
+            className="px-6 sm:px-10 lg:px-16 pt-10 sm:pt-14 lg:pt-16 pb-8 sm:pb-10 lg:pb-12"
             style={{ background: 'linear-gradient(180deg, #273C65 0%, #182B51 100%)' }}
           >
             {/* Heading */}
@@ -46,11 +46,11 @@ export default function ProblemsFeaturesSection() {
                 <div key={index} className="flex items-start">
                   {/* Vertical Divider */}
                   {index > 0 && (
-                    <div className="w-px h-28 sm:h-36 lg:h-44 bg-white/15 mx-5 sm:mx-8 lg:mx-12 flex-shrink-0 self-center" />
+                    <div className="w-px h-28 sm:h-36 lg:h-44 bg-white/15 mx-4 sm:mx-6 lg:mx-10 flex-shrink-0 self-center" />
                   )}
                   {/* Feature Item */}
-                  <div className="flex flex-col items-center text-center min-w-[120px] sm:min-w-[160px] lg:min-w-[200px]">
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 flex items-center justify-center mb-4 sm:mb-5">
+                  <div className="flex flex-col items-center text-center min-w-[110px] sm:min-w-[140px] lg:min-w-[180px]">
+                    <div className="w-14 h-14 sm:w-18 sm:h-18 lg:w-22 lg:h-22 flex items-center justify-center mb-4 sm:mb-5">
                       <Image
                         src={item.icon}
                         alt={item.label}
@@ -59,7 +59,7 @@ export default function ProblemsFeaturesSection() {
                         className="w-full h-full object-contain brightness-0 invert"
                       />
                     </div>
-                    <p className="font-[family-name:var(--font-tajawal)] text-base sm:text-lg lg:text-xl font-bold text-white leading-tight">
+                    <p className="font-[family-name:var(--font-tajawal)] text-sm sm:text-base lg:text-lg font-bold text-white leading-tight">
                       {item.label}
                     </p>
                   </div>
@@ -69,7 +69,8 @@ export default function ProblemsFeaturesSection() {
           </div>
 
           {/* ========== PART 2 — WHITE BOTTOM PANEL ========== */}
-          <div className="bg-white px-8 sm:px-14 lg:px-24 pt-8 sm:pt-12 lg:pt-14 pb-10 sm:pb-14 lg:pb-16 relative">
+          <div className="bg-white px-6 sm:px-10 lg:px-16 pt-8 sm:pt-12 lg:pt-14 pb-10 sm:pb-14 lg:pb-16 relative">
+
             {/* Orange Heading */}
             <h2 className="font-[family-name:var(--font-tajawal)] text-3xl sm:text-5xl lg:text-6xl font-bold text-sparko-orange text-center leading-tight mb-2">
               هنا كل شيء محسوب
@@ -83,43 +84,43 @@ export default function ProblemsFeaturesSection() {
               كل خطوة لها هدف ... وكل تجربة لها نتيجة
             </p>
 
-            {/* ===== DESKTOP: Cards + Phone (absolute positioned) ===== */}
+            {/* ===== DESKTOP: Phone on RIGHT, Cards on LEFT ===== */}
             <div className="hidden lg:block relative">
-              {/* Phone Mockup — absolute, LEFT side in RTL (end of row), extends from top of section */}
-              <div className="absolute left-0 top-[-80px] xl:top-[-100px] z-10">
+              {/* Phone Mockup — absolute, RIGHT side in RTL (start), extends above cards, overlaps first card */}
+              <div className="absolute right-0 top-[-60px] xl:top-[-80px] z-10">
                 <Image
                   src="/phone-mockup.png"
                   alt="Sparko App"
-                  width={440}
-                  height={880}
-                  className="w-[340px] xl:w-[380px] h-auto object-contain"
+                  width={400}
+                  height={800}
+                  className="w-[300px] xl:w-[340px] h-auto object-contain"
                 />
               </div>
 
-              {/* Cards Grid — flows from RIGHT in RTL, leaves space on left for phone */}
-              <div className="grid grid-cols-6 gap-5 xl:gap-6 mr-0 ml-[320px] xl:ml-[360px]">
+              {/* Cards Grid — leaves space on right for phone */}
+              <div className="grid grid-cols-6 gap-4 xl:gap-5" style={{ marginLeft: '0', marginRight: '0', paddingRight: '280px' }}>
                 {bottomFeatures.map((card, index) => (
                   <div
                     key={index}
-                    className="bg-white border border-gray-200 rounded-2xl p-5 xl:p-6 flex flex-col items-center text-center min-h-[320px] xl:min-h-[360px] justify-center"
-                    style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}
+                    className="bg-white border border-gray-200 rounded-2xl p-4 xl:p-5 flex flex-col items-center text-center justify-center"
+                    style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)', minHeight: '260px' }}
                   >
                     {/* Orange Icon */}
-                    <div className="w-20 h-20 xl:w-24 xl:h-24 flex items-center justify-center mb-4 xl:mb-5">
+                    <div className="w-16 h-16 xl:w-20 xl:h-20 flex items-center justify-center mb-3 xl:mb-4">
                       <Image
                         src={card.icon}
                         alt={card.ar}
-                        width={80}
-                        height={80}
+                        width={64}
+                        height={64}
                         className="w-full h-full object-contain"
                       />
                     </div>
                     {/* Arabic Title */}
-                    <p className="font-[family-name:var(--font-tajawal)] text-sm xl:text-base font-bold text-[#0B1A3E] leading-snug mb-2">
+                    <p className="font-[family-name:var(--font-tajawal)] text-xs xl:text-sm font-bold text-[#0B1A3E] leading-snug mb-1.5">
                       {card.ar}
                     </p>
                     {/* English Subtitle */}
-                    <p className="text-gray-400 font-[family-name:var(--font-ibm-plex)] text-[10px] xl:text-xs leading-snug">
+                    <p className="text-gray-400 font-[family-name:var(--font-ibm-plex)] text-[9px] xl:text-[10px] leading-snug">
                       {card.en}
                     </p>
                   </div>
@@ -133,7 +134,7 @@ export default function ProblemsFeaturesSection() {
                 {bottomFeatures.map((card, index) => (
                   <div
                     key={index}
-                    className="bg-white border border-gray-200 rounded-2xl p-4 sm:p-5 flex flex-col items-center text-center min-h-[180px] sm:min-h-[220px] justify-center"
+                    className="bg-white border border-gray-200 rounded-2xl p-4 sm:p-5 flex flex-col items-center text-center min-h-[180px] sm:min-h-[200px] justify-center"
                     style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}
                   >
                     {/* Orange Icon */}
