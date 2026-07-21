@@ -83,10 +83,21 @@ export default function ProblemsFeaturesSection() {
               كل خطوة لها هدف ... وكل تجربة لها نتيجة
             </p>
 
-            {/* Desktop: Cards on right, Phone on left (RTL: cards=first=right, phone=last=left) */}
-            <div className="hidden lg:flex items-center gap-6 xl:gap-8 relative">
-              {/* Cards Grid — first in DOM = RIGHT side in RTL */}
-              <div className="grid grid-cols-6 gap-5 xl:gap-6 flex-1">
+            {/* ===== DESKTOP: Cards + Phone (absolute positioned) ===== */}
+            <div className="hidden lg:block relative">
+              {/* Phone Mockup — absolute, LEFT side in RTL (end of row), extends from top of section */}
+              <div className="absolute left-0 top-[-80px] xl:top-[-100px] z-10">
+                <Image
+                  src="/phone-mockup.png"
+                  alt="Sparko App"
+                  width={440}
+                  height={880}
+                  className="w-[340px] xl:w-[380px] h-auto object-contain"
+                />
+              </div>
+
+              {/* Cards Grid — flows from RIGHT in RTL, leaves space on left for phone */}
+              <div className="grid grid-cols-6 gap-5 xl:gap-6 mr-0 ml-[320px] xl:ml-[360px]">
                 {bottomFeatures.map((card, index) => (
                   <div
                     key={index}
@@ -114,20 +125,9 @@ export default function ProblemsFeaturesSection() {
                   </div>
                 ))}
               </div>
-
-              {/* Phone Mockup — last in DOM = LEFT side in RTL, extends above cards */}
-              <div className="flex-shrink-0 relative -mt-24 xl:-mt-32">
-                <Image
-                  src="/phone-mockup.png"
-                  alt="Sparko App"
-                  width={440}
-                  height={880}
-                  className="w-[360px] xl:w-[400px] h-auto object-contain"
-                />
-              </div>
             </div>
 
-            {/* Mobile/Tablet: Cards grid + phone below */}
+            {/* ===== MOBILE/TABLET: Cards grid + phone below ===== */}
             <div className="lg:hidden">
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-5">
                 {bottomFeatures.map((card, index) => (
