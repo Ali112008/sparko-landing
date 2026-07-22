@@ -43,7 +43,7 @@ export default function CTASection() {
             {/* CTA Button - Figma: bg orange cr:40 */}
             <a
               href="#contact"
-              className="inline-flex flex-col items-center justify-center gap-[2px] px-[40px] py-[16px] bg-sparko-orange text-white rounded-full font-tajawal font-medium text-[20px] hover:bg-[#E64D00] transition-all duration-300 shadow-lg shadow-sparko-orange/25"
+              className="inline-flex flex-col items-center justify-center gap-[2px] px-[40px] py-[16px] bg-sparko-orange text-white rounded-full font-ibm-plex font-medium text-[20px] hover:bg-[#E64D00] transition-all duration-300 shadow-lg shadow-sparko-orange/25"
             >
               <span>ابدأ رحلتك الآن</span>
               <span className="font-ibm-plex text-[10px] font-normal opacity-75">Start your journey now</span>

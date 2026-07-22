@@ -38,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl" suppressHydrationWarning>
       <body
-        className={`${cairo.variable} ${tajawal.variable} ${ibmPlexSansArabic.variable} antialiased font-cairo`}
+        className={`${cairo.variable} ${tajawal.variable} ${ibmPlexSansArabic.variable} antialiased font-ibm-plex`}
       >
         {children}
       </body>

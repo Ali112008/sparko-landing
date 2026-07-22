@@ -66,22 +66,22 @@ export default function HeroSection() {
             <div className="w-full lg:w-[42%] lg:pl-[40px] xl:pl-[56px] flex flex-col items-center lg:items-start" dir="rtl">
               <div className="inline-flex items-center gap-[6px] px-[12px] py-[6px] bg-gray-200 rounded-full mb-[16px]">
                 <span className="w-[6px] h-[6px] bg-green-500 rounded-full" />
-                <span className="font-tajawal text-[14px] text-gray-700 font-medium">نسبة قبول عالية</span>
+                <span className="font-ibm-plex text-[14px] text-gray-700 font-medium">نسبة قبول عالية</span>
               </div>
-              <h1 className="font-tajawal text-[24px] sm:text-[36px] lg:text-[48px] font-bold leading-[1.25] mb-[12px] text-center lg:text-right">
+              <h1 className="font-ibm-plex text-[24px] sm:text-[36px] lg:text-[48px] font-bold leading-[1.25] mb-[12px] text-center lg:text-right">
                 <span className="text-[#0B1A3E]">قصة حقيقية من </span>
                 <span className="text-[#0B1A3E]">التدريب الميداني</span>
                 <br />
                 <span className="text-[#0B1A3E]">إلى </span>
                 <span className="text-sparko-orange">عرض وظيفي</span>
               </h1>
-              <p className="font-tajawal text-[16px] sm:text-[20px] lg:text-[24px] text-[#2B2D2F] font-normal mb-[24px] text-center lg:text-right">
+              <p className="font-ibm-plex text-[16px] sm:text-[20px] lg:text-[24px] text-[#2B2D2F] font-normal mb-[24px] text-center lg:text-right">
                 تجربة تعيشها ... و نتيجة تشوفها
               </p>
               <div className="mb-[20px]">
                 <a
                   href="#contact"
-                  className="inline-flex flex-col items-center justify-center gap-[2px] px-[32px] lg:px-[40px] py-[14px] lg:py-[16px] bg-sparko-orange text-white rounded-full font-tajawal font-medium text-[20px] hover:bg-[#E64D00] transition-all duration-300 shadow-lg shadow-sparko-orange/25"
+                  className="inline-flex flex-col items-center justify-center gap-[2px] px-[32px] lg:px-[40px] py-[14px] lg:py-[16px] bg-sparko-orange text-white rounded-full font-ibm-plex font-medium text-[20px] hover:bg-[#E64D00] transition-all duration-300 shadow-lg shadow-sparko-orange/25"
                 >
                   <span>ابدأ رحلتك الآن</span>
                   <span className="font-ibm-plex text-[10px] font-normal opacity-75">Start your journey now</span>
