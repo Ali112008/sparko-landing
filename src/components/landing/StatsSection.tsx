@@ -32,11 +32,11 @@ export default function StatsSection() {
 
           {/* Main content: padding matches QuoteSection (py-[44px] px-[48px]) */}
           {/* RTL: Trophy+Text first in DOM → appears on RIGHT, Stats second → appears on LEFT */}
-          {/* Figma: HORIZONTAL flex, items vertically centered, space between trophy side and stats side */}
-          <div className="flex items-center py-[44px] px-[48px]" style={{ gap: '0px' }}>
+          {/* Figma: HORIZONTAL flex, items centered, gap 44px between each child */}
+          <div className="flex items-center py-[44px] px-[48px]" style={{ gap: '44px' }}>
             {/* Trophy + "منذ 2015" block — appears on RIGHT side in RTL */}
-            {/* Figma: HORIZONTAL flex, items centered, gap 32px */}
-            <div className="flex items-center flex-shrink-0" style={{ gap: '32px' }}>
+            {/* Figma: HORIZONTAL flex, items centered, gap 24px */}
+            <div className="flex items-center flex-shrink-0" style={{ gap: '24px' }}>
               {/* Trophy image - Figma: 143x126 */}
               <div className="w-[143px] h-[126px] flex-shrink-0">
                 <Image
@@ -62,14 +62,13 @@ export default function StatsSection() {
               </div>
             </div>
 
-            {/* Vertical divider — Figma: 1px width, height matches content area */}
-            {/* Positioned with 40px margin from each side per Figma */}
+            {/* Vertical divider — Figma: 1px width, self-stretch height */}
+            {/* Spacing handled by parent flex gap: 44px on each side */}
             <div
               className="flex-shrink-0"
               style={{
                 width: '1px',
                 alignSelf: 'stretch',
-                margin: '0 40px',
                 background: 'rgba(255, 255, 255, 0.2)',
               }}
             />
