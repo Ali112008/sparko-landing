@@ -134,8 +134,26 @@ export default function ProblemsFeaturesSection() {
             {/* ===== DESKTOP: Cards + Phone in HORIZONTAL layout per Figma ===== */}
             {/* Figma node 261:1743: HORIZONTAL flex, items vertically centered, 24px gap */}
             {/* Cards area takes ~80% width, Phone takes ~18% width, side by side */}
+            {/* RTL layout: Phone on RIGHT (DOM-first) → Cards on LEFT (DOM-second) */}
             <div className="hidden lg:flex w-full items-center gap-[24px]">
-              {/* Cards area — flex row, 16px gap between cards per Figma */}
+              {/* Phone mockup — appears on RIGHT side in RTL */}
+              <div
+                className="flex-shrink-0"
+                style={{
+                  filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.15))',
+                }}
+              >
+                <Image
+                  src="/phone-mockup.png"
+                  alt="Sparko App"
+                  width={283}
+                  height={575}
+                  className="h-auto object-contain"
+                  style={{ width: '283px', maxHeight: '575px' }}
+                />
+              </div>
+
+              {/* Cards area — appears on LEFT side in RTL */}
               {/* Each card: ~200px wide, padding 24px, gap 20px, border 1px rgba(0,0,0,0.24) */}
               <div className="flex gap-[16px] flex-1 min-w-0">
                 {bottomFeatures.map((card, index) => (
@@ -178,24 +196,6 @@ export default function ProblemsFeaturesSection() {
                     </p>
                   </div>
                 ))}
-              </div>
-
-              {/* Phone mockup — beside cards, 283×575 per Figma */}
-              {/* Soft shadow for subtle elevation */}
-              <div
-                className="flex-shrink-0"
-                style={{
-                  filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.15))',
-                }}
-              >
-                <Image
-                  src="/phone-mockup.png"
-                  alt="Sparko App"
-                  width={283}
-                  height={575}
-                  className="h-auto object-contain"
-                  style={{ width: '283px', maxHeight: '575px' }}
-                />
               </div>
             </div>
 
