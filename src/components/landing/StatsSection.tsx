@@ -78,10 +78,10 @@ export default function StatsSection() {
 
             {/* 4 Stat items — appears on LEFT side in RTL */}
             {/* Figma: HORIZONTAL flex, items-start, gap 40px between items */}
-            {/* Each item: flex-1 to distribute evenly across available width */}
+            {/* Each item: flex-1 with basis 0 for equal distribution */}
             <div className="flex items-start flex-1 min-w-0" style={{ gap: '40px' }}>
               {stats.map((stat, index) => (
-                <div key={index} className="flex flex-col flex-1 min-w-0 text-start" style={{ gap: '12px' }}>
+                <div key={index} className="flex flex-col min-w-0 text-start" style={{ flex: '1 1 0px', gap: '12px' }}>
                   {/* Icon - Figma: 44x44 */}
                   <div className="w-[44px] h-[44px] flex items-center justify-center flex-shrink-0">
                     <Image
@@ -93,15 +93,18 @@ export default function StatsSection() {
                     />
                   </div>
                   {/* Text frame — Figma: VERTICAL, gap 4px */}
-                  <div className="flex flex-col" style={{ gap: '4px' }}>
+                  <div className="flex flex-col min-w-0" style={{ gap: '4px' }}>
                     {/* Figma: 24px w700 lh28.8px white, IBM Plex Sans Arabic */}
-                    <p className="font-[family-name:var(--font-ibm-plex)] text-[24px] font-bold leading-[28.8px] text-white">
+                    <p
+                      className="font-[family-name:var(--font-ibm-plex)] text-[24px] font-bold leading-[28.8px] text-white"
+                      style={{ overflowWrap: 'break-word' }}
+                    >
                       {stat.ar}
                     </p>
                     {/* Figma: 18px w400 lh27px white/60, IBM Plex Sans Arabic, letterSpacing 0.16px */}
                     <p
                       className="font-[family-name:var(--font-ibm-plex)] text-[18px] font-normal leading-[27px] text-white/60"
-                      style={{ letterSpacing: '0.16px' }}
+                      style={{ letterSpacing: '0.16px', hyphens: 'none', overflowWrap: 'break-word' }}
                     >
                       {stat.en}
                     </p>
