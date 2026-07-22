@@ -137,57 +137,61 @@ export default function ProblemsFeaturesSection() {
             </p>
 
             {/* ===== DESKTOP: Cards + Phone ===== */}
+            {/* Figma: Frame 2121453275, HORIZONTAL, spacing:24 */}
             <div className="hidden lg:flex items-start gap-[24px] w-full">
-              {/* Figma: Cards row - HORIZONTAL, spacing:16 */}
-              <div className="flex gap-[16px] flex-1">
-                {bottomFeatures.map((card, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col items-center text-center"
-                    style={{
-                      boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
-                      borderRadius: '24px',
-                      padding: '24px',
-                      gap: '20px',
-                      flex: '1 1 0%',
-                      minWidth: 0,
-                      border: '1px solid rgba(0, 0, 0, 0.24)',
-                    }}
-                  >
-                    {/* Figma: Icon 80x80 */}
-                    <div className="w-[80px] h-[80px] flex items-center justify-center">
-                      <Image
-                        src={card.icon}
-                        alt={card.ar}
-                        width={80}
-                        height={80}
-                        className="w-full h-full object-contain"
-                      />
+              {/* Figma: Frame 2121453273 - Cards row, HORIZONTAL, spacing:24, paddingTop:60, cA:CENTER */}
+              <div className="flex flex-1" style={{ paddingTop: '60px' }}>
+                {/* Figma: Frame 1686552644 - 6 Cards, HORIZONTAL, spacing:16 */}
+                <div className="flex gap-[16px] flex-1">
+                  {bottomFeatures.map((card, index) => (
+                    <div
+                      key={index}
+                      className="flex flex-col items-center text-center"
+                      style={{
+                        boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
+                        borderRadius: '24px',
+                        padding: '24px',
+                        gap: '20px',
+                        flex: '1 1 0%',
+                        minWidth: 0,
+                        border: '1px solid rgba(0, 0, 0, 0.24)',
+                      }}
+                    >
+                      {/* Figma: Icon 80x80, orange fill */}
+                      <div className="w-[80px] h-[80px] flex items-center justify-center">
+                        <Image
+                          src={card.icon}
+                          alt={card.ar}
+                          width={80}
+                          height={80}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                      {/* Figma: 20px w600 lh:32px #2B2D2F */}
+                      <p className="font-[family-name:var(--font-ibm-plex)] text-[20px] leading-[32px] font-semibold text-[#2B2D2F]">
+                        {card.ar.split('\n').map((line, i) => (
+                          <span key={i}>
+                            {line}
+                            {i < card.ar.split('\n').length - 1 && <br />}
+                          </span>
+                        ))}
+                      </p>
+                      {/* Figma: 18px w600 lh:32px #2B2D2F */}
+                      <p className="font-[family-name:var(--font-ibm-plex)] text-[18px] leading-[32px] font-semibold text-[#2B2D2F]">
+                        {card.en.split('\n').map((line, i) => (
+                          <span key={i}>
+                            {line}
+                            {i < card.en.split('\n').length - 1 && <br />}
+                          </span>
+                        ))}
+                      </p>
                     </div>
-                    {/* Figma: 20px w600 lh:32px #2B2D2F */}
-                    <p className="font-[family-name:var(--font-ibm-plex)] text-[20px] leading-[32px] font-semibold text-[#2B2D2F]">
-                      {card.ar.split('\n').map((line, i) => (
-                        <span key={i}>
-                          {line}
-                          {i < card.ar.split('\n').length - 1 && <br />}
-                        </span>
-                      ))}
-                    </p>
-                    {/* Figma: 18px w600 lh:32px #2B2D2F */}
-                    <p className="font-[family-name:var(--font-ibm-plex)] text-[18px] leading-[32px] font-semibold text-[#2B2D2F]">
-                      {card.en.split('\n').map((line, i) => (
-                        <span key={i}>
-                          {line}
-                          {i < card.en.split('\n').length - 1 && <br />}
-                        </span>
-                      ))}
-                    </p>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
 
-              {/* Phone mockup */}
-              <div className="flex-shrink-0 relative" style={{ marginTop: '-200px' }}>
+              {/* Figma: Group 1000004725 - Phone mockup, 283x575, aligned to top */}
+              <div className="flex-shrink-0 relative">
                 <Image
                   src="/phone-mockup.png"
                   alt="Sparko App"
