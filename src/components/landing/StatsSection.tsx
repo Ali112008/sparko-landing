@@ -1,12 +1,12 @@
 'use client';
 
-import { ThumbsUp, Clock, Building2, Users } from 'lucide-react';
+import Image from 'next/image';
 
 const stats = [
-  { icon: ThumbsUp, ar: 'نتائج تتكرر… وليست صدفة', en: 'Repeatable results — not luck' },
-  { icon: Clock, ar: 'نتائج تُقاس بوضوح', en: 'Clearly measurable outcomes' },
-  { icon: Building2, ar: 'تقييم مبني على الأداء', en: 'Performance-based evaluation' },
-  { icon: Users, ar: 'تجارب موثقة', en: 'Documented experiences' },
+  { icon: '/icon-stats-thumb.png', ar: 'نتائج تتكرر… وليست صدفة', en: 'Repeatable results — not luck' },
+  { icon: '/icon-stats-clock.png', ar: 'نتائج تُقاس بوضوح', en: 'Clearly measurable outcomes' },
+  { icon: '/icon-stats-grid.png', ar: 'تقييم مبني على الأداء', en: 'Performance-based evaluation' },
+  { icon: '/icon-stats-person.png', ar: 'تجارب موثقة', en: 'Documented experiences' },
 ];
 
 export default function StatsSection() {
@@ -37,9 +37,15 @@ export default function StatsSection() {
             <div className="flex items-start gap-[40px]">
               {stats.map((stat, index) => (
                 <div key={index} className="flex flex-col items-start gap-[12px] w-[269px]">
-                  {/* Figma: Icon - 44x44 */}
+                  {/* Figma: Icon - 44x44, orange (#FF5500) */}
                   <div className="w-[44px] h-[44px] flex items-center justify-center flex-shrink-0">
-                    <stat.icon className="w-[44px] h-[44px] text-white/80" />
+                    <Image
+                      src={stat.icon}
+                      alt={stat.ar}
+                      width={44}
+                      height={44}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                   {/* Figma: Text frame */}
                   <div>
@@ -47,8 +53,8 @@ export default function StatsSection() {
                     <p className="font-[family-name:var(--font-ibm-plex)] text-[24px] font-bold leading-[28.8px] text-white">
                       {stat.ar}
                     </p>
-                    {/* Figma: 18px w400 lh:27px (150%) white, IBM Plex Sans Arabic */}
-                    <p className="font-[family-name:var(--font-ibm-plex)] text-[18px] font-normal leading-[27px] text-white mt-[4px]">
+                    {/* Figma: 18px w400 lh:27px (150%) white/60, IBM Plex Sans Arabic */}
+                    <p className="font-[family-name:var(--font-ibm-plex)] text-[18px] font-normal leading-[27px] text-white/60 mt-[4px]">
                       {stat.en}
                     </p>
                   </div>
@@ -73,12 +79,14 @@ export default function StatsSection() {
                 </p>
               </div>
 
-              {/* Figma: image 10 - 143x126 */}
-              <div className="w-[143px] h-[126px] flex-shrink-0 overflow-hidden">
-                <img
+              {/* Figma: image 10 - 143x126 - Trophy/Cup illustration */}
+              <div className="w-[143px] h-[126px] flex-shrink-0">
+                <Image
                   src="/stats-image.png"
-                  alt="Sparko Stats"
-                  className="w-full h-full object-cover"
+                  alt="Sparko Trophy"
+                  width={143}
+                  height={126}
+                  className="w-full h-full object-contain"
                 />
               </div>
             </div>
