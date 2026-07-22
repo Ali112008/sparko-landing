@@ -15,6 +15,7 @@
 
 # next.js
 /.next/
+/_next/
 /out/
 
 # production
@@ -39,3 +40,18 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# === Cleanup: junk directories that should NOT be in the repo ===
+/download/
+/serve-dir/
+/prod-serve/
+/tool-results/
+/scripts/
+/tmp-page.html
+/worklog.md
+/CLAUDE.md
+/AGENTS.md
+/bun.lock
+
+# upload temp files
+/upload/
