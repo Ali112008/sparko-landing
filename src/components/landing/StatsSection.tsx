@@ -55,8 +55,11 @@ export default function StatsSection() {
                 <p className="font-[family-name:var(--font-ibm-plex)] text-[24px] font-bold leading-[31.2px] text-white text-right">
                   منذ 2015 ،<br />نتائج مستمرة حتى اليوم
                 </p>
-                {/* Figma: 18px w700 lh23.4px rgb(255,85,0), IBM Plex Sans Arabic */}
-                <p className="font-[family-name:var(--font-ibm-plex)] text-[18px] font-bold leading-[23.4px] text-sparko-orange text-right">
+                {/* Figma: 18px w700 lh23.4px rgb(255,85,0), IBM Plex Sans Arabic, letterSpacing 0.16px */}
+                <p
+                  className="font-[family-name:var(--font-ibm-plex)] text-[18px] font-bold leading-[23.4px] text-sparko-orange text-right"
+                  style={{ letterSpacing: '0.16px' }}
+                >
                   Since 2015 ,<br />results that continue
                 </p>
               </div>
@@ -69,7 +72,7 @@ export default function StatsSection() {
               style={{
                 width: '1px',
                 alignSelf: 'stretch',
-                background: 'rgba(255, 255, 255, 0.2)',
+                background: 'rgba(255, 255, 255, 0.24)',
               }}
             />
 
@@ -78,7 +81,7 @@ export default function StatsSection() {
             {/* Each item: flex-1 to distribute evenly across available width */}
             <div className="flex items-start flex-1 min-w-0" style={{ gap: '40px' }}>
               {stats.map((stat, index) => (
-                <div key={index} className="flex flex-col flex-1 min-w-0" style={{ gap: '12px' }}>
+                <div key={index} className="flex flex-col flex-1 min-w-0 text-start" style={{ gap: '12px' }}>
                   {/* Icon - Figma: 44x44 */}
                   <div className="w-[44px] h-[44px] flex items-center justify-center flex-shrink-0">
                     <Image
@@ -95,8 +98,11 @@ export default function StatsSection() {
                     <p className="font-[family-name:var(--font-ibm-plex)] text-[24px] font-bold leading-[28.8px] text-white">
                       {stat.ar}
                     </p>
-                    {/* Figma: 18px w400 lh27px white/60, IBM Plex Sans Arabic */}
-                    <p className="font-[family-name:var(--font-ibm-plex)] text-[18px] font-normal leading-[27px] text-white/60">
+                    {/* Figma: 18px w400 lh27px white/60, IBM Plex Sans Arabic, letterSpacing 0.16px */}
+                    <p
+                      className="font-[family-name:var(--font-ibm-plex)] text-[18px] font-normal leading-[27px] text-white/60"
+                      style={{ letterSpacing: '0.16px' }}
+                    >
                       {stat.en}
                     </p>
                   </div>
