@@ -24,7 +24,7 @@ export default function HeroSection() {
               <svg className="w-[12px] h-[12px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6" /></svg>
             </button>
             <button className="flex items-center gap-[4px] px-[16px] py-[6px] bg-gray-100 border border-gray-200 rounded-full text-gray-700 text-[13px] hover:bg-gray-200 transition-colors">
-              منظومة <span className="text-sparko-orange font-[family-name:var(--font-ibm-plex)] font-bold">Sparko.</span> المتكاملة
+              منظومة <span className="text-sparko-orange font-ibm-plex font-bold">Sparko.</span> المتكاملة
             </button>
           </div>
           <button className="md:hidden text-gray-600" aria-label="القائمة">
@@ -53,10 +53,10 @@ export default function HeroSection() {
                 style={{ boxShadow: '0 12px 28px rgba(255,85,0,0.3)' }}
               >
                 <span className="text-white/80 text-[40px] font-light leading-none">&ldquo;</span>
-                <p className="font-[family-name:var(--font-ibm-plex)] text-white text-[23px] font-semibold leading-[44px] mt-[-8px]">
+                <p className="font-ibm-plex text-white text-[23px] font-semibold leading-[44px] mt-[-8px]">
                   تجربة مختلفة تعتبر نقطة تحول في مساري المهني
                 </p>
-                <p className="font-[family-name:var(--font-ibm-plex)] text-white text-[16px] font-normal mt-[8px]">
+                <p className="font-ibm-plex text-white text-[16px] font-normal mt-[8px]">
                   Majed Baqshan<br />Since 2015
                 </p>
               </div>
@@ -66,25 +66,25 @@ export default function HeroSection() {
             <div className="w-full lg:w-[42%] lg:pl-[40px] xl:pl-[56px] flex flex-col items-center lg:items-start" dir="rtl">
               <div className="inline-flex items-center gap-[6px] px-[12px] py-[6px] bg-gray-200 rounded-full mb-[16px]">
                 <span className="w-[6px] h-[6px] bg-green-500 rounded-full" />
-                <span className="font-[family-name:var(--font-tajawal)] text-[14px] text-gray-700 font-medium">نسبة قبول عالية</span>
+                <span className="font-tajawal text-[14px] text-gray-700 font-medium">نسبة قبول عالية</span>
               </div>
-              <h1 className="font-[family-name:var(--font-tajawal)] text-[24px] sm:text-[36px] lg:text-[48px] font-bold leading-[1.25] mb-[12px] text-center lg:text-right">
+              <h1 className="font-tajawal text-[24px] sm:text-[36px] lg:text-[48px] font-bold leading-[1.25] mb-[12px] text-center lg:text-right">
                 <span className="text-[#0B1A3E]">قصة حقيقية من </span>
                 <span className="text-[#0B1A3E]">التدريب الميداني</span>
                 <br />
                 <span className="text-[#0B1A3E]">إلى </span>
                 <span className="text-sparko-orange">عرض وظيفي</span>
               </h1>
-              <p className="font-[family-name:var(--font-tajawal)] text-[16px] sm:text-[20px] lg:text-[24px] text-[#2B2D2F] font-normal mb-[24px] text-center lg:text-right">
+              <p className="font-tajawal text-[16px] sm:text-[20px] lg:text-[24px] text-[#2B2D2F] font-normal mb-[24px] text-center lg:text-right">
                 تجربة تعيشها ... و نتيجة تشوفها
               </p>
               <div className="mb-[20px]">
                 <a
                   href="#contact"
-                  className="inline-flex flex-col items-center justify-center gap-[2px] px-[32px] lg:px-[40px] py-[14px] lg:py-[16px] bg-sparko-orange text-white rounded-full font-[family-name:var(--font-tajawal)] font-medium text-[20px] hover:bg-[#E64D00] transition-all duration-300 shadow-lg shadow-sparko-orange/25"
+                  className="inline-flex flex-col items-center justify-center gap-[2px] px-[32px] lg:px-[40px] py-[14px] lg:py-[16px] bg-sparko-orange text-white rounded-full font-tajawal font-medium text-[20px] hover:bg-[#E64D00] transition-all duration-300 shadow-lg shadow-sparko-orange/25"
                 >
                   <span>ابدأ رحلتك الآن</span>
-                  <span className="font-[family-name:var(--font-ibm-plex)] text-[10px] font-normal opacity-75">Start your journey now</span>
+                  <span className="font-ibm-plex text-[10px] font-normal opacity-75">Start your journey now</span>
                 </a>
               </div>
               <div className="flex items-center gap-[12px] justify-center lg:justify-start">

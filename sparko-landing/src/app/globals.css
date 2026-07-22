@@ -10,6 +10,9 @@
   --color-foreground: var(--foreground);
   --color-sparko-orange: #FF5500;
   --color-sparko-green: #00D084;
+  --font-family-ibm-plex: var(--font-ibm-plex);
+  --font-family-tajawal: var(--font-tajawal);
+  --font-family-cairo: var(--font-cairo);
 }
 
 body {
