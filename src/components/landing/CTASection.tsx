@@ -6,15 +6,31 @@ export default function CTASection() {
   return (
     <section className="relative py-[24px] lg:py-[40px]">
       <div className="max-w-[88%] lg:max-w-[86%] mx-auto">
+        {/* Background+Border+Shadow — matches Figma pattern from other sections */}
         <div
-          className="rounded-[24px] border-2 border-white/30 overflow-hidden"
+          className="rounded-[24px] overflow-hidden relative"
           style={{
-            background: 'linear-gradient(180deg, #16284D 0%, #0F1D38 100%)',
+            background: 'radial-gradient(circle at center, #21355A 0%, #0C1B3A 100%)',
+            border: '1.5px solid rgba(255, 255, 255, 0.12)',
+            boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
           }}
         >
-          <div className="flex flex-col items-center py-[48px] lg:py-[64px] px-[32px] lg:px-[80px]">
-            {/* Pill: منظومة Sparko. المتكاملة - Figma: 16px w500 */}
-            <div className="inline-flex items-center gap-[8px] px-[16px] py-[6px] bg-white/10 rounded-full mb-[24px]">
+          {/* Figma: HorizontalBorder+Blur — blue glow line at bottom */}
+          <div
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[103%] h-[1px]"
+            style={{
+              borderTop: '1px solid rgba(43, 127, 255, 0.7)',
+              filter: 'blur(10px)',
+            }}
+          />
+
+          {/* Content container */}
+          {/* Figma: VERTICAL flex, CENTER alignment, gap 24px */}
+          <div className="flex flex-col items-center py-[44px] px-[48px]" style={{ gap: '24px' }}>
+            {/* Pill/Badge: منظومة Sparko. المتكاملة */}
+            {/* Figma: HORIZONTAL flex, CENTER, gap 8px, bg white/10, rounded-full */}
+            <div className="inline-flex items-center" style={{ gap: '8px', padding: '6px 16px', background: 'rgba(255, 255, 255, 0.10)', borderRadius: '50px' }}>
+              {/* Figma: 16px w500 white, IBM Plex Sans Arabic */}
               <span className="font-ibm-plex text-[14px] lg:text-[16px] font-medium text-white">
                 منظومة
               </span>
@@ -30,23 +46,38 @@ export default function CTASection() {
               </span>
             </div>
 
-            {/* Heading - Figma: 40px w700 */}
-            <h2 className="font-ibm-plex text-[24px] sm:text-[32px] lg:text-[40px] font-bold leading-[1.2] text-white text-center mb-[16px]">
+            {/* Heading */}
+            {/* Figma: 40px w700 lh48px white, IBM Plex Sans Arabic, textAlign CENTER */}
+            <h2 className="font-ibm-plex text-[24px] lg:text-[40px] font-bold text-white text-center"
+              style={{ lineHeight: '48px' }}>
               جاهز أنت الآن تبني قصة نجاحك؟
             </h2>
 
-            {/* Subtitle - Figma: 24px w400 */}
-            <p className="font-ibm-plex text-[16px] sm:text-[20px] lg:text-[24px] font-normal leading-[1.4] text-white/70 text-center mb-[32px]">
+            {/* Subtitle */}
+            {/* Figma: 24px w400 lh28px white 70% opacity, letterSpacing 0.16px, IBM Plex Sans Arabic */}
+            <p className="font-ibm-plex text-[16px] lg:text-[24px] font-normal text-white/70 text-center"
+              style={{ lineHeight: '28px', letterSpacing: '0.16px' }}>
               تجربة تعيشها ... و نتيجة تشوفها
             </p>
 
-            {/* CTA Button - Figma: bg orange cr:40 */}
+            {/* CTA Button */}
+            {/* Figma: bg orange, rounded-full, cornerRadius 40 */}
             <a
               href="#contact"
-              className="inline-flex flex-col items-center justify-center gap-[2px] px-[40px] py-[16px] bg-sparko-orange text-white rounded-full font-ibm-plex font-medium text-[20px] hover:bg-[#E64D00] transition-all duration-300 shadow-lg shadow-sparko-orange/25"
+              className="inline-flex flex-col items-center justify-center font-ibm-plex"
+              style={{
+                gap: '2px',
+                padding: '16px 40px',
+                background: '#FF5500',
+                borderRadius: '40px',
+                color: '#FFFFFF',
+                fontSize: '20px',
+                fontWeight: 500,
+                boxShadow: '0px 10px 15px -3px rgba(255, 85, 0, 0.25)',
+              }}
             >
               <span>ابدأ رحلتك الآن</span>
-              <span className="font-ibm-plex text-[10px] font-normal opacity-75">Start your journey now</span>
+              <span style={{ fontSize: '10px', fontWeight: 400, opacity: 0.75 }}>Start your journey now</span>
             </a>
           </div>
         </div>
