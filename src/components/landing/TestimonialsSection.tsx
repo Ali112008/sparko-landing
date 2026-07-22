@@ -40,7 +40,7 @@ export default function TestimonialsSection() {
             {/* Figma: Group 1000004750 - Heading with logo */}
             <div className="flex flex-col items-center">
               {/* Figma: 40px w700 lh:48px white, IBM Plex Sans Arabic */}
-              <h1 className="font-[family-name:var(--font-ibm-plex)] text-[40px] font-bold text-white leading-[48px]">
+              <h1 className="font-ibm-plex text-[40px] font-bold text-white leading-[48px]">
                 &ldquo;{' '}
                 <Image
                   src="/logo.png"
@@ -56,7 +56,7 @@ export default function TestimonialsSection() {
 
             {/* Figma: Container - 20px w400 lh:28px white, letterSpacing: 0.16px */}
             <p
-              className="font-[family-name:var(--font-ibm-plex)] text-[20px] font-normal leading-[28px] text-white"
+              className="font-ibm-plex text-[20px] font-normal leading-[28px] text-white"
               style={{ letterSpacing: '0.16px' }}
             >
               &ldquo;نتيجة حقيقية … تتكرر كل يوم&rdquo;
@@ -91,7 +91,7 @@ export default function TestimonialsSection() {
                     />
                   </div>
                   {/* Figma: Heading 3 - 20px w600 lh:32px white, IBM Plex Sans Arabic */}
-                  <p className="font-[family-name:var(--font-ibm-plex)] text-[20px] font-semibold leading-[32px] text-white text-center whitespace-nowrap">
+                  <p className="font-ibm-plex text-[20px] font-semibold leading-[32px] text-white text-center whitespace-nowrap">
                     {person.name}
                   </p>
                 </div>

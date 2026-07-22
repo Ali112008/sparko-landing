@@ -16,10 +16,10 @@ export default function WatchSection() {
 
             {/* Right Column (RTL) */}
             <div className="flex flex-col items-center justify-center py-[32px] lg:py-[48px] md:pl-[32px] lg:pl-[56px]">
-              <h3 className="font-[family-name:var(--font-ibm-plex)] text-[18px] sm:text-[24px] lg:text-[32px] font-semibold leading-[1.5] text-center text-white">
+              <h3 className="font-ibm-plex text-[18px] sm:text-[24px] lg:text-[32px] font-semibold leading-[1.5] text-center text-white">
                 ما هي تجربة واحدة … هي تجارب تتكرر
               </h3>
-              <p className="text-white/60 font-[family-name:var(--font-ibm-plex)] text-[12px] sm:text-[16px] lg:text-[20px] font-normal mt-[8px]">
+              <p className="text-white/60 font-ibm-plex text-[12px] sm:text-[16px] lg:text-[20px] font-normal mt-[8px]">
                 بنوك ، شركات ، جامعات ، جهات مختلفة
               </p>
               {/* Play button */}
@@ -37,7 +37,7 @@ export default function WatchSection() {
                     <path d="M10 6L22 14L10 22V6Z" fill="white" />
                   </svg>
                 </button>
-                <span className="font-[family-name:var(--font-ibm-plex)] text-[14px] lg:text-[16px] font-normal text-white">
+                <span className="font-ibm-plex text-[14px] lg:text-[16px] font-normal text-white">
                   شاهد
                 </span>
               </div>
@@ -45,10 +45,10 @@ export default function WatchSection() {
 
             {/* Left Column (RTL) */}
             <div className="flex flex-col items-center justify-center py-[32px] lg:py-[48px] md:pr-[32px] lg:pr-[56px]">
-              <h3 className="font-[family-name:var(--font-ibm-plex)] text-[18px] sm:text-[24px] lg:text-[32px] font-semibold leading-[1.5] text-center text-white">
+              <h3 className="font-ibm-plex text-[18px] sm:text-[24px] lg:text-[32px] font-semibold leading-[1.5] text-center text-white">
                 من تجربة محلية … إلى أثر عالمي
               </h3>
-              <p className="text-white/60 font-[family-name:var(--font-ibm-plex)] text-[12px] sm:text-[16px] lg:text-[20px] font-normal mt-[8px]">
+              <p className="text-white/60 font-ibm-plex text-[12px] sm:text-[16px] lg:text-[20px] font-normal mt-[8px]">
                 What started here… reached the world
               </p>
               {/* Play button */}
@@ -66,7 +66,7 @@ export default function WatchSection() {
                     <path d="M10 6L22 14L10 22V6Z" fill="white" />
                   </svg>
                 </button>
-                <span className="font-[family-name:var(--font-ibm-plex)] text-[14px] lg:text-[16px] font-normal text-white">
+                <span className="font-ibm-plex text-[14px] lg:text-[16px] font-normal text-white">
                   شاهد
                 </span>
               </div>
@@ -78,7 +78,7 @@ export default function WatchSection() {
 
           {/* Bottom - Figma: 32px w700 */}
           <div className="flex items-center justify-center py-[24px] lg:py-[36px] px-[16px] lg:px-[32px]">
-            <p className="font-[family-name:var(--font-ibm-plex)] text-[16px] sm:text-[24px] lg:text-[32px] font-bold text-white text-center leading-[1.4]">
+            <p className="font-ibm-plex text-[16px] sm:text-[24px] lg:text-[32px] font-bold text-white text-center leading-[1.4]">
               التدريب الميداني … ليس مجرد حضور بل &ldquo;تجربة تُبنى وفق معيار واضح&rdquo;
             </p>
           </div>

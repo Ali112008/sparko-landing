@@ -47,11 +47,11 @@ export default function ProblemsFeaturesSection() {
           <div className="flex flex-col items-center justify-center py-[44px] px-[44px] gap-[44px]">
             {/* Heading + Subtitle */}
             <div className="flex flex-col items-center gap-[24px]">
-              <h2 className="font-[family-name:var(--font-ibm-plex)] text-[40px] leading-[48px] font-bold text-white text-center">
+              <h2 className="font-ibm-plex text-[40px] leading-[48px] font-bold text-white text-center">
                 أغلب التجارب تمر بدون أثر
               </h2>
               <p
-                className="font-[family-name:var(--font-ibm-plex)] text-[24px] leading-[28px] font-normal text-white text-center"
+                className="font-ibm-plex text-[24px] leading-[28px] font-normal text-white text-center"
                 style={{ letterSpacing: '0.16px' }}
               >
                 Most training experiences pass without impact
@@ -83,7 +83,7 @@ export default function ProblemsFeaturesSection() {
                         className="w-full h-full object-contain brightness-0 invert"
                       />
                     </div>
-                    <p className="font-[family-name:var(--font-ibm-plex)] text-[18px] leading-[28px] font-semibold text-white">
+                    <p className="font-ibm-plex text-[18px] leading-[28px] font-semibold text-white">
                       {item.label}
                     </p>
                   </div>
@@ -115,11 +115,11 @@ export default function ProblemsFeaturesSection() {
           <div className="flex flex-col items-center py-[44px] px-[44px]" style={{ gap: '44px' }}>
             {/* Headings — gap 24px between title and subtitle per Figma */}
             <div className="flex flex-col items-center gap-[24px]">
-              <h2 className="font-[family-name:var(--font-ibm-plex)] text-[40px] leading-[48px] font-bold text-sparko-orange text-center">
+              <h2 className="font-ibm-plex text-[40px] leading-[48px] font-bold text-sparko-orange text-center">
                 هنا كل شيء محسوب
               </h2>
               <p
-                className="font-[family-name:var(--font-ibm-plex)] text-[24px] leading-[28px] font-normal text-[#2B2D2F] text-center"
+                className="font-ibm-plex text-[24px] leading-[28px] font-normal text-[#2B2D2F] text-center"
                 style={{ letterSpacing: '0.16px' }}
               >
                 Here, everything is calculated
@@ -127,7 +127,7 @@ export default function ProblemsFeaturesSection() {
             </div>
 
             {/* Green text per Figma */}
-            <p className="font-[family-name:var(--font-ibm-plex)] text-[36px] leading-[48px] font-bold text-sparko-green text-center">
+            <p className="font-ibm-plex text-[36px] leading-[48px] font-bold text-sparko-green text-center">
               كل خطوة لها هدف ... وكل تجربة لها نتيجة
             </p>
 
@@ -177,7 +177,7 @@ export default function ProblemsFeaturesSection() {
                       />
                     </div>
                     {/* Arabic text: fontSize 20, lineHeight 32, fontWeight 600 per Figma */}
-                    <p className="font-[family-name:var(--font-ibm-plex)] text-[20px] leading-[32px] font-semibold text-[#2B2D2F]">
+                    <p className="font-ibm-plex text-[20px] leading-[32px] font-semibold text-[#2B2D2F]">
                       {card.ar.split('\n').map((line, i) => (
                         <span key={i}>
                           {line}
@@ -186,7 +186,7 @@ export default function ProblemsFeaturesSection() {
                       ))}
                     </p>
                     {/* English text: fontSize 18, lineHeight 32, fontWeight 600 per Figma */}
-                    <p className="font-[family-name:var(--font-ibm-plex)] text-[18px] leading-[32px] font-semibold text-[#2B2D2F]">
+                    <p className="font-ibm-plex text-[18px] leading-[32px] font-semibold text-[#2B2D2F]">
                       {card.en.split('\n').map((line, i) => (
                         <span key={i}>
                           {line}
@@ -217,7 +217,7 @@ export default function ProblemsFeaturesSection() {
                     <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center">
                       <Image src={card.icon} alt={card.ar} width={56} height={56} className="w-full h-full object-contain" />
                     </div>
-                    <p className="font-[family-name:var(--font-ibm-plex)] text-xs sm:text-sm font-semibold text-[#2B2D2F] leading-snug">
+                    <p className="font-ibm-plex text-xs sm:text-sm font-semibold text-[#2B2D2F] leading-snug">
                       {card.ar.split('\n').map((line, i) => (
                         <span key={i}>
                           {line}
@@ -225,7 +225,7 @@ export default function ProblemsFeaturesSection() {
                         </span>
                       ))}
                     </p>
-                    <p className="font-[family-name:var(--font-ibm-plex)] text-[9px] sm:text-[10px] leading-snug font-semibold text-[#2B2D2F]">
+                    <p className="font-ibm-plex text-[9px] sm:text-[10px] leading-snug font-semibold text-[#2B2D2F]">
                       {card.en.split('\n').map((line, i) => (
                         <span key={i}>
                           {line}

@@ -29,19 +29,19 @@ export default function QuoteSection() {
             <div className="flex flex-col items-center text-center gap-[24px]">
               {/* Figma: 36px w500 lh:48px white, IBM Plex Sans Arabic */}
               <p
-                className="font-[family-name:var(--font-ibm-plex)] text-[36px] font-medium leading-[48px] text-white"
+                className="font-ibm-plex text-[36px] font-medium leading-[48px] text-white"
               >
                 إذا كنت تبحث عن تدريب ، هذا مو مكان تدريب … !
               </p>
               {/* Figma: 56px w700 lh:80px rgb(255,85,0), IBM Plex Sans Arabic */}
               <p
-                className="font-[family-name:var(--font-ibm-plex)] text-[56px] font-bold leading-[80px] text-sparko-orange"
+                className="font-ibm-plex text-[56px] font-bold leading-[80px] text-sparko-orange"
               >
                 هذا مكان &ldquo; يصنع نتيجتك &rdquo;
               </p>
               {/* Figma: 20px w400 lh:28px white (full opacity), letterSpacing: 0.16px, IBM Plex Sans Arabic */}
               <p
-                className="font-[family-name:var(--font-ibm-plex)] text-[20px] font-normal leading-[28px] text-white"
+                className="font-ibm-plex text-[20px] font-normal leading-[28px] text-white"
                 style={{ letterSpacing: '0.16px' }}
               >
                 &ldquo;If you&apos;re looking for training, this isn&apos;t a training place…!

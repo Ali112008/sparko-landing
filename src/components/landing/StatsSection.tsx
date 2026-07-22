@@ -52,12 +52,12 @@ export default function StatsSection() {
               {/* Figma: VERTICAL flex, gap 16px, textAlign right */}
               <div className="flex flex-col" style={{ gap: '16px' }}>
                 {/* Figma: 24px w700 lh31.2px white, IBM Plex Sans Arabic */}
-                <p className="font-[family-name:var(--font-ibm-plex)] text-[24px] font-bold leading-[31.2px] text-white text-right">
+                <p className="font-ibm-plex text-[24px] font-bold leading-[31.2px] text-white text-right">
                   منذ 2015 ،<br />نتائج مستمرة حتى اليوم
                 </p>
                 {/* Figma: 18px w700 lh23.4px rgb(255,85,0), IBM Plex Sans Arabic, letterSpacing 0 */}
                 <p
-                  className="font-[family-name:var(--font-ibm-plex)] text-[18px] font-bold leading-[23.4px] text-sparko-orange text-right"
+                  className="font-ibm-plex text-[18px] font-bold leading-[23.4px] text-sparko-orange text-right"
                 >
                   Since 2015 ,<br />results that continue
                 </p>
@@ -95,14 +95,14 @@ export default function StatsSection() {
                   <div className="flex flex-col items-center min-w-0" style={{ gap: '8px' }}>
                     {/* Arabic text — centered */}
                     <p
-                      className="font-[family-name:var(--font-ibm-plex)] text-[24px] font-bold leading-[28.8px] text-white text-center"
+                      className="font-ibm-plex text-[24px] font-bold leading-[28.8px] text-white text-center"
                       style={{ overflowWrap: 'break-word' }}
                     >
                       {stat.ar}
                     </p>
                     {/* English translation — Figma: 18px w400 lh27px white, letterSpacing 0 */}
                     <p
-                      className="font-[family-name:var(--font-ibm-plex)] text-[18px] font-normal leading-[27px] text-white text-center"
+                      className="font-ibm-plex text-[18px] font-normal leading-[27px] text-white text-center"
                       style={{ hyphens: 'none', overflowWrap: 'break-word' }}
                     >
                       {stat.en}
