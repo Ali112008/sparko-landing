@@ -27,30 +27,32 @@ export default function ProblemsFeaturesSection() {
         <div className="rounded-[20px] sm:rounded-[24px] lg:rounded-[28px] overflow-hidden shadow-2xl border-2 border-white/20">
 
           {/* ========== PART 1 — DARK BLUE TOP PANEL ========== */}
-          {/* Figma: Container 1680×383.5, padding=44, gap=44 */}
           <div
-            className="flex flex-col items-center px-[2.62vw] pt-[2.62vw] pb-[2.62vw] gap-[2.62vw]"
+            className="flex flex-col items-center py-[44px] px-[44px] gap-[44px]"
             style={{ background: 'linear-gradient(180deg, #273C65 0%, #182B51 100%)' }}
           >
-            {/* Figma: Container gap=24, Heading 40px/48px bold, Subtitle 24px/28px w400 */}
-            <div className="flex flex-col items-center gap-[1.43vw]">
-              <h2 className="font-[family-name:var(--font-tajawal)] text-[2.38vw] leading-[2.86vw] font-bold text-white text-center">
+            {/* Heading + Subtitle */}
+            <div className="flex flex-col items-center gap-[24px]">
+              <h2 className="font-[family-name:var(--font-tajawal)] text-[40px] leading-[48px] font-bold text-white text-center">
                 أغلب التجارب تمر بدون أثر
               </h2>
-              <p className="text-white/40 font-[family-name:var(--font-ibm-plex)] text-[1.43vw] leading-[1.67vw] font-normal text-center">
+              <p className="text-white/40 font-[family-name:var(--font-ibm-plex)] text-[24px] leading-[28px] font-normal text-center">
                 Most training experiences pass without impact
               </p>
             </div>
 
-            {/* Figma: 5 icons row, gap=64, icon=80×80, text=20px/32px w600, divider h=148.5 */}
+            {/* 5 icons row with vertical dividers */}
             <div className="flex items-start justify-center">
               {topFeatures.map((item, index) => (
                 <div key={index} className="flex items-start">
                   {index > 0 && (
-                    <div className="w-px bg-white/15 flex-shrink-0 self-center" style={{ height: '8.84vw', marginLeft: '1.9vw', marginRight: '1.9vw' }} />
+                    <div
+                      className="w-px bg-white/15 flex-shrink-0 self-center"
+                      style={{ height: '148.5px', marginLeft: '32px', marginRight: '32px' }}
+                    />
                   )}
-                  <div className="flex flex-col items-center text-center" style={{ gap: '1.19vw' }}>
-                    <div style={{ width: '4.76vw', height: '4.76vw' }} className="flex items-center justify-center">
+                  <div className="flex flex-col items-center text-center" style={{ gap: '16px' }}>
+                    <div className="w-[80px] h-[80px] flex items-center justify-center">
                       <Image
                         src={item.icon}
                         alt={item.label}
@@ -59,7 +61,7 @@ export default function ProblemsFeaturesSection() {
                         className="w-full h-full object-contain brightness-0 invert"
                       />
                     </div>
-                    <p className="font-[family-name:var(--font-tajawal)] text-[1.19vw] leading-[1.9vw] font-semibold text-white">
+                    <p className="font-[family-name:var(--font-tajawal)] text-[20px] leading-[32px] font-semibold text-white">
                       {item.label}
                     </p>
                   </div>
@@ -69,44 +71,38 @@ export default function ProblemsFeaturesSection() {
           </div>
 
           {/* ========== PART 2 — WHITE BOTTOM PANEL ========== */}
-          {/* Figma: Container 1680×678, padding=44, gap=44 */}
-          <div className="bg-white flex flex-col items-center px-[2.62vw] pt-[2.62vw] pb-[2.62vw] gap-[2.62vw] relative">
-            {/* Figma: gap=24 between heading items */}
-            <div className="flex flex-col items-center gap-[1.43vw]">
-              {/* Figma: 40px/48px w700 */}
-              <h2 className="font-[family-name:var(--font-tajawal)] text-[2.38vw] leading-[2.86vw] font-bold text-sparko-orange text-center">
+          <div className="bg-white flex flex-col items-center py-[44px] px-[44px] gap-[44px] relative">
+            {/* Headings */}
+            <div className="flex flex-col items-center gap-[24px]">
+              <h2 className="font-[family-name:var(--font-tajawal)] text-[40px] leading-[48px] font-bold text-sparko-orange text-center">
                 هنا كل شيء محسوب
               </h2>
-              {/* Figma: 24px/28px w400 */}
-              <p className="text-gray-400 font-[family-name:var(--font-ibm-plex)] text-[1.43vw] leading-[1.67vw] font-normal text-center">
+              <p className="text-gray-400 font-[family-name:var(--font-ibm-plex)] text-[24px] leading-[28px] font-normal text-center">
                 Here, everything is calculated
               </p>
             </div>
-            {/* Figma: 36px/48px w700 */}
-            <p className="font-[family-name:var(--font-tajawal)] text-[2.14vw] leading-[2.86vw] font-bold text-sparko-green text-center">
+            <p className="font-[family-name:var(--font-tajawal)] text-[36px] leading-[48px] font-bold text-sparko-green text-center">
               كل خطوة لها هدف ... وكل تجربة لها نتيجة
             </p>
 
             {/* ===== DESKTOP: Cards + Phone ===== */}
-            {/* Figma: Frame 1589×575, gap=24 horizontal */}
-            <div className="hidden lg:flex items-start gap-[1.43vw] w-full">
-              {/* Figma: Cards row 1282×358, inner gap=16, each card 200×298 pad=24 radius=24 */}
-              <div className="flex gap-[0.95vw] flex-1">
+            <div className="hidden lg:flex items-start gap-[24px] w-full">
+              {/* Cards row */}
+              <div className="flex gap-[16px] flex-1">
                 {bottomFeatures.map((card, index) => (
                   <div
                     key={index}
                     className="bg-white border border-gray-200 flex flex-col items-center text-center justify-center"
                     style={{
                       boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
-                      borderRadius: '1.43vw',
-                      padding: '1.43vw',
-                      gap: '1.19vw',
+                      borderRadius: '24px',
+                      padding: '24px',
+                      gap: '16px',
                       flex: '1 1 0%',
                       minWidth: 0,
                     }}
                   >
-                    {/* Figma: icon 80×80 */}
-                    <div style={{ width: '4.76vw', height: '4.76vw' }} className="flex items-center justify-center">
+                    <div className="w-[80px] h-[80px] flex items-center justify-center">
                       <Image
                         src={card.icon}
                         alt={card.ar}
@@ -115,27 +111,25 @@ export default function ProblemsFeaturesSection() {
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    {/* Figma: 20px/32px w600 */}
-                    <p className="font-[family-name:var(--font-tajawal)] text-[1.19vw] leading-[1.9vw] font-semibold text-[#0B1A3E]">
+                    <p className="font-[family-name:var(--font-tajawal)] text-[20px] leading-[32px] font-semibold text-[#0B1A3E]">
                       {card.ar}
                     </p>
-                    {/* Figma: 18px/32px w600 */}
-                    <p className="text-gray-400 font-[family-name:var(--font-ibm-plex)] text-[1.07vw] leading-[1.9vw] font-semibold">
+                    <p className="text-gray-400 font-[family-name:var(--font-ibm-plex)] text-[18px] leading-[32px] font-semibold">
                       {card.en}
                     </p>
                   </div>
                 ))}
               </div>
 
-              {/* Figma: Phone 283×575, extends above cards */}
-              <div className="flex-shrink-0 relative" style={{ marginTop: '-12.94vw' }}>
+              {/* Phone — actual image 352×410, displayed to match Figma visual */}
+              <div className="flex-shrink-0 relative" style={{ marginTop: '-200px' }}>
                 <Image
                   src="/phone-mockup.png"
                   alt="Sparko App"
-                  width={283}
-                  height={575}
+                  width={352}
+                  height={410}
                   className="h-auto object-contain"
-                  style={{ width: '16.85vw' }}
+                  style={{ width: '283px' }}
                 />
               </div>
             </div>
