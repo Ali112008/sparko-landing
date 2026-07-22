@@ -1,0 +1,169 @@
+'use client';
+
+import Image from 'next/image';
+
+const topFeatures = [
+  { icon: '/icon-close.png', label: 'بدون نتيجة ملموسة' },
+  { icon: '/icon-file.png', label: 'بدون تقرير موثق' },
+  { icon: '/icon-collaborate.png', label: 'بدون متابعة فعالة' },
+  { icon: '/icon-star.png', label: 'بدون تقييم حقيقي' },
+  { icon: '/icon-aiming.png', label: 'بدون توجيه واضح' },
+];
+
+const bottomFeatures = [
+  { icon: '/icon-training.png', ar: 'تدريب ميداني منظم', en: 'Structured Field Training' },
+  { icon: '/icon-tasks.png', ar: 'تطبيق واقعي', en: 'Practical Tasks' },
+  { icon: '/icon-rate.png', ar: 'تقييم أداء يومي', en: 'Daily evaluation' },
+  { icon: '/icon-user-follow.png', ar: 'إشراف ومتابعة', en: 'Supervision & Follow-up' },
+  { icon: '/icon-diploma.png', ar: 'تقرير مهني موثق', en: 'Verified Professional Report' },
+  { icon: '/icon-verified.png', ar: 'توثيق تجربة احترافية', en: 'Professional Experience Documentation' },
+];
+
+export default function ProblemsFeaturesSection() {
+  return (
+    <section className="relative py-6 sm:py-10 lg:py-14">
+      <div className="max-w-[88%] lg:max-w-[86%] mx-auto">
+        {/* Single Large Rounded Container */}
+        <div className="rounded-[20px] sm:rounded-[24px] lg:rounded-[28px] overflow-hidden shadow-2xl border-2 border-white/20">
+
+          {/* ========== PART 1 — DARK BLUE TOP PANEL ========== */}
+          {/* Figma: Container 1680×383.5, padding=44, gap=44 */}
+          <div
+            className="flex flex-col items-center px-[2.62vw] pt-[2.62vw] pb-[2.62vw] gap-[2.62vw]"
+            style={{ background: 'linear-gradient(180deg, #273C65 0%, #182B51 100%)' }}
+          >
+            {/* Figma: Container gap=24, Heading 40px/48px bold, Subtitle 24px/28px w400 */}
+            <div className="flex flex-col items-center gap-[1.43vw]">
+              <h2 className="font-[family-name:var(--font-tajawal)] text-[2.38vw] leading-[2.86vw] font-bold text-white text-center">
+                أغلب التجارب تمر بدون أثر
+              </h2>
+              <p className="text-white/40 font-[family-name:var(--font-ibm-plex)] text-[1.43vw] leading-[1.67vw] font-normal text-center">
+                Most training experiences pass without impact
+              </p>
+            </div>
+
+            {/* Figma: 5 icons row, gap=64, icon=80×80, text=20px/32px w600, divider h=148.5 */}
+            <div className="flex items-start justify-center">
+              {topFeatures.map((item, index) => (
+                <div key={index} className="flex items-start">
+                  {index > 0 && (
+                    <div className="w-px bg-white/15 flex-shrink-0 self-center" style={{ height: '8.84vw', marginLeft: '1.9vw', marginRight: '1.9vw' }} />
+                  )}
+                  <div className="flex flex-col items-center text-center" style={{ gap: '1.19vw' }}>
+                    <div style={{ width: '4.76vw', height: '4.76vw' }} className="flex items-center justify-center">
+                      <Image
+                        src={item.icon}
+                        alt={item.label}
+                        width={80}
+                        height={80}
+                        className="w-full h-full object-contain brightness-0 invert"
+                      />
+                    </div>
+                    <p className="font-[family-name:var(--font-tajawal)] text-[1.19vw] leading-[1.9vw] font-semibold text-white">
+                      {item.label}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ========== PART 2 — WHITE BOTTOM PANEL ========== */}
+          {/* Figma: Container 1680×678, padding=44, gap=44 */}
+          <div className="bg-white flex flex-col items-center px-[2.62vw] pt-[2.62vw] pb-[2.62vw] gap-[2.62vw] relative">
+            {/* Figma: gap=24 between heading items */}
+            <div className="flex flex-col items-center gap-[1.43vw]">
+              {/* Figma: 40px/48px w700 */}
+              <h2 className="font-[family-name:var(--font-tajawal)] text-[2.38vw] leading-[2.86vw] font-bold text-sparko-orange text-center">
+                هنا كل شيء محسوب
+              </h2>
+              {/* Figma: 24px/28px w400 */}
+              <p className="text-gray-400 font-[family-name:var(--font-ibm-plex)] text-[1.43vw] leading-[1.67vw] font-normal text-center">
+                Here, everything is calculated
+              </p>
+            </div>
+            {/* Figma: 36px/48px w700 */}
+            <p className="font-[family-name:var(--font-tajawal)] text-[2.14vw] leading-[2.86vw] font-bold text-sparko-green text-center">
+              كل خطوة لها هدف ... وكل تجربة لها نتيجة
+            </p>
+
+            {/* ===== DESKTOP: Cards + Phone ===== */}
+            {/* Figma: Frame 1589×575, gap=24 horizontal */}
+            <div className="hidden lg:flex items-start gap-[1.43vw] w-full">
+              {/* Figma: Cards row 1282×358, inner gap=16, each card 200×298 pad=24 radius=24 */}
+              <div className="flex gap-[0.95vw] flex-1">
+                {bottomFeatures.map((card, index) => (
+                  <div
+                    key={index}
+                    className="bg-white border border-gray-200 flex flex-col items-center text-center justify-center"
+                    style={{
+                      boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
+                      borderRadius: '1.43vw',
+                      padding: '1.43vw',
+                      gap: '1.19vw',
+                      flex: '1 1 0%',
+                      minWidth: 0,
+                    }}
+                  >
+                    {/* Figma: icon 80×80 */}
+                    <div style={{ width: '4.76vw', height: '4.76vw' }} className="flex items-center justify-center">
+                      <Image
+                        src={card.icon}
+                        alt={card.ar}
+                        width={80}
+                        height={80}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    {/* Figma: 20px/32px w600 */}
+                    <p className="font-[family-name:var(--font-tajawal)] text-[1.19vw] leading-[1.9vw] font-semibold text-[#0B1A3E]">
+                      {card.ar}
+                    </p>
+                    {/* Figma: 18px/32px w600 */}
+                    <p className="text-gray-400 font-[family-name:var(--font-ibm-plex)] text-[1.07vw] leading-[1.9vw] font-semibold">
+                      {card.en}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Figma: Phone 283×575, extends above cards */}
+              <div className="flex-shrink-0 relative" style={{ marginTop: '-12.94vw' }}>
+                <Image
+                  src="/phone-mockup.png"
+                  alt="Sparko App"
+                  width={283}
+                  height={575}
+                  className="h-auto object-contain"
+                  style={{ width: '16.85vw' }}
+                />
+              </div>
+            </div>
+
+            {/* ===== MOBILE/TABLET ===== */}
+            <div className="lg:hidden">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-5">
+                {bottomFeatures.map((card, index) => (
+                  <div
+                    key={index}
+                    className="bg-white border border-gray-200 rounded-2xl p-4 sm:p-5 flex flex-col items-center text-center min-h-[180px] sm:min-h-[200px] justify-center"
+                    style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}
+                  >
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mb-3 sm:mb-4">
+                      <Image src={card.icon} alt={card.ar} width={56} height={56} className="w-full h-full object-contain" />
+                    </div>
+                    <p className="font-[family-name:var(--font-tajawal)] text-xs sm:text-sm font-semibold text-[#0B1A3E] leading-snug mb-1.5">{card.ar}</p>
+                    <p className="text-gray-400 font-[family-name:var(--font-ibm-plex)] text-[9px] sm:text-[10px] leading-snug font-semibold">{card.en}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="flex justify-center mt-8">
+                <Image src="/phone-mockup.png" alt="Sparko App" width={280} height={560} className="w-[240px] sm:w-[280px] h-auto object-contain" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
