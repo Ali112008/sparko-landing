@@ -14,7 +14,7 @@ export default function WatchSection() {
           <div className="relative grid grid-cols-1 md:grid-cols-2">
             <div className="hidden md:block absolute left-1/2 top-[24px] bottom-[24px] w-px bg-white/20 -translate-x-1/2" />
 
-            {/* Right Column (RTL) - Figma: 32px w600 */}
+            {/* Right Column (RTL) */}
             <div className="flex flex-col items-center justify-center py-[32px] lg:py-[48px] md:pl-[32px] lg:pl-[56px]">
               <h3 className="font-[family-name:var(--font-ibm-plex)] text-[18px] sm:text-[24px] lg:text-[32px] font-semibold leading-[1.5] text-center text-white">
                 ما هي تجربة واحدة … هي تجارب تتكرر
@@ -22,9 +22,28 @@ export default function WatchSection() {
               <p className="text-white/60 font-[family-name:var(--font-ibm-plex)] text-[12px] sm:text-[16px] lg:text-[20px] font-normal mt-[8px]">
                 بنوك ، شركات ، جامعات ، جهات مختلفة
               </p>
+              {/* Play button */}
+              <div className="mt-[40px] lg:mt-[48px] flex flex-col items-center gap-[16px]">
+                <button
+                  className="w-[80px] h-[80px] rounded-full flex items-center justify-center"
+                  style={{
+                    backgroundColor: '#000000',
+                    border: '4px solid #FF5500',
+                    boxShadow: '0px 4px 4px rgba(1, 7, 255, 0.24)',
+                  }}
+                >
+                  {/* White play triangle */}
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                    <path d="M10 6L22 14L10 22V6Z" fill="white" />
+                  </svg>
+                </button>
+                <span className="font-[family-name:var(--font-ibm-plex)] text-[14px] lg:text-[16px] font-normal text-white">
+                  شاهد
+                </span>
+              </div>
             </div>
 
-            {/* Left Column (RTL) - Figma: 32px w600 */}
+            {/* Left Column (RTL) */}
             <div className="flex flex-col items-center justify-center py-[32px] lg:py-[48px] md:pr-[32px] lg:pr-[56px]">
               <h3 className="font-[family-name:var(--font-ibm-plex)] text-[18px] sm:text-[24px] lg:text-[32px] font-semibold leading-[1.5] text-center text-white">
                 من تجربة محلية … إلى أثر عالمي
@@ -32,6 +51,25 @@ export default function WatchSection() {
               <p className="text-white/60 font-[family-name:var(--font-ibm-plex)] text-[12px] sm:text-[16px] lg:text-[20px] font-normal mt-[8px]">
                 What started here… reached the world
               </p>
+              {/* Play button */}
+              <div className="mt-[40px] lg:mt-[48px] flex flex-col items-center gap-[16px]">
+                <button
+                  className="w-[80px] h-[80px] rounded-full flex items-center justify-center"
+                  style={{
+                    backgroundColor: '#000000',
+                    border: '4px solid #FF5500',
+                    boxShadow: '0px 4px 4px rgba(1, 7, 255, 0.24)',
+                  }}
+                >
+                  {/* White play triangle */}
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                    <path d="M10 6L22 14L10 22V6Z" fill="white" />
+                  </svg>
+                </button>
+                <span className="font-[family-name:var(--font-ibm-plex)] text-[14px] lg:text-[16px] font-normal text-white">
+                  شاهد
+                </span>
+              </div>
             </div>
           </div>
 
