@@ -18,7 +18,7 @@ export default function StatsSection() {
           style={{
             background: 'radial-gradient(circle at center, #21355A 0%, #0C1B3A 100%)',
             border: '1.5px solid rgba(255, 255, 255, 0.12)',
-            boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
+            boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.35)',
           }}
         >
           {/* Blue glow line at bottom */}
@@ -72,7 +72,7 @@ export default function StatsSection() {
               style={{
                 width: '1px',
                 alignSelf: 'stretch',
-                background: 'rgba(255, 255, 255, 0.24)',
+                background: 'rgba(255, 255, 255, 0.15)',
               }}
             />
 
@@ -101,9 +101,9 @@ export default function StatsSection() {
                     >
                       {stat.ar}
                     </p>
-                    {/* Figma: 18px w400 lh27px white/60, IBM Plex Sans Arabic, letterSpacing 0.16px */}
+                    {/* Figma: 18px w500 lh27px white/70, IBM Plex Sans Arabic, letterSpacing 0.16px */}
                     <p
-                      className="font-[family-name:var(--font-ibm-plex)] text-[18px] font-normal leading-[27px] text-white/60"
+                      className="font-[family-name:var(--font-ibm-plex)] text-[18px] font-medium leading-[27px] text-white/70"
                       style={{ letterSpacing: '0.16px', hyphens: 'none', overflowWrap: 'break-word' }}
                     >
                       {stat.en}
