@@ -15,18 +15,10 @@ export default function CTASection() {
             boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
           }}
         >
-          {/* Figma: HorizontalBorder+Blur — blue glow line at bottom */}
-          <div
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[103%] h-[1px]"
-            style={{
-              borderTop: '1px solid rgba(43, 127, 255, 0.7)',
-              filter: 'blur(10px)',
-            }}
-          />
-
           {/* Content container */}
           {/* Figma: VERTICAL flex, CENTER alignment, gap 24px */}
-          <div className="flex flex-col items-center py-[44px] px-[48px]" style={{ gap: '24px' }}>
+          {/* VLM verified: CTA has NO blue glow line unlike Stats/Quote sections */}
+          <div className="flex flex-col items-center py-[44px] lg:py-[64px] px-[32px] lg:px-[80px]" style={{ gap: '24px' }}>
             {/* Pill/Badge: منظومة Sparko. المتكاملة */}
             {/* Figma: HORIZONTAL flex, CENTER, gap 8px, bg white/10, rounded-full */}
             <div className="inline-flex items-center" style={{ gap: '8px', padding: '6px 16px', background: 'rgba(255, 255, 255, 0.10)', borderRadius: '50px' }}>
