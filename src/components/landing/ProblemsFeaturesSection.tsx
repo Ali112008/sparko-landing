@@ -14,9 +14,9 @@ const bottomFeatures = [
   { icon: '/icon-training.png', ar: 'تدريب ميداني\nمنظم', en: 'Structured Field\nTraining' },
   { icon: '/icon-tasks.png', ar: 'تطبيق واقعي', en: 'Practical Tasks' },
   { icon: '/icon-rate.png', ar: 'تقييم أداء\nيومي', en: 'Daily evaluation' },
-  { icon: '/icon-user-follow.png', ar: 'اشراف ومتابعة', en: 'Supervision & Follow-up' },
-  { icon: '/icon-diploma.png', ar: 'تقرير مهني موثق', en: 'Verified Professional\nReport' },
-  { icon: '/icon-verified.png', ar: 'توثيق تجربة احترافية', en: 'Professional Experience\nDocumentation' },
+  { icon: '/icon-user-follow.png', ar: 'اشراف ومتابعة', en: 'Supervision\n& Follow-up' },
+  { icon: '/icon-verified.png', ar: 'تقرير مهني موثق', en: 'Verified\nProfessional\nReport' },
+  { icon: '/icon-diploma.png', ar: 'توثيق تجربة احترافية', en: 'Professional\nExperience\nDocumentation' },
 ];
 
 export default function ProblemsFeaturesSection() {
@@ -28,7 +28,7 @@ export default function ProblemsFeaturesSection() {
           className="overflow-hidden relative"
           style={{
             background: 'linear-gradient(180deg, #273C65 0%, #182B51 100%)',
-            border: '1px solid rgba(255, 254, 254, 0.4)',
+            border: '1.5px solid rgba(255, 254, 254, 0.4)',
             boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
           }}
         >
@@ -101,7 +101,7 @@ export default function ProblemsFeaturesSection() {
         <div
           className="bg-white overflow-hidden relative"
           style={{
-            border: '1px solid rgba(255, 254, 254, 0.4)',
+            border: '1.5px solid rgba(255, 254, 254, 0.4)',
             boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
           }}
         >
@@ -148,7 +148,6 @@ export default function ProblemsFeaturesSection() {
                       key={index}
                       className="flex flex-col items-center text-center"
                       style={{
-                        boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
                         borderRadius: '24px',
                         padding: '24px',
                         gap: '20px',
@@ -193,10 +192,10 @@ export default function ProblemsFeaturesSection() {
               {/* Figma: Group 1000004725 - Phone mockup, 283x575, aligned to top */}
               <div className="flex-shrink-0 relative">
                 <Image
-                  src="/phone-mockup.png"
+                  src="/phone-mockup-figma.png"
                   alt="Sparko App"
-                  width={352}
-                  height={410}
+                  width={283}
+                  height={546}
                   className="h-auto object-contain"
                   style={{ width: '283px' }}
                 />
