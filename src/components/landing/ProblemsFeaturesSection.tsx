@@ -22,8 +22,8 @@ const bottomFeatures = [
 export default function ProblemsFeaturesSection() {
   return (
     <section className="relative overflow-visible py-6 sm:py-10 lg:py-14">
-      {/* Reduced content width → larger margins, more breathing room */}
-      <div className="max-w-[88%] lg:max-w-[78%] mx-auto overflow-visible">
+      {/* Match other sections: max-w-[88%] lg:max-w-[86%] */}
+      <div className="max-w-[88%] lg:max-w-[86%] mx-auto overflow-visible">
         {/* ========== PART 1 — DARK BLUE TOP PANEL ========== */}
         <div
           className="overflow-hidden relative"
@@ -31,6 +31,7 @@ export default function ProblemsFeaturesSection() {
             background: 'linear-gradient(180deg, #273C65 0%, #182B51 100%)',
             border: '1.5px solid rgba(255, 254, 254, 0.4)',
             boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
+            borderRadius: '24px 24px 0 0',
           }}
         >
           {/* Blue glow line at bottom */}
@@ -42,10 +43,10 @@ export default function ProblemsFeaturesSection() {
             }}
           />
 
-          {/* Reduced height: padding 36px, gap 32px (≈9% reduction from 44px) */}
-          <div className="flex flex-col items-center justify-center py-[36px] px-[44px] gap-[32px]">
-            {/* Heading + Subtitle, reduced gap: 20px */}
-            <div className="flex flex-col items-center gap-[20px]">
+          {/* Content: padding 44px, gap 44px per Figma */}
+          <div className="flex flex-col items-center justify-center py-[44px] px-[44px] gap-[44px]">
+            {/* Heading + Subtitle */}
+            <div className="flex flex-col items-center gap-[24px]">
               <h2 className="font-[family-name:var(--font-ibm-plex)] text-[40px] leading-[48px] font-bold text-white text-center">
                 أغلب التجارب تمر بدون أثر
               </h2>
@@ -57,7 +58,7 @@ export default function ProblemsFeaturesSection() {
               </p>
             </div>
 
-            {/* 5 icons row — increased spacing between icons (40px each side of divider) */}
+            {/* 5 icons row — Figma dividers */}
             <div className="flex items-stretch justify-center">
               {topFeatures.map((item, index) => (
                 <div key={index} className="flex items-center">
@@ -98,6 +99,7 @@ export default function ProblemsFeaturesSection() {
           style={{
             border: '1.5px solid rgba(255, 254, 254, 0.4)',
             boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
+            borderRadius: '0 0 24px 24px',
           }}
         >
           {/* Blue glow line at bottom */}
@@ -109,29 +111,10 @@ export default function ProblemsFeaturesSection() {
             }}
           />
 
-          {/* Phone mockup — absolute positioned at bottom-right, extending ~35% outside */}
-          <div
-            className="absolute z-10 hidden lg:block"
-            style={{
-              right: '-20px',
-              bottom: '-35%',
-              filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.15))',
-            }}
-          >
-            <Image
-              src="/phone-mockup.png"
-              alt="Sparko App"
-              width={280}
-              height={410}
-              className="h-auto object-contain"
-              style={{ width: '280px' }}
-            />
-          </div>
-
-          {/* Content — increased top padding, reduced gaps for headings */}
-          <div className="flex flex-col items-center pt-[56px] pb-[44px] px-[44px] gap-[28px]">
-            {/* Headings — reduced spacing to move upward */}
-            <div className="flex flex-col items-center gap-[18px]">
+          {/* Content: padding 44px all sides, gap 44px per Figma */}
+          <div className="flex flex-col items-center py-[44px] px-[44px]" style={{ gap: '44px' }}>
+            {/* Headings — gap 24px between title and subtitle per Figma */}
+            <div className="flex flex-col items-center gap-[24px]">
               <h2 className="font-[family-name:var(--font-ibm-plex)] text-[40px] leading-[48px] font-bold text-sparko-orange text-center">
                 هنا كل شيء محسوب
               </h2>
@@ -143,58 +126,77 @@ export default function ProblemsFeaturesSection() {
               </p>
             </div>
 
-            {/* Green text — reduced gap above */}
+            {/* Green text per Figma */}
             <p className="font-[family-name:var(--font-ibm-plex)] text-[36px] leading-[48px] font-bold text-sparko-green text-center">
               كل خطوة لها هدف ... وكل تجربة لها نتيجة
             </p>
 
-            {/* ===== DESKTOP: Cards row from LEFT ===== */}
-            {/* Cards packed to the left side (justify-end in RTL = visual left) */}
-            {/* Reduced card width via max-width constraint, leaving space for phone on right */}
-            <div className="hidden lg:flex gap-[12px] justify-end w-full" style={{ maxWidth: '72%' }}>
-              {bottomFeatures.map((card, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center text-center"
-                  style={{
-                    borderRadius: '20px',
-                    padding: '18px 14px',
-                    gap: '14px',
-                    flex: '1 1 0%',
-                    minWidth: 0,
-                    border: '1px solid rgba(0, 0, 0, 0.24)',
-                  }}
-                >
-                  {/* Smaller icons: 60x60 */}
-                  <div className="w-[60px] h-[60px] flex items-center justify-center">
-                    <Image
-                      src={card.icon}
-                      alt={card.ar}
-                      width={60}
-                      height={60}
-                      className="w-full h-full object-contain"
-                    />
+            {/* ===== DESKTOP: Cards + Phone in HORIZONTAL layout per Figma ===== */}
+            {/* Figma node 261:1743: HORIZONTAL flex, items vertically centered, 24px gap */}
+            {/* Cards area takes ~80% width, Phone takes ~18% width, side by side */}
+            <div className="hidden lg:flex w-full items-center gap-[24px]">
+              {/* Cards area — flex row, 16px gap between cards per Figma */}
+              {/* Each card: ~200px wide, padding 24px, gap 20px, border 1px rgba(0,0,0,0.24) */}
+              <div className="flex gap-[16px] flex-1 min-w-0">
+                {bottomFeatures.map((card, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-col items-center text-center flex-1 min-w-0"
+                    style={{
+                      padding: '24px',
+                      gap: '20px',
+                      border: '1px solid rgba(0, 0, 0, 0.24)',
+                    }}
+                  >
+                    {/* Icon: 80×80 per Figma */}
+                    <div className="w-[80px] h-[80px] flex items-center justify-center">
+                      <Image
+                        src={card.icon}
+                        alt={card.ar}
+                        width={80}
+                        height={80}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    {/* Arabic text: fontSize 20, lineHeight 32, fontWeight 600 per Figma */}
+                    <p className="font-[family-name:var(--font-ibm-plex)] text-[20px] leading-[32px] font-semibold text-[#2B2D2F]">
+                      {card.ar.split('\n').map((line, i) => (
+                        <span key={i}>
+                          {line}
+                          {i < card.ar.split('\n').length - 1 && <br />}
+                        </span>
+                      ))}
+                    </p>
+                    {/* English text: fontSize 18, lineHeight 32, fontWeight 600 per Figma */}
+                    <p className="font-[family-name:var(--font-ibm-plex)] text-[18px] leading-[32px] font-semibold text-[#2B2D2F]">
+                      {card.en.split('\n').map((line, i) => (
+                        <span key={i}>
+                          {line}
+                          {i < card.en.split('\n').length - 1 && <br />}
+                        </span>
+                      ))}
+                    </p>
                   </div>
-                  {/* Arabic text: 18px w600 */}
-                  <p className="font-[family-name:var(--font-ibm-plex)] text-[18px] leading-[28px] font-semibold text-[#2B2D2F]">
-                    {card.ar.split('\n').map((line, i) => (
-                      <span key={i}>
-                        {line}
-                        {i < card.ar.split('\n').length - 1 && <br />}
-                      </span>
-                    ))}
-                  </p>
-                  {/* English text: 14px w600 */}
-                  <p className="font-[family-name:var(--font-ibm-plex)] text-[14px] leading-[22px] font-semibold text-[#2B2D2F]">
-                    {card.en.split('\n').map((line, i) => (
-                      <span key={i}>
-                        {line}
-                        {i < card.en.split('\n').length - 1 && <br />}
-                      </span>
-                    ))}
-                  </p>
-                </div>
-              ))}
+                ))}
+              </div>
+
+              {/* Phone mockup — beside cards, 283×575 per Figma */}
+              {/* Soft shadow for subtle elevation */}
+              <div
+                className="flex-shrink-0"
+                style={{
+                  filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.15))',
+                }}
+              >
+                <Image
+                  src="/phone-mockup.png"
+                  alt="Sparko App"
+                  width={283}
+                  height={575}
+                  className="h-auto object-contain"
+                  style={{ width: '283px', maxHeight: '575px' }}
+                />
+              </div>
             </div>
 
             {/* ===== MOBILE/TABLET ===== */}
