@@ -42,12 +42,12 @@ export default function ProblemsFeaturesSection() {
             </div>
 
             {/* 5 icons row with vertical dividers */}
-            <div className="flex items-start justify-center">
+            <div className="flex items-stretch justify-center">
               {topFeatures.map((item, index) => (
-                <div key={index} className="flex items-start">
+                <div key={index} className="flex items-center">
                   {index > 0 && (
                     <div
-                      className="w-px bg-white/15 flex-shrink-0 self-center"
+                      className="w-px bg-white/15 flex-shrink-0"
                       style={{ height: '148.5px', marginLeft: '32px', marginRight: '32px' }}
                     />
                   )}
