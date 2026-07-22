@@ -2,6 +2,11 @@ import HeroSection from '@/components/landing/HeroSection';
 import TestimonialsSection from '@/components/landing/TestimonialsSection';
 import WatchSection from '@/components/landing/WatchSection';
 import ProblemsFeaturesSection from '@/components/landing/ProblemsFeaturesSection';
+import QuoteSection from '@/components/landing/QuoteSection';
+import StatsSection from '@/components/landing/StatsSection';
+import JobOfferSection from '@/components/landing/JobOfferSection';
+import CTASection from '@/components/landing/CTASection';
+import Footer from '@/components/landing/Footer';
 
 export default function Home() {
   return (
@@ -13,6 +18,11 @@ export default function Home() {
       <TestimonialsSection />
       <WatchSection />
       <ProblemsFeaturesSection />
+      <QuoteSection />
+      <StatsSection />
+      <JobOfferSection />
+      <CTASection />
+      <Footer />
     </main>
   );
 }

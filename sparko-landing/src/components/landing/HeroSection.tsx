@@ -7,23 +7,23 @@ export default function HeroSection() {
     <section className="relative pt-[32px] pb-[16px] lg:pt-[40px] lg:pb-[24px] overflow-hidden">
       {/* White Card */}
       <div
-        className="max-w-[96%] lg:max-w-[94%] mx-auto bg-white rounded-[24px] lg:rounded-[32px] overflow-hidden"
+        className="max-w-[96%] lg:max-w-[94%] mx-auto bg-white rounded-[24px] overflow-hidden"
         style={{
           boxShadow:
             '0 30px 60px rgba(0, 0, 0, 0.35), 0 12px 24px rgba(0, 0, 0, 0.2)',
         }}
       >
         {/* Navbar */}
-        <div className="flex items-center justify-between px-[24px] lg:px-[48px] py-[16px] lg:py-[20px]">
+        <div className="flex items-center justify-between px-[24px] lg:px-[100px] py-[20px] lg:py-[32px]">
           <a href="#" className="flex items-center">
-            <Image src="/logo.png" alt="Sparko" width={105} height={50} className="h-[32px] lg:h-[42px] w-auto" priority />
+            <Image src="/logo.png" alt="Sparko" width={132} height={62} className="h-[40px] lg:h-[62px] w-auto" priority />
           </a>
           <div className="hidden md:flex items-center gap-[12px]" dir="ltr">
-            <button className="flex items-center gap-[6px] px-[12px] py-[6px] bg-gray-100 border border-gray-200 rounded-full text-gray-600 text-[12px] hover:bg-gray-200 transition-colors">
+            <button className="flex items-center gap-[6px] px-[14px] py-[6px] bg-gray-100 border border-gray-200 rounded-full text-gray-600 text-[13px] hover:bg-gray-200 transition-colors">
               <span>🇸🇦</span>
               <svg className="w-[12px] h-[12px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6" /></svg>
             </button>
-            <button className="flex items-center gap-[4px] px-[16px] py-[6px] bg-gray-100 border border-gray-200 rounded-full text-gray-700 text-[12px] hover:bg-gray-200 transition-colors">
+            <button className="flex items-center gap-[4px] px-[16px] py-[6px] bg-gray-100 border border-gray-200 rounded-full text-gray-700 text-[13px] hover:bg-gray-200 transition-colors">
               منظومة <span className="text-sparko-orange font-[family-name:var(--font-ibm-plex)] font-bold">Sparko.</span> المتكاملة
             </button>
           </div>
@@ -35,7 +35,7 @@ export default function HeroSection() {
         </div>
 
         {/* Hero Content */}
-        <div className="px-[24px] lg:px-[48px] pb-[32px] lg:pb-[64px]" dir="ltr">
+        <div className="px-[24px] lg:px-[100px] pb-[32px] lg:pb-[64px]" dir="ltr">
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-[32px] lg:gap-0">
             {/* LEFT — Illustration */}
             <div className="w-full lg:w-[52%] flex-shrink-0 relative flex items-center justify-center">
@@ -47,40 +47,41 @@ export default function HeroSection() {
                 className="w-full max-h-[420px] lg:max-h-[520px] object-contain"
                 priority
               />
+              {/* Orange Quote Card */}
               <div
-                className="absolute bottom-[2%] left-[4%] z-10"
-                style={{ filter: 'drop-shadow(0 12px 28px rgba(0,0,0,0.25))' }}
+                className="absolute bottom-[2%] left-[4%] z-10 bg-sparko-orange rounded-[20px] px-[24px] py-[20px] max-w-[280px]"
+                style={{ boxShadow: '0 12px 28px rgba(255,85,0,0.3)' }}
               >
-                <Image
-                  src="/testimonial-card.png"
-                  alt="تجربة مستخدم"
-                  width={200}
-                  height={193}
-                  className="w-[140px] lg:w-[200px] h-auto"
-                />
+                <span className="text-white/80 text-[40px] font-light leading-none">&ldquo;</span>
+                <p className="font-[family-name:var(--font-ibm-plex)] text-white text-[23px] font-semibold leading-[44px] mt-[-8px]">
+                  تجربة مختلفة تعتبر نقطة تحول في مساري المهني
+                </p>
+                <p className="font-[family-name:var(--font-ibm-plex)] text-white text-[16px] font-normal mt-[8px]">
+                  Majed Baqshan<br />Since 2015
+                </p>
               </div>
             </div>
 
             {/* RIGHT — Text */}
             <div className="w-full lg:w-[42%] lg:pl-[40px] xl:pl-[56px] flex flex-col items-center lg:items-start" dir="rtl">
-              <div className="inline-flex items-center gap-[6px] px-[12px] py-[4px] bg-gray-100 rounded-full mb-[16px]">
+              <div className="inline-flex items-center gap-[6px] px-[12px] py-[6px] bg-gray-200 rounded-full mb-[16px]">
                 <span className="w-[6px] h-[6px] bg-green-500 rounded-full" />
-                <span className="font-[family-name:var(--font-tajawal)] text-[12px] text-gray-600 font-medium">نسبة قبول عالية</span>
+                <span className="font-[family-name:var(--font-tajawal)] text-[14px] text-gray-700 font-medium">نسبة قبول عالية</span>
               </div>
-              <h1 className="font-[family-name:var(--font-tajawal)] text-[20px] sm:text-[24px] lg:text-[32px] xl:text-[36px] font-extrabold leading-[1.35] mb-[12px] text-center lg:text-right">
+              <h1 className="font-[family-name:var(--font-tajawal)] text-[24px] sm:text-[36px] lg:text-[48px] font-bold leading-[1.25] mb-[12px] text-center lg:text-right">
                 <span className="text-[#0B1A3E]">قصة حقيقية من </span>
-                <span className="text-sparko-orange">التدريب الميداني</span>
+                <span className="text-[#0B1A3E]">التدريب الميداني</span>
                 <br />
                 <span className="text-[#0B1A3E]">إلى </span>
                 <span className="text-sparko-orange">عرض وظيفي</span>
               </h1>
-              <p className="font-[family-name:var(--font-tajawal)] text-[14px] lg:text-[18px] text-gray-400 font-medium mb-[24px] text-center lg:text-right whitespace-nowrap">
-                تجربة تعيشها ... ونتيجة تشوفها
+              <p className="font-[family-name:var(--font-tajawal)] text-[16px] sm:text-[20px] lg:text-[24px] text-[#2B2D2F] font-normal mb-[24px] text-center lg:text-right">
+                تجربة تعيشها ... و نتيجة تشوفها
               </p>
               <div className="mb-[20px]">
                 <a
                   href="#contact"
-                  className="inline-flex flex-col items-center justify-center gap-[2px] px-[32px] lg:px-[40px] py-[12px] lg:py-[14px] bg-sparko-orange text-white rounded-full font-[family-name:var(--font-tajawal)] font-bold text-[16px] lg:text-[18px] hover:bg-[#E64D00] transition-all duration-300 shadow-lg shadow-sparko-orange/25"
+                  className="inline-flex flex-col items-center justify-center gap-[2px] px-[32px] lg:px-[40px] py-[14px] lg:py-[16px] bg-sparko-orange text-white rounded-full font-[family-name:var(--font-tajawal)] font-medium text-[20px] hover:bg-[#E64D00] transition-all duration-300 shadow-lg shadow-sparko-orange/25"
                 >
                   <span>ابدأ رحلتك الآن</span>
                   <span className="font-[family-name:var(--font-ibm-plex)] text-[10px] font-normal opacity-75">Start your journey now</span>

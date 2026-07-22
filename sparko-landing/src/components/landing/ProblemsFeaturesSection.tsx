@@ -77,7 +77,7 @@ export default function ProblemsFeaturesSection() {
               <h2 className="font-[family-name:var(--font-tajawal)] text-[40px] leading-[48px] font-bold text-sparko-orange text-center">
                 هنا كل شيء محسوب
               </h2>
-              <p className="text-gray-400 font-[family-name:var(--font-ibm-plex)] text-[24px] leading-[28px] font-normal text-center">
+              <p className="text-[#2B2D2F] font-[family-name:var(--font-ibm-plex)] text-[24px] leading-[28px] font-normal text-center">
                 Here, everything is calculated
               </p>
             </div>
