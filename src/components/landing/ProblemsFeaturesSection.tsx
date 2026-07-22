@@ -11,47 +11,72 @@ const topFeatures = [
 ];
 
 const bottomFeatures = [
-  { icon: '/icon-training.png', ar: 'تدريب ميداني منظم', en: 'Structured Field Training' },
+  { icon: '/icon-training.png', ar: 'تدريب ميداني\nمنظم', en: 'Structured Field\nTraining' },
   { icon: '/icon-tasks.png', ar: 'تطبيق واقعي', en: 'Practical Tasks' },
-  { icon: '/icon-rate.png', ar: 'تقييم أداء يومي', en: 'Daily evaluation' },
-  { icon: '/icon-user-follow.png', ar: 'إشراف ومتابعة', en: 'Supervision & Follow-up' },
-  { icon: '/icon-diploma.png', ar: 'تقرير مهني موثق', en: 'Verified Professional Report' },
-  { icon: '/icon-verified.png', ar: 'توثيق تجربة احترافية', en: 'Professional Experience Documentation' },
+  { icon: '/icon-rate.png', ar: 'تقييم أداء\nيومي', en: 'Daily evaluation' },
+  { icon: '/icon-user-follow.png', ar: 'اشراف ومتابعة', en: 'Supervision & Follow-up' },
+  { icon: '/icon-diploma.png', ar: 'تقرير مهني موثق', en: 'Verified Professional\nReport' },
+  { icon: '/icon-verified.png', ar: 'توثيق تجربة احترافية', en: 'Professional Experience\nDocumentation' },
 ];
 
 export default function ProblemsFeaturesSection() {
   return (
     <section className="relative py-6 sm:py-10 lg:py-14">
       <div className="max-w-[88%] lg:max-w-[86%] mx-auto">
-        {/* Single Large Rounded Container */}
-        <div className="rounded-[20px] sm:rounded-[24px] lg:rounded-[28px] overflow-hidden shadow-2xl border-2 border-white/20">
-
-          {/* ========== PART 1 — DARK BLUE TOP PANEL ========== */}
+        {/* ========== PART 1 — DARK BLUE TOP PANEL ========== */}
+        <div
+          className="overflow-hidden relative"
+          style={{
+            background: 'linear-gradient(180deg, #273C65 0%, #182B51 100%)',
+            border: '1px solid rgba(255, 254, 254, 0.4)',
+            boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
+          }}
+        >
+          {/* Figma: HorizontalBorder+Blur - blue glow line at bottom */}
           <div
-            className="flex flex-col items-center py-[44px] px-[44px] gap-[44px]"
-            style={{ background: 'linear-gradient(180deg, #273C65 0%, #182B51 100%)' }}
-          >
-            {/* Heading + Subtitle */}
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[103%] h-[1px]"
+            style={{
+              borderTop: '1px solid rgba(43, 127, 255, 0.7)',
+              filter: 'blur(10px)',
+            }}
+          />
+
+          {/* Figma: Container - VERTICAL, spacing:44, CENTER */}
+          <div className="flex flex-col items-center justify-center py-[44px] px-[44px] gap-[44px]">
+            {/* Figma: Heading + Subtitle, VERTICAL, spacing:24, CENTER */}
             <div className="flex flex-col items-center gap-[24px]">
-              <h2 className="font-[family-name:var(--font-tajawal)] text-[40px] leading-[48px] font-bold text-white text-center">
+              {/* Figma: 40px w700 lh:48px white, IBM Plex Sans Arabic */}
+              <h2 className="font-[family-name:var(--font-ibm-plex)] text-[40px] leading-[48px] font-bold text-white text-center">
                 أغلب التجارب تمر بدون أثر
               </h2>
-              <p className="text-white/40 font-[family-name:var(--font-ibm-plex)] text-[24px] leading-[28px] font-normal text-center">
+              {/* Figma: 24px w400 lh:28px white, letterSpacing: 0.16px */}
+              <p
+                className="font-[family-name:var(--font-ibm-plex)] text-[24px] leading-[28px] font-normal text-white text-center"
+                style={{ letterSpacing: '0.16px' }}
+              >
                 Most training experiences pass without impact
               </p>
             </div>
 
-            {/* 5 icons row with vertical dividers */}
+            {/* Figma: 5 icons row - HORIZONTAL, spacing:64, SPACE_BETWEEN, CENTER */}
             <div className="flex items-stretch justify-center">
               {topFeatures.map((item, index) => (
                 <div key={index} className="flex items-center">
+                  {/* Figma: Line - rgba(255,255,255,0.24) */}
                   {index > 0 && (
                     <div
-                      className="w-px bg-white/15 flex-shrink-0"
-                      style={{ height: '148.5px', marginLeft: '32px', marginRight: '32px' }}
+                      className="w-px flex-shrink-0"
+                      style={{
+                        height: '148.5px',
+                        marginLeft: '32px',
+                        marginRight: '32px',
+                        background: 'rgba(255, 255, 255, 0.24)',
+                      }}
                     />
                   )}
-                  <div className="flex flex-col items-center text-center" style={{ gap: '16px' }}>
+                  {/* Figma: Container - VERTICAL, spacing:20, CENTER, padding:24 */}
+                  <div className="flex flex-col items-center text-center" style={{ gap: '20px' }}>
+                    {/* Figma: Icon 80x80 */}
                     <div className="w-[80px] h-[80px] flex items-center justify-center">
                       <Image
                         src={item.icon}
@@ -61,7 +86,8 @@ export default function ProblemsFeaturesSection() {
                         className="w-full h-full object-contain brightness-0 invert"
                       />
                     </div>
-                    <p className="font-[family-name:var(--font-tajawal)] text-[20px] leading-[32px] font-semibold text-white">
+                    {/* Figma: 20px w600 lh:32px white */}
+                    <p className="font-[family-name:var(--font-ibm-plex)] text-[20px] leading-[32px] font-semibold text-white">
                       {item.label}
                     </p>
                   </div>
@@ -69,39 +95,66 @@ export default function ProblemsFeaturesSection() {
               ))}
             </div>
           </div>
+        </div>
 
-          {/* ========== PART 2 — WHITE BOTTOM PANEL ========== */}
-          <div className="bg-white flex flex-col items-center py-[44px] px-[44px] gap-[44px] relative">
-            {/* Headings */}
+        {/* ========== PART 2 — WHITE BOTTOM PANEL ========== */}
+        <div
+          className="bg-white overflow-hidden relative"
+          style={{
+            border: '1px solid rgba(255, 254, 254, 0.4)',
+            boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
+          }}
+        >
+          {/* Figma: HorizontalBorder+Blur - blue glow line at bottom */}
+          <div
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[103%] h-[1px]"
+            style={{
+              borderTop: '1px solid rgba(43, 127, 255, 0.7)',
+              filter: 'blur(10px)',
+            }}
+          />
+
+          {/* Figma: VERTICAL, spacing:44, CENTER */}
+          <div className="flex flex-col items-center py-[44px] px-[44px] gap-[44px]">
+            {/* Figma: Container - VERTICAL, spacing:24 */}
             <div className="flex flex-col items-center gap-[24px]">
-              <h2 className="font-[family-name:var(--font-tajawal)] text-[40px] leading-[48px] font-bold text-sparko-orange text-center">
+              {/* Figma: 40px w700 lh:48px orange, IBM Plex Sans Arabic */}
+              <h2 className="font-[family-name:var(--font-ibm-plex)] text-[40px] leading-[48px] font-bold text-sparko-orange text-center">
                 هنا كل شيء محسوب
               </h2>
-              <p className="text-[#2B2D2F] font-[family-name:var(--font-ibm-plex)] text-[24px] leading-[28px] font-normal text-center">
+              {/* Figma: 24px w400 lh:28px #2B2D2F, letterSpacing: 0.16px */}
+              <p
+                className="font-[family-name:var(--font-ibm-plex)] text-[24px] leading-[28px] font-normal text-[#2B2D2F] text-center"
+                style={{ letterSpacing: '0.16px' }}
+              >
                 Here, everything is calculated
               </p>
             </div>
-            <p className="font-[family-name:var(--font-tajawal)] text-[36px] leading-[48px] font-bold text-sparko-green text-center">
+
+            {/* Figma: 36px w700 lh:48px green (#00D084), IBM Plex Sans Arabic */}
+            <p className="font-[family-name:var(--font-ibm-plex)] text-[36px] leading-[48px] font-bold text-sparko-green text-center">
               كل خطوة لها هدف ... وكل تجربة لها نتيجة
             </p>
 
             {/* ===== DESKTOP: Cards + Phone ===== */}
             <div className="hidden lg:flex items-start gap-[24px] w-full">
-              {/* Cards row */}
+              {/* Figma: Cards row - HORIZONTAL, spacing:16 */}
               <div className="flex gap-[16px] flex-1">
                 {bottomFeatures.map((card, index) => (
                   <div
                     key={index}
-                    className="bg-white border border-gray-200 flex flex-col items-center text-center justify-center"
+                    className="flex flex-col items-center text-center"
                     style={{
                       boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
                       borderRadius: '24px',
                       padding: '24px',
-                      gap: '16px',
+                      gap: '20px',
                       flex: '1 1 0%',
                       minWidth: 0,
+                      border: '1px solid rgba(0, 0, 0, 0.24)',
                     }}
                   >
+                    {/* Figma: Icon 80x80 */}
                     <div className="w-[80px] h-[80px] flex items-center justify-center">
                       <Image
                         src={card.icon}
@@ -111,17 +164,29 @@ export default function ProblemsFeaturesSection() {
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <p className="font-[family-name:var(--font-tajawal)] text-[20px] leading-[32px] font-semibold text-[#0B1A3E]">
-                      {card.ar}
+                    {/* Figma: 20px w600 lh:32px #2B2D2F */}
+                    <p className="font-[family-name:var(--font-ibm-plex)] text-[20px] leading-[32px] font-semibold text-[#2B2D2F]">
+                      {card.ar.split('\n').map((line, i) => (
+                        <span key={i}>
+                          {line}
+                          {i < card.ar.split('\n').length - 1 && <br />}
+                        </span>
+                      ))}
                     </p>
-                    <p className="text-gray-400 font-[family-name:var(--font-ibm-plex)] text-[18px] leading-[32px] font-semibold">
-                      {card.en}
+                    {/* Figma: 18px w600 lh:32px #2B2D2F */}
+                    <p className="font-[family-name:var(--font-ibm-plex)] text-[18px] leading-[32px] font-semibold text-[#2B2D2F]">
+                      {card.en.split('\n').map((line, i) => (
+                        <span key={i}>
+                          {line}
+                          {i < card.en.split('\n').length - 1 && <br />}
+                        </span>
+                      ))}
                     </p>
                   </div>
                 ))}
               </div>
 
-              {/* Phone — actual image 352×410, displayed to match Figma visual */}
+              {/* Phone mockup */}
               <div className="flex-shrink-0 relative" style={{ marginTop: '-200px' }}>
                 <Image
                   src="/phone-mockup.png"
@@ -140,14 +205,34 @@ export default function ProblemsFeaturesSection() {
                 {bottomFeatures.map((card, index) => (
                   <div
                     key={index}
-                    className="bg-white border border-gray-200 rounded-2xl p-4 sm:p-5 flex flex-col items-center text-center min-h-[180px] sm:min-h-[200px] justify-center"
-                    style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}
+                    className="bg-white flex flex-col items-center text-center min-h-[180px] sm:min-h-[200px] justify-center"
+                    style={{
+                      boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
+                      borderRadius: '24px',
+                      padding: '16px',
+                      gap: '16px',
+                      border: '1px solid rgba(0, 0, 0, 0.24)',
+                    }}
                   >
-                    <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mb-3 sm:mb-4">
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center">
                       <Image src={card.icon} alt={card.ar} width={56} height={56} className="w-full h-full object-contain" />
                     </div>
-                    <p className="font-[family-name:var(--font-tajawal)] text-xs sm:text-sm font-semibold text-[#0B1A3E] leading-snug mb-1.5">{card.ar}</p>
-                    <p className="text-gray-400 font-[family-name:var(--font-ibm-plex)] text-[9px] sm:text-[10px] leading-snug font-semibold">{card.en}</p>
+                    <p className="font-[family-name:var(--font-ibm-plex)] text-xs sm:text-sm font-semibold text-[#2B2D2F] leading-snug">
+                      {card.ar.split('\n').map((line, i) => (
+                        <span key={i}>
+                          {line}
+                          {i < card.ar.split('\n').length - 1 && <br />}
+                        </span>
+                      ))}
+                    </p>
+                    <p className="font-[family-name:var(--font-ibm-plex)] text-[9px] sm:text-[10px] leading-snug font-semibold text-[#2B2D2F]">
+                      {card.en.split('\n').map((line, i) => (
+                        <span key={i}>
+                          {line}
+                          {i < card.en.split('\n').length - 1 && <br />}
+                        </span>
+                      ))}
+                    </p>
                   </div>
                 ))}
               </div>
