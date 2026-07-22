@@ -35,15 +35,15 @@ export default function StatsSection() {
           {/* Figma: HORIZONTAL flex, items centered, gap 44px between each child */}
           <div className="flex items-center py-[44px] px-[48px]" style={{ gap: '44px' }}>
             {/* Trophy + "منذ 2015" block — appears on RIGHT side in RTL */}
-            {/* Figma: HORIZONTAL flex, items centered, gap 24px */}
-            <div className="flex items-center flex-shrink-0" style={{ gap: '24px' }}>
-              {/* Trophy image — enlarged for better visual impact */}
-              <div className="w-[170px] h-[150px] flex-shrink-0">
+            {/* Figma: HORIZONTAL flex, items centered, gap 44px */}
+            <div className="flex items-center flex-shrink-0" style={{ gap: '44px' }}>
+              {/* Trophy image — Figma: 143x126 */}
+              <div className="w-[143px] h-[126px] flex-shrink-0">
                 <Image
                   src="/stats-image.png"
                   alt="Sparko Trophy"
-                  width={170}
-                  height={150}
+                  width={143}
+                  height={126}
                   className="w-full h-full object-contain"
                 />
               </div>
@@ -55,24 +55,23 @@ export default function StatsSection() {
                 <p className="font-[family-name:var(--font-ibm-plex)] text-[24px] font-bold leading-[31.2px] text-white text-right">
                   منذ 2015 ،<br />نتائج مستمرة حتى اليوم
                 </p>
-                {/* Figma: 18px w700 lh23.4px rgb(255,85,0), IBM Plex Sans Arabic, letterSpacing 0.16px */}
+                {/* Figma: 18px w700 lh23.4px rgb(255,85,0), IBM Plex Sans Arabic, letterSpacing 0 */}
                 <p
                   className="font-[family-name:var(--font-ibm-plex)] text-[18px] font-bold leading-[23.4px] text-sparko-orange text-right"
-                  style={{ letterSpacing: '0.16px' }}
                 >
                   Since 2015 ,<br />results that continue
                 </p>
               </div>
             </div>
 
-            {/* Vertical divider — Figma: 1px width, self-stretch height */}
+            {/* Vertical divider — Figma: 1.5px stroke, white at 24% opacity, self-stretch */}
             {/* Spacing handled by parent flex gap: 44px on each side */}
             <div
               className="flex-shrink-0"
               style={{
-                width: '1px',
+                width: '1.5px',
                 alignSelf: 'stretch',
-                background: 'rgba(255, 255, 255, 0.15)',
+                background: 'rgba(255, 255, 255, 0.24)',
               }}
             />
 
@@ -92,8 +91,8 @@ export default function StatsSection() {
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  {/* Text frame — centered alignment */}
-                  <div className="flex flex-col items-center min-w-0" style={{ gap: '4px' }}>
+                  {/* Text frame — Figma: gap 8px, centered alignment */}
+                  <div className="flex flex-col items-center min-w-0" style={{ gap: '8px' }}>
                     {/* Arabic text — centered */}
                     <p
                       className="font-[family-name:var(--font-ibm-plex)] text-[24px] font-bold leading-[28.8px] text-white text-center"
@@ -101,10 +100,10 @@ export default function StatsSection() {
                     >
                       {stat.ar}
                     </p>
-                    {/* English translation — centered */}
+                    {/* English translation — Figma: 18px w400 lh27px white, letterSpacing 0 */}
                     <p
-                      className="font-[family-name:var(--font-ibm-plex)] text-[18px] font-medium leading-[27px] text-white/70 text-center"
-                      style={{ letterSpacing: '0.16px', hyphens: 'none', overflowWrap: 'break-word' }}
+                      className="font-[family-name:var(--font-ibm-plex)] text-[18px] font-normal leading-[27px] text-white text-center"
+                      style={{ hyphens: 'none', overflowWrap: 'break-word' }}
                     >
                       {stat.en}
                     </p>
