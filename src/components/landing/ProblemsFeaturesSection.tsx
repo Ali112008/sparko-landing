@@ -21,9 +21,9 @@ const bottomFeatures = [
 
 export default function ProblemsFeaturesSection() {
   return (
-    <section className="relative overflow-visible py-6 sm:py-10 lg:py-14">
+    <section className="relative py-6 sm:py-10 lg:py-14">
       {/* Match other sections: max-w-[88%] lg:max-w-[86%] */}
-      <div className="max-w-[88%] lg:max-w-[86%] mx-auto overflow-visible">
+      <div className="max-w-[88%] lg:max-w-[86%] mx-auto">
         {/* ========== PART 1 — DARK BLUE TOP PANEL ========== */}
         <div
           className="overflow-hidden relative"
@@ -95,7 +95,7 @@ export default function ProblemsFeaturesSection() {
 
         {/* ========== PART 2 — WHITE BOTTOM PANEL ========== */}
         <div
-          className="bg-white overflow-visible relative"
+          className="bg-white relative"
           style={{
             border: '1.5px solid rgba(255, 254, 254, 0.4)',
             boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
