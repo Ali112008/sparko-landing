@@ -37,13 +37,13 @@ export default function StatsSection() {
             {/* Trophy + "منذ 2015" block — appears on RIGHT side in RTL */}
             {/* Figma: HORIZONTAL flex, items centered, gap 24px */}
             <div className="flex items-center flex-shrink-0" style={{ gap: '24px' }}>
-              {/* Trophy image - Figma: 143x126 */}
-              <div className="w-[143px] h-[126px] flex-shrink-0">
+              {/* Trophy image — enlarged for better visual impact */}
+              <div className="w-[170px] h-[150px] flex-shrink-0">
                 <Image
                   src="/stats-image.png"
                   alt="Sparko Trophy"
-                  width={143}
-                  height={126}
+                  width={170}
+                  height={150}
                   className="w-full h-full object-contain"
                 />
               </div>
@@ -77,12 +77,12 @@ export default function StatsSection() {
             />
 
             {/* 4 Stat items — appears on LEFT side in RTL */}
-            {/* Figma: HORIZONTAL flex, items-start, gap 40px between items */}
+            {/* Center-aligned: icon, Arabic text, English translation all centered */}
             {/* Each item: flex-1 with basis 0 for equal distribution */}
-            <div className="flex items-start flex-1 min-w-0" style={{ gap: '40px' }}>
+            <div className="flex items-center flex-1 min-w-0" style={{ gap: '40px' }}>
               {stats.map((stat, index) => (
-                <div key={index} className="flex flex-col min-w-0 text-start" style={{ flex: '1 1 0px', gap: '12px' }}>
-                  {/* Icon - Figma: 44x44 */}
+                <div key={index} className="flex flex-col items-center min-w-0 text-center" style={{ flex: '1 1 0px', gap: '12px' }}>
+                  {/* Icon - centered */}
                   <div className="w-[44px] h-[44px] flex items-center justify-center flex-shrink-0">
                     <Image
                       src={stat.icon}
@@ -92,18 +92,18 @@ export default function StatsSection() {
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  {/* Text frame — Figma: VERTICAL, gap 4px */}
-                  <div className="flex flex-col min-w-0" style={{ gap: '4px' }}>
-                    {/* Figma: 24px w700 lh28.8px white, IBM Plex Sans Arabic */}
+                  {/* Text frame — centered alignment */}
+                  <div className="flex flex-col items-center min-w-0" style={{ gap: '4px' }}>
+                    {/* Arabic text — centered */}
                     <p
-                      className="font-[family-name:var(--font-ibm-plex)] text-[24px] font-bold leading-[28.8px] text-white"
+                      className="font-[family-name:var(--font-ibm-plex)] text-[24px] font-bold leading-[28.8px] text-white text-center"
                       style={{ overflowWrap: 'break-word' }}
                     >
                       {stat.ar}
                     </p>
-                    {/* Figma: 18px w500 lh27px white/70, IBM Plex Sans Arabic, letterSpacing 0.16px */}
+                    {/* English translation — centered */}
                     <p
-                      className="font-[family-name:var(--font-ibm-plex)] text-[18px] font-medium leading-[27px] text-white/70"
+                      className="font-[family-name:var(--font-ibm-plex)] text-[18px] font-medium leading-[27px] text-white/70 text-center"
                       style={{ letterSpacing: '0.16px', hyphens: 'none', overflowWrap: 'break-word' }}
                     >
                       {stat.en}
