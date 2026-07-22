@@ -6,71 +6,87 @@ export default function CTASection() {
   return (
     <section className="relative py-[24px] lg:py-[40px]">
       <div className="max-w-[88%] lg:max-w-[86%] mx-auto">
-        {/* Background+Border+Shadow — matches Figma pattern from other sections */}
+        {/* Container: Background + Border + Shadow */}
         <div
           className="rounded-[24px] overflow-hidden relative"
           style={{
-            background: 'radial-gradient(circle at center, #21355A 0%, #0C1B3A 100%)',
+            background: 'radial-gradient(circle at center, #20345A 0%, #0C1B3A 100%)',
             border: '1.5px solid rgba(255, 255, 255, 0.12)',
             boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
           }}
         >
-          {/* Content container */}
-          {/* Figma: VERTICAL flex, CENTER alignment, gap 24px */}
-          {/* VLM verified: CTA has NO blue glow line unlike Stats/Quote sections */}
-          <div className="flex flex-col items-center py-[44px] lg:py-[64px] px-[32px] lg:px-[80px]" style={{ gap: '24px' }}>
-            {/* Pill/Badge: منظومة Sparko. المتكاملة */}
-            {/* Figma: HORIZONTAL flex, CENTER, gap 8px, bg white/10, rounded-full */}
-            <div className="inline-flex items-center" style={{ gap: '8px', padding: '6px 16px', background: 'rgba(255, 255, 255, 0.10)', borderRadius: '50px' }}>
-              {/* Figma: 16px w500 white, IBM Plex Sans Arabic */}
-              <span className="font-ibm-plex text-[14px] lg:text-[16px] font-medium text-white">
-                منظومة
-              </span>
-              <Image
-                src="/logo.png"
-                alt="Sparko."
-                width={51}
-                height={24}
-                className="h-[20px] lg:h-[24px] w-auto"
-              />
-              <span className="font-ibm-plex text-[14px] lg:text-[16px] font-medium text-white">
-                المتكاملة
-              </span>
+          {/* Inner content area */}
+          {/* Padding: ~48px sides, ~60px top, ~55px bottom (pixel-verified) */}
+          <div className="px-[48px] lg:px-[64px] pt-[60px] lg:pt-[64px] pb-[55px] lg:pb-[56px]">
+            {/* Top row: two-column layout (flex justify-between in RTL) */}
+            {/* In RTL: first child → right/start side, second child → left/end side */}
+            <div className="flex justify-between items-start">
+              {/* Start side (right in RTL): Logo + Heading + Subtitle */}
+              <div className="flex flex-col" style={{ gap: '12px' }}>
+                {/* Sparko. logo */}
+                <Image
+                  src="/logo.png"
+                  alt="Sparko."
+                  width={51}
+                  height={24}
+                  className="h-[24px] lg:h-[28px] w-auto"
+                />
+
+                {/* Heading: Arabic text */}
+                <h2
+                  className="font-ibm-plex text-[24px] lg:text-[28px] font-bold text-white text-start"
+                  style={{ lineHeight: '36px' }}
+                >
+                  حيث يتحول التدريب الميداني إلى تجربة حقيقية
+                </h2>
+
+                {/* Subtitle: English text */}
+                <p
+                  className="font-ibm-plex text-[16px] lg:text-[20px] font-normal text-white/70 text-start"
+                  style={{ lineHeight: '28px' }}
+                >
+                  Where Field Training Becomes Real Experience
+                </p>
+              </div>
+
+              {/* End side (left in RTL): Partners Portal badge */}
+              <div
+                className="inline-flex items-center self-center shrink-0"
+                style={{
+                  padding: '8px 20px',
+                  background: 'rgba(255, 255, 255, 0.10)',
+                  borderRadius: '50px',
+                  gap: '8px',
+                }}
+              >
+                <span className="font-ibm-plex text-[16px] font-medium text-white">
+                  بوابة الشركاء
+                </span>
+                <span className="font-ibm-plex text-[14px] font-normal text-white/60">
+                  Partners Portal
+                </span>
+              </div>
             </div>
 
-            {/* Heading */}
-            {/* Figma: 40px w700 lh48px white, IBM Plex Sans Arabic, textAlign CENTER */}
-            <h2 className="font-ibm-plex text-[24px] lg:text-[40px] font-bold text-white text-center"
-              style={{ lineHeight: '48px' }}>
-              جاهز أنت الآن تبني قصة نجاحك؟
-            </h2>
-
-            {/* Subtitle */}
-            {/* Figma: 24px w400 lh28px white 70% opacity, letterSpacing 0.16px, IBM Plex Sans Arabic */}
-            <p className="font-ibm-plex text-[16px] lg:text-[24px] font-normal text-white/70 text-center"
-              style={{ lineHeight: '28px', letterSpacing: '0.16px' }}>
-              تجربة تعيشها ... و نتيجة تشوفها
-            </p>
-
-            {/* CTA Button */}
-            {/* Figma: bg orange, rounded-full, cornerRadius 40 */}
-            <a
-              href="#contact"
-              className="inline-flex flex-col items-center justify-center font-ibm-plex"
-              style={{
-                gap: '2px',
-                padding: '16px 40px',
-                background: '#FF5500',
-                borderRadius: '40px',
-                color: '#FFFFFF',
-                fontSize: '20px',
-                fontWeight: 500,
-                boxShadow: '0px 10px 15px -3px rgba(255, 85, 0, 0.25)',
-              }}
+            {/* Bottom: Saudi flag + tagline (centered) */}
+            {/* Gap from subtitle to bottom: ~78px (pixel-verified) */}
+            <div
+              className="flex items-center justify-center mt-[78px] lg:mt-[80px]"
+              style={{ gap: '10px' }}
             >
-              <span>ابدأ رحلتك الآن</span>
-              <span style={{ fontSize: '10px', fontWeight: 400, opacity: 0.75 }}>Start your journey now</span>
-            </a>
+              <Image
+                src="/saudi-flag.png"
+                alt="Saudi Arabia"
+                width={16}
+                height={11}
+                className="h-[11px] lg:h-[13px] w-auto object-contain"
+              />
+              <span
+                className="font-ibm-plex text-[16px] lg:text-[18px] font-medium text-white/80"
+              >
+                Saudi-born. Built for real impact.
+              </span>
+            </div>
           </div>
         </div>
       </div>
