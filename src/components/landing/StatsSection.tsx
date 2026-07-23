@@ -34,9 +34,9 @@ export default function StatsSection() {
               <Image
                 src="/stats-image.png"
                 alt="Sparko Trophy"
-                width={220}
-                height={194}
-                className="w-[220px] h-auto flex-shrink-0 object-contain"
+                width={160}
+                height={141}
+                className="w-[160px] h-auto flex-shrink-0 object-contain"
                 priority
               />
               <div className="flex flex-col" style={{ gap: '16px' }}>
