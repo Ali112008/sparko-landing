@@ -1,97 +1,64 @@
 'use client';
 
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect } from 'react';
 
 const DESKTOP_WIDTH = 1440;
 
 /**
- * MobileScaler — scales the desktop layout to fit mobile devices
- * using CSS transform: scale() instead of viewport manipulation.
+ * MobileScaler — dynamically sets viewport meta to show desktop layout
+ * scaled down on mobile devices.
  *
- * Why transform:scale() instead of viewport meta manipulation?
- * 1. Universally supported on ALL browsers (including Huawei)
- * 2. Doesn't mess with viewport dimensions (JS still gets real device width)
- * 3. More predictable — no browser-specific viewport behavior differences
- * 4. The viewport meta stays clean: width=device-width, initial-scale=1
+ * Approach: Instead of CSS zoom/transform (which don't work reliably on
+ * some browsers like Huawei), we manipulate the viewport meta tag directly.
  *
- * How it works:
- * - Inner wrapper is fixed at 1440px width (desktop layout)
- * - On mobile (< 1440px), we apply transform: scale(ratio) where ratio = deviceWidth/1440
- * - Outer wrapper adjusts its height to match the scaled-down content height
- * - This prevents extra whitespace after the scaled content
- * - On desktop (>= 1440px), no scaling is applied
+ * On mount, we detect the actual device width, calculate initial-scale
+ * = deviceWidth / 1440, and set the viewport meta to:
+ *   width=1440, initial-scale={scale}
+ *
+ * This tells the browser: "render the page at 1440px width, but start
+ * at the calculated zoom level so it fits the device screen."
+ * The browser handles scaling at viewport level — works on ALL browsers.
  */
 export default function MobileScaler({ children }: { children: React.ReactNode }) {
-  const [scale, setScale] = useState(1);
-  const [contentHeight, setContentHeight] = useState(0);
-  const innerRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    // Capture device width BEFORE changing viewport
+    // (after change, innerWidth would report 1440)
+    const deviceWidth = window.innerWidth;
 
-  const updateScale = useCallback(() => {
-    const w = window.innerWidth;
-    if (w < DESKTOP_WIDTH) {
-      const newScale = w / DESKTOP_WIDTH;
-      setScale(newScale);
-    } else {
-      setScale(1);
+    if (deviceWidth < DESKTOP_WIDTH) {
+      const initialScale = deviceWidth / DESKTOP_WIDTH;
+
+      // Find the viewport meta tag and update it
+      const viewportMeta = document.querySelector('meta[name="viewport"]');
+      if (viewportMeta) {
+        viewportMeta.setAttribute(
+          'content',
+          `width=${DESKTOP_WIDTH}, initial-scale=${initialScale}`
+        );
+      }
     }
-  }, []);
 
-  // Calculate scale on mount and resize
-  useEffect(() => {
-    updateScale();
-    window.addEventListener('resize', updateScale);
-    return () => window.removeEventListener('resize', updateScale);
-  }, [updateScale]);
+    // Handle resize (e.g., orientation change on mobile)
+    const handleResize = () => {
+      // After viewport change, screen.width gives the actual device width
+      // innerWidth now reports the viewport width (1440 on mobile)
+      const actualDeviceWidth = window.screen.width;
 
-  // Measure inner content height and adjust outer wrapper height
-  useEffect(() => {
-    if (!innerRef.current) return;
-
-    const updateHeight = () => {
-      if (innerRef.current) {
-        // scrollHeight gives the full content height of the 1440px container
-        setContentHeight(innerRef.current.scrollHeight);
+      if (actualDeviceWidth < DESKTOP_WIDTH) {
+        const newScale = actualDeviceWidth / DESKTOP_WIDTH;
+        const viewportMeta = document.querySelector('meta[name="viewport"]');
+        if (viewportMeta) {
+          viewportMeta.setAttribute(
+            'content',
+            `width=${DESKTOP_WIDTH}, initial-scale=${newScale}`
+          );
+        }
       }
     };
 
-    // Initial measurement
-    updateHeight();
-
-    // Observe size changes (content loading, images, etc.)
-    const observer = new ResizeObserver(updateHeight);
-    observer.observe(innerRef.current);
-
-    return () => observer.disconnect();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // The outer wrapper height must be = contentHeight * scale
-  // because transform:scale() doesn't affect document flow
-  const outerHeight = scale < 1 && contentHeight > 0
-    ? Math.ceil(contentHeight * scale)
-    : undefined;
-
-  return (
-    <div
-      style={{
-        // Outer wrapper: sized to the scaled dimensions so no extra whitespace
-        width: '100%',
-        height: outerHeight ? `${outerHeight}px` : 'auto',
-        overflow: 'hidden',
-      }}
-    >
-      <div
-        ref={innerRef}
-        style={{
-          // Inner wrapper: fixed desktop width, scaled down on mobile
-          width: `${DESKTOP_WIDTH}px`,
-          transform: scale < 1 ? `scale(${scale})` : 'none',
-          transformOrigin: 'top left',
-          // On desktop, no transform, so width should be auto
-          ...(scale >= 1 ? { width: 'auto' } : {}),
-        }}
-      >
-        {children}
-      </div>
-    </div>
-  );
+  return <>{children}</>;
 }
