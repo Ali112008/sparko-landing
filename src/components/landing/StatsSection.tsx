@@ -15,8 +15,8 @@ export default function StatsSection() {
   const t = (ar: string, en: string) => lang === 'ar' ? ar : en;
 
   return (
-    <section className="relative py-[24px] lg:py-[40px]">
-      <div className="max-w-[88%] lg:max-w-[86%] mx-auto">
+    <section className="relative py-[40px]">
+      <div className="max-w-[86%] mx-auto">
         <div
           className="rounded-[24px] overflow-hidden relative"
           style={{

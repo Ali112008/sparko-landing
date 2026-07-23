@@ -21,8 +21,8 @@ export default function ProblemsFeaturesSection() {
   const t = (ar: string, en: string) => lang === 'ar' ? ar : en;
 
   return (
-    <section className="relative py-6 sm:py-10 lg:py-14">
-      <div className="max-w-[88%] lg:max-w-[86%] mx-auto">
+    <section className="relative py-14">
+      <div className="max-w-[86%] mx-auto">
         {/* ========== PART 1 — DARK BLUE TOP PANEL ========== */}
         <div
           className="overflow-hidden relative"
@@ -35,12 +35,12 @@ export default function ProblemsFeaturesSection() {
         >
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[103%] h-[1px]" style={{ borderTop: '1px solid rgba(43, 127, 255, 0.7)', filter: 'blur(10px)' }} />
 
-          <div className="flex flex-col items-center justify-center py-[24px] sm:py-[32px] lg:py-[44px] px-[20px] sm:px-[32px] lg:px-[44px] gap-[24px] sm:gap-[32px] lg:gap-[44px]">
+          <div className="flex flex-col items-center justify-center py-[44px] px-[44px] gap-[44px]">
             <div className="flex flex-col items-center gap-[24px]">
-              <h2 className="font-ibm-plex text-[24px] sm:text-[32px] lg:text-[40px] leading-[30px] sm:leading-[38px] lg:leading-[48px] font-bold text-white text-center">
+              <h2 className="font-ibm-plex text-[40px] leading-[48px] font-bold text-white text-center">
                 {t('أغلب التجارب تمر بدون أثر', 'Most experiences pass without impact')}
               </h2>
-              <p className="font-ibm-plex text-[14px] sm:text-[18px] lg:text-[24px] leading-[20px] sm:leading-[24px] lg:leading-[28px] font-normal text-white text-center" style={{ letterSpacing: '0.16px' }}>
+              <p className="font-ibm-plex text-[24px] leading-[28px] font-normal text-white text-center" style={{ letterSpacing: '0.16px' }}>
                 {t('Most training experiences pass without impact', 'Most training experiences pass without impact')}
               </p>
             </div>
@@ -78,17 +78,17 @@ export default function ProblemsFeaturesSection() {
         >
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[103%] h-[1px]" style={{ borderTop: '1px solid rgba(43, 127, 255, 0.7)', filter: 'blur(10px)' }} />
 
-          <div className="flex flex-col items-center py-[24px] sm:py-[32px] lg:py-[44px] px-[20px] sm:px-[32px] lg:px-[44px]" style={{ gap: '24px sm:gap-[32px] lg:gap-[44px]' }}>
+          <div className="flex flex-col items-center py-[44px] px-[44px]" style={{ gap: '44px' }}>
             <div className="flex flex-col items-center gap-[24px]">
-              <h2 className="font-ibm-plex text-[24px] sm:text-[32px] lg:text-[40px] leading-[30px] sm:leading-[38px] lg:leading-[48px] font-bold text-sparko-orange text-center">
+              <h2 className="font-ibm-plex text-[40px] leading-[48px] font-bold text-sparko-orange text-center">
                 {t('هنا كل شيء محسوب', 'Here, everything is calculated')}
               </h2>
-              <p className="font-ibm-plex text-[14px] sm:text-[18px] lg:text-[24px] leading-[20px] sm:leading-[24px] lg:leading-[28px] font-normal text-[#2B2D2F] text-center" style={{ letterSpacing: '0.16px' }}>
+              <p className="font-ibm-plex text-[24px] leading-[28px] font-normal text-[#2B2D2F] text-center" style={{ letterSpacing: '0.16px' }}>
                 {t('Here, everything is calculated', 'Here, everything is calculated')}
               </p>
             </div>
 
-            <p className="font-ibm-plex text-[24px] sm:text-[32px] lg:text-[36px] leading-[32px] sm:leading-[40px] lg:leading-[48px] font-bold text-sparko-green text-center">
+            <p className="font-ibm-plex text-[36px] leading-[48px] font-bold text-sparko-green text-center">
               {t('كل خطوة لها هدف ... وكل تجربة لها نتيجة', 'Every step has a goal... and every experience has a result')}
             </p>
 

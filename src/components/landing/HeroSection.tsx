@@ -9,10 +9,10 @@ export default function HeroSection() {
   const t = (ar: string, en: string) => lang === 'ar' ? ar : en;
 
   return (
-    <section className="relative pt-[32px] pb-[16px] lg:pt-[40px] lg:pb-[24px] overflow-hidden">
+    <section className="relative pt-[40px] pb-[24px] overflow-hidden">
       {/* White Card */}
       <div
-        className="max-w-[96%] lg:max-w-[94%] mx-auto bg-white rounded-[24px] overflow-hidden"
+        className="max-w-[94%] mx-auto bg-white rounded-[24px] overflow-hidden"
         style={{
           boxShadow:
             '0 30px 60px rgba(0, 0, 0, 0.35), 0 12px 24px rgba(0, 0, 0, 0.2)',
@@ -77,7 +77,7 @@ export default function HeroSection() {
             </div>
 
             {/* Text side */}
-            <div className="w-[40%] pe-[40px] xl:pe-[56px] flex flex-col items-start order-1">
+            <div className="w-[40%] pe-[56px] flex flex-col items-start order-1">
               <div className="inline-flex items-center gap-[6px] px-[12px] py-[6px] bg-gray-200 rounded-full mb-[16px]">
                 <span className="w-[6px] h-[6px] bg-green-500 rounded-full" />
                 <span className="font-ibm-plex text-[14px] text-gray-700 font-medium">
