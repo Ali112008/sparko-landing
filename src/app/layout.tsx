@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Cairo, Tajawal, IBM_Plex_Sans_Arabic } from "next/font/google";
 import { LanguageProvider } from "@/context/LanguageContext";
 import DirectionManager from "@/components/DirectionManager";
+import MobileScaler from "@/components/MobileScaler";
 import "./globals.css";
 
 const cairo = Cairo({
@@ -33,7 +34,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  width: 1440,
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -48,7 +50,9 @@ export default function RootLayout({
       >
         <LanguageProvider>
           <DirectionManager />
-          {children}
+          <MobileScaler>
+            {children}
+          </MobileScaler>
         </LanguageProvider>
       </body>
     </html>

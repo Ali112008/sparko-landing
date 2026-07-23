@@ -18,6 +18,7 @@
 body {
   background: radial-gradient(circle at center, #2B4373 0%, #05122D 100%);
   color: var(--foreground);
+  overflow-x: hidden;
 }
 
 html {
