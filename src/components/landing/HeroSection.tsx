@@ -1,8 +1,13 @@
 'use client';
 
 import Image from 'next/image';
+import { useLang } from '@/context/LanguageContext';
 
 export default function HeroSection() {
+  const { lang, toggle } = useLang();
+
+  const t = (ar: string, en: string) => lang === 'ar' ? ar : en;
+
   return (
     <section className="relative pt-[32px] pb-[16px] lg:pt-[40px] lg:pb-[24px] overflow-hidden">
       {/* White Card */}
@@ -18,60 +23,66 @@ export default function HeroSection() {
           <a href="#" className="flex items-center">
             <Image src="/logo.png" alt="Sparko" width={132} height={62} className="h-[40px] lg:h-[62px] w-auto" priority />
           </a>
-          <div className="hidden md:flex items-center gap-[12px]" dir="ltr">
-            <button className="font-ibm-plex flex items-center gap-[6px] px-[14px] py-[6px] bg-gray-100 border border-gray-200 rounded-full text-gray-600 text-[13px] hover:bg-gray-200 transition-colors">
+          <div className="hidden md:flex items-center gap-[12px]">
+            {/* Language toggle — Saudi flag button */}
+            <button
+              onClick={toggle}
+              className="font-ibm-plex flex items-center gap-[6px] px-[14px] py-[6px] bg-gray-100 border border-gray-200 rounded-full text-gray-600 text-[13px] hover:bg-gray-200 transition-colors"
+            >
               <span>🇸🇦</span>
-              <svg className="w-[12px] h-[12px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6" /></svg>
+              {lang === 'ar' ? 'العربية' : 'English'}
             </button>
             <button className="font-ibm-plex flex items-center gap-[4px] px-[16px] py-[6px] bg-gray-100 border border-gray-200 rounded-full text-gray-700 text-[13px] hover:bg-gray-200 transition-colors">
-              منظومة <span className="text-sparko-orange font-ibm-plex font-bold">Sparko.</span> المتكاملة
+              {t('منظومة', 'Ecosystem')} <span className="text-sparko-orange font-ibm-plex font-bold">Sparko.</span> {t('المتكاملة', 'Integrated')}
             </button>
           </div>
-          <button className="md:hidden text-gray-600" aria-label="القائمة">
-            <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-              <line x1="4" x2="20" y1="12" y2="12" /><line x1="4" x2="20" y1="6" y2="6" /><line x1="4" x2="20" y1="18" y2="18" />
-            </svg>
-          </button>
+          {/* Mobile menu */}
+          <div className="md:hidden flex items-center gap-[8px]">
+            <button
+              onClick={toggle}
+              className="font-ibm-plex flex items-center gap-[4px] px-[12px] py-[4px] bg-gray-100 border border-gray-200 rounded-full text-gray-600 text-[12px] hover:bg-gray-200 transition-colors"
+            >
+              <span>🇸🇦</span>
+              {lang === 'ar' ? 'AR' : 'EN'}
+            </button>
+            <button className="text-gray-600" aria-label={t('القائمة', 'Menu')}>
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                <line x1="4" x2="20" y1="12" y2="12" /><line x1="4" x2="20" y1="6" y2="6" /><line x1="4" x2="20" y1="18" y2="18" />
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Hero Content */}
-        <div className="px-[24px] lg:px-[100px] pb-[32px] lg:pb-[64px]" dir="ltr">
+        <div className="px-[24px] lg:px-[100px] pb-[32px] lg:pb-[64px]">
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-[32px] lg:gap-0">
-            {/* LEFT — Illustration */}
+            {/* Illustration side */}
             <div className="w-full lg:w-[52%] flex-shrink-0 relative flex items-center justify-center">
               <Image
                 src="/design-hero-left.png"
-                alt="رحلة Sparko المهنية"
+                alt="Sparko Career Journey"
                 width={636}
                 height={900}
                 className="w-full max-h-[420px] lg:max-h-[520px] object-contain"
                 priority
               />
-              {/* Orange Quote Card — redesigned with avatar */}
+              {/* Orange Quote Card */}
               <div
                 className="absolute bottom-[2%] left-[4%] z-10 bg-sparko-orange rounded-[20px] max-w-[280px] overflow-visible"
                 style={{ boxShadow: '0 12px 28px rgba(255,85,0,0.3)' }}
               >
-                {/* Avatar — circular, overlapping the top border */}
                 <div className="flex justify-center -mt-[28px] mb-[4px]">
                   <div
                     className="w-[56px] h-[56px] rounded-full overflow-hidden flex-shrink-0"
                     style={{ border: '3px solid white', boxShadow: '0 4px 8px rgba(0,0,0,0.15)' }}
                   >
-                    <Image
-                      src="/avatar-person.png"
-                      alt="Majed Baqshan"
-                      width={56}
-                      height={56}
-                      className="w-full h-full object-cover"
-                    />
+                    <Image src="/avatar-person.png" alt="Majed Baqshan" width={56} height={56} className="w-full h-full object-cover" />
                   </div>
                 </div>
-                {/* Quote content */}
                 <div className="px-[24px] pb-[20px]" style={{ paddingTop: '8px' }}>
                   <span className="font-ibm-plex text-white/80 text-[40px] font-light leading-none">&ldquo;</span>
                   <p className="font-ibm-plex text-white text-[23px] font-semibold leading-[44px] mt-[-8px]">
-                    تجربة مختلفة تعتبر نقطة تحول في مساري المهني
+                    {t('تجربة مختلفة تعتبر نقطة تحول في مساري المهني', 'A different experience that was a turning point in my career')}
                   </p>
                   <p className="font-ibm-plex text-white text-[16px] font-normal mt-[8px]">
                     Majed Baqshan<br />Since 2015
@@ -80,29 +91,42 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* RIGHT — Text */}
-            <div className="w-full lg:w-[42%] lg:pl-[40px] xl:pl-[56px] flex flex-col items-center lg:items-start" dir="rtl">
+            {/* Text side */}
+            <div className="w-full lg:w-[42%] lg:pl-[40px] xl:pl-[56px] flex flex-col items-center lg:items-start">
               <div className="inline-flex items-center gap-[6px] px-[12px] py-[6px] bg-gray-200 rounded-full mb-[16px]">
                 <span className="w-[6px] h-[6px] bg-green-500 rounded-full" />
-                <span className="font-ibm-plex text-[14px] text-gray-700 font-medium">نسبة قبول عالية</span>
+                <span className="font-ibm-plex text-[14px] text-gray-700 font-medium">
+                  {t('نسبة قبول عالية', 'High acceptance rate')}
+                </span>
               </div>
-              <h1 className="font-ibm-plex text-[24px] sm:text-[36px] lg:text-[48px] font-bold leading-[1.25] mb-[12px] text-center lg:text-right">
-                <span className="text-[#0B1A3E]">قصة حقيقية من </span>
-                <span className="text-[#0B1A3E]">التدريب الميداني</span>
-                <br />
-                <span className="text-[#0B1A3E]">إلى </span>
-                <span className="text-sparko-orange">عرض وظيفي</span>
+              <h1 className="font-ibm-plex text-[24px] sm:text-[36px] lg:text-[48px] font-bold leading-[1.25] mb-[12px] text-center lg:text-start">
+                {lang === 'ar' ? (
+                  <>
+                    <span className="text-[#0B1A3E]">قصة حقيقية من </span>
+                    <span className="text-[#0B1A3E]">التدريب الميداني</span>
+                    <br />
+                    <span className="text-[#0B1A3E]">إلى </span>
+                    <span className="text-sparko-orange">عرض وظيفي</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="text-[#0B1A3E]">A true story from </span>
+                    <span className="text-[#0B1A3E]">Field Training</span>
+                    <br />
+                    <span className="text-[#0B1A3E]">to a </span>
+                    <span className="text-sparko-orange">Job Offer</span>
+                  </>
+                )}
               </h1>
-              <p className="font-ibm-plex text-[16px] sm:text-[20px] lg:text-[24px] text-[#2B2D2F] font-normal mb-[24px] text-center lg:text-right">
-                تجربة تعيشها ... و نتيجة تشوفها
+              <p className="font-ibm-plex text-[16px] sm:text-[20px] lg:text-[24px] text-[#2B2D2F] font-normal mb-[24px] text-center lg:text-start">
+                {t('تجربة تعيشها ... و نتيجة تشوفها', 'An experience you live... and a result you see')}
               </p>
               <div className="mb-[20px]">
                 <a
                   href="#contact"
                   className="inline-flex flex-col items-center justify-center gap-[2px] px-[32px] lg:px-[40px] py-[14px] lg:py-[16px] bg-sparko-orange text-white rounded-full font-ibm-plex font-medium text-[20px] hover:bg-[#E64D00] transition-all duration-300 shadow-lg shadow-sparko-orange/25"
                 >
-                  <span>ابدأ رحلتك الآن</span>
-                  <span className="font-ibm-plex text-[10px] font-normal opacity-75">Start your journey now</span>
+                  <span>{t('ابدأ رحلتك الآن', 'Start your journey now')}</span>
                 </a>
               </div>
               <div className="flex items-center gap-[12px] justify-center lg:justify-start">

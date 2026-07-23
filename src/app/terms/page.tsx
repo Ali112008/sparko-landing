@@ -2,8 +2,25 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useLang } from '@/context/LanguageContext';
+
+const sections = [
+  { num: '01', arTitle: 'القبول', enTitle: 'Acceptance', arBody: 'باستخدام Sparko، فإنك توافق على هذه الشروط. إذا كنت لا توافق على أي من هذه الشروط، يجب عليك عدم استخدام المنصة.', enBody: 'By using Sparko, you agree to these terms. If you do not agree with any of these terms, you must not use the platform.' },
+  { num: '02', arTitle: 'وصف الخدمة', enTitle: 'Service Description', arBody: 'Sparko تقدم منظومة للتدريب الميداني، تقييم الأداء، والتوثيق المهني. المنصة توفر أدوات لتنظيم التجارب التدريبية، تقييم المتدربين بشكل يومي، وإنشاء تقارير مهنية موثقة.', enBody: 'Sparko provides a system for field training, performance evaluation, and professional documentation. The platform offers tools to organize training experiences, evaluate trainees daily, and generate verified professional reports.' },
+  { num: '03', arTitle: 'حساب المستخدم', enTitle: 'User Account', arBody: 'أنت مسؤول عن دقة بياناتك، حماية حسابك، وأي نشاط يتم من خلاله. يجب عليك 保持 بياناتك محدثة وصحيحة.', enBody: 'You are responsible for the accuracy of your information, securing your account, and any activities conducted under your account. You must keep your information up to date and accurate.' },
+  { num: '04', arTitle: 'الاستخدام المقبول', enTitle: 'Acceptable Use', arBody: 'يجب عليك عدم إساءة استخدام المنصة، أو تقديم بيانات غير صحيحة، أو محاولة اختراق أو تعطيل الخدمة. أي استخدام غير مشروع قد يؤدي إلى إيقاف حسابك.', enBody: 'You must not misuse the system, provide false data, or attempt to hack or disrupt the service. Any unauthorized use may result in account suspension.' },
+  { num: '05', arTitle: 'الملكية الفكرية', enTitle: 'Intellectual Property', arBody: 'جميع الحقوق المتعلقة بالمنصة والمحتوى تعود إلى Sparko. لا يسمح بإعادة استخدام أو نسخ أي جزء من المنصة أو محتواها دون إذن مسبق.', enBody: 'All rights related to the platform and content belong to Sparko. Reuse or copying of any part of the platform or its content without prior permission is not allowed.' },
+  { num: '06', arTitle: 'حدود المسؤولية', enTitle: 'Limitation of Liability', arBody: 'Sparko غير مسؤول عن الأضرار غير المباشرة الناتجة عن استخدام الخدمة. لا تضمن SparkO نتائج محددة من استخدام المنصة.', enBody: 'Sparko is not liable for indirect damages resulting from the use of the service. Sparko does not guarantee specific results from using the platform.' },
+  { num: '07', arTitle: 'التعديلات', enTitle: 'Modifications', arBody: 'قد نحدّث هذه الشروط في أي وقت. الاستخدام المستمر للمنصة يعني قبولك للتعديلات.', enBody: 'We may update these terms at any time. Continued use implies acceptance of modifications.' },
+  { num: '08', arTitle: 'الإنهاء', enTitle: 'Termination', arBody: 'قد نوقف أو ننهي حسابات التي تنتهك هذه الشروط.', enBody: 'We may suspend or terminate accounts that violate these terms.' },
+  { num: '09', arTitle: 'القانون الحاكم', enTitle: 'Governing Law', arBody: 'هذه الشروط تخضع لقوانين المملكة العربية السعودية.', enBody: 'These terms are governed by the laws of Saudi Arabia.' },
+  { num: '10', arTitle: 'التواصل', enTitle: 'Contact', arBody: 'للاستفسارات أو الشكاوى المتعلقة بهذه الشروط، يرجى التواصل معنا عبر المنصة.', enBody: 'For inquiries or complaints related to these terms, please contact us through the platform.' },
+];
 
 export default function TermsPage() {
+  const { lang } = useLang();
+  const t = (ar: string, en: string) => lang === 'ar' ? ar : en;
+
   return (
     <section className="relative py-[40px] lg:py-[80px]">
       <div className="max-w-[88%] lg:max-w-[86%] mx-auto">
@@ -16,153 +33,35 @@ export default function TermsPage() {
           }}
         >
           <div className="py-[48px] lg:py-[64px] px-[32px] lg:px-[64px]">
-            {/* Logo */}
             <div className="flex justify-center mb-[24px]">
               <Link href="/">
                 <Image src="/sparko-logo-white.png" alt="Sparko." width={120} height={57} className="h-[36px] lg:h-[44px] w-auto" priority />
               </Link>
             </div>
 
-            {/* Title */}
-            <h1 className="font-ibm-plex text-[28px] lg:text-[40px] font-bold text-white text-center mb-[8px]">
-              الشروط والأحكام وسياسة الاستخدام
+            <h1 className="font-ibm-plex text-[28px] lg:text-[40px] font-bold text-white text-center mb-[40px] lg:mb-[56px]">
+              {t('الشروط والأحكام وسياسة الاستخدام', 'Terms, Conditions & Acceptable Use')}
             </h1>
-            <p className="font-ibm-plex text-[16px] lg:text-[20px] font-normal text-white/70 text-center mb-[40px] lg:mb-[56px]">
-              Terms, Conditions & Acceptable Use — Sparko.
-            </p>
 
-            {/* Sections */}
             <div className="flex flex-col" style={{ gap: '32px' }}>
-
-              {/* 1. Acceptance */}
-              <div>
-                <div className="flex items-center" style={{ gap: '12px' }}>
-                  <span className="font-ibm-plex text-[20px] lg:text-[28px] font-bold text-sparko-orange">01</span>
-                  <h2 className="font-ibm-plex text-[20px] lg:text-[28px] font-bold text-white">القبول | Acceptance</h2>
+              {sections.map((s) => (
+                <div key={s.num}>
+                  <div className="flex items-center" style={{ gap: '12px' }}>
+                    <span className="font-ibm-plex text-[20px] lg:text-[28px] font-bold text-sparko-orange">{s.num}</span>
+                    <h2 className="font-ibm-plex text-[20px] lg:text-[28px] font-bold text-white">{t(s.arTitle, s.enTitle)}</h2>
+                  </div>
+                  <p className="font-ibm-plex text-[16px] lg:text-[20px] font-normal text-white/80 mt-[12px]" style={{ lineHeight: '1.7' }}>
+                    {t(s.arBody, s.enBody)}
+                  </p>
                 </div>
-                <p className="font-ibm-plex text-[16px] lg:text-[20px] font-normal text-white/80 mt-[12px]" style={{ lineHeight: '1.7' }}>
-                  باستخدام Sparko، فإنك توافق على هذه الشروط. إذا كنت لا توافق على أي من هذه الشروط، يجب عليك عدم استخدام المنصة.
-                  By using Sparko, you agree to these terms. If you do not agree with any of these terms, you must not use the platform.
-                </p>
-              </div>
-
-              {/* 2. Service Description */}
-              <div>
-                <div className="flex items-center" style={{ gap: '12px' }}>
-                  <span className="font-ibm-plex text-[20px] lg:text-[28px] font-bold text-sparko-orange">02</span>
-                  <h2 className="font-ibm-plex text-[20px] lg:text-[28px] font-bold text-white">وصف الخدمة | Service Description</h2>
-                </div>
-                <p className="font-ibm-plex text-[16px] lg:text-[20px] font-normal text-white/80 mt-[12px]" style={{ lineHeight: '1.7' }}>
-                  Sparko تقدم منظومة للتدريب الميداني، تقييم الأداء، والتوثيق المهني. المنصة توفر أدوات لتنظيم التجارب التدريبية، تقييم المتدربين بشكل يومي، وإنشاء تقارير مهنية موثقة.
-                  Sparko provides a system for field training, performance evaluation, and professional documentation. The platform offers tools to organize training experiences, evaluate trainees daily, and generate verified professional reports.
-                </p>
-              </div>
-
-              {/* 3. User Account */}
-              <div>
-                <div className="flex items-center" style={{ gap: '12px' }}>
-                  <span className="font-ibm-plex text-[20px] lg:text-[28px] font-bold text-sparko-orange">03</span>
-                  <h2 className="font-ibm-plex text-[20px] lg:text-[28px] font-bold text-white">حساب المستخدم | User Account</h2>
-                </div>
-                <p className="font-ibm-plex text-[16px] lg:text-[20px] font-normal text-white/80 mt-[12px]" style={{ lineHeight: '1.7' }}>
-                  أنت مسؤول عن دقة بياناتك، حماية حسابك، وأي نشاط يتم من خلاله. يجب عليك 保持 بياناتك محدثة وصحيحة.
-                  You are responsible for the accuracy of your information, securing your account, and any activities conducted under your account. You must keep your information up to date and accurate.
-                </p>
-              </div>
-
-              {/* 4. Acceptable Use */}
-              <div>
-                <div className="flex items-center" style={{ gap: '12px' }}>
-                  <span className="font-ibm-plex text-[20px] lg:text-[28px] font-bold text-sparko-orange">04</span>
-                  <h2 className="font-ibm-plex text-[20px] lg:text-[28px] font-bold text-white">الاستخدام المقبول | Acceptable Use</h2>
-                </div>
-                <p className="font-ibm-plex text-[16px] lg:text-[20px] font-normal text-white/80 mt-[12px]" style={{ lineHeight: '1.7' }}>
-                  يجب عليك عدم إساءة استخدام المنصة، أو تقديم بيانات غير صحيحة، أو محاولة اختراق أو تعطيل الخدمة. أي استخدام غير مشروع قد يؤدي إلى إيقاف حسابك.
-                  You must not misuse the system, provide false data, or attempt to hack or disrupt the service. Any unauthorized use may result in account suspension.
-                </p>
-              </div>
-
-              {/* 5. Intellectual Property */}
-              <div>
-                <div className="flex items-center" style={{ gap: '12px' }}>
-                  <span className="font-ibm-plex text-[20px] lg:text-[28px] font-bold text-sparko-orange">05</span>
-                  <h2 className="font-ibm-plex text-[20px] lg:text-[28px] font-bold text-white">الملكية الفكرية | Intellectual Property</h2>
-                </div>
-                <p className="font-ibm-plex text-[16px] lg:text-[20px] font-normal text-white/80 mt-[12px]" style={{ lineHeight: '1.7' }}>
-                  جميع الحقوق المتعلقة بالمنصة والمحتوى تعود إلى Sparko. لا يسمح بإعادة استخدام أو نسخ أي جزء من المنصة أو محتوىها دون إذن مسبق.
-                  All rights related to the platform and content belong to Sparko. Reuse or copying of any part of the platform or its content without prior permission is not allowed.
-                </p>
-              </div>
-
-              {/* 6. Limitation of Liability */}
-              <div>
-                <div className="flex items-center" style={{ gap: '12px' }}>
-                  <span className="font-ibm-plex text-[20px] lg:text-[28px] font-bold text-sparko-orange">06</span>
-                  <h2 className="font-ibm-plex text-[20px] lg:text-[28px] font-bold text-white">حدود المسؤولية | Limitation of Liability</h2>
-                </div>
-                <p className="font-ibm-plex text-[16px] lg:text-[20px] font-normal text-white/80 mt-[12px]" style={{ lineHeight: '1.7' }}>
-                  Sparko غير مسؤول عن الأضرار غير المباشرة الناتجة عن استخدام الخدمة. لا تضمن Sparko نتائج محددة من استخدام المنصة.
-                  Sparko is not liable for indirect damages resulting from the use of the service. Sparko does not guarantee specific results from using the platform.
-                </p>
-              </div>
-
-              {/* 7. Modification */}
-              <div>
-                <div className="flex items-center" style={{ gap: '12px' }}>
-                  <span className="font-ibm-plex text-[20px] lg:text-[28px] font-bold text-sparko-orange">07</span>
-                  <h2 className="font-ibm-plex text-[20px] lg:text-[28px] font-bold text-white">التعديلات | Modifications</h2>
-                </div>
-                <p className="font-ibm-plex text-[16px] lg:text-[20px] font-normal text-white/80 mt-[12px]" style={{ lineHeight: '1.7' }}>
-                  قد نحدّث هذه الشروط في أي وقت. الاستخدام المستمر للمنصة يعني قبولك للتعديلات.
-                  We may update these terms at any time. Continued use implies acceptance of modifications.
-                </p>
-              </div>
-
-              {/* 8. Termination */}
-              <div>
-                <div className="flex items-center" style={{ gap: '12px' }}>
-                  <span className="font-ibm-plex text-[20px] lg:text-[28px] font-bold text-sparko-orange">08</span>
-                  <h2 className="font-ibm-plex text-[20px] lg:text-[28px] font-bold text-white">الإنهاء | Termination</h2>
-                </div>
-                <p className="font-ibm-plex text-[16px] lg:text-[20px] font-normal text-white/80 mt-[12px]" style={{ lineHeight: '1.7' }}>
-                  قد نوقف أو ننهي حسابات التي ت violate هذه الشروط.
-                  We may suspend or terminate accounts that violate these terms.
-                </p>
-              </div>
-
-              {/* 9. Governing Law */}
-              <div>
-                <div className="flex items-center" style={{ gap: '12px' }}>
-                  <span className="font-ibm-plex text-[20px] lg:text-[28px] font-bold text-sparko-orange">09</span>
-                  <h2 className="font-ibm-plex text-[20px] lg:text-[28px] font-bold text-white">القانون الحاكم | Governing Law</h2>
-                </div>
-                <p className="font-ibm-plex text-[16px] lg:text-[20px] font-normal text-white/80 mt-[12px]" style={{ lineHeight: '1.7' }}>
-                  هذه الشروط تخضع لقوانين المملكة العربية السعودية.
-                  These terms are governed by the laws of Saudi Arabia.
-                </p>
-              </div>
-
-              {/* 10. Contact */}
-              <div>
-                <div className="flex items-center" style={{ gap: '12px' }}>
-                  <span className="font-ibm-plex text-[20px] lg:text-[28px] font-bold text-sparko-orange">10</span>
-                  <h2 className="font-ibm-plex text-[20px] lg:text-[28px] font-bold text-white">التواصل | Contact</h2>
-                </div>
-                <p className="font-ibm-plex text-[16px] lg:text-[20px] font-normal text-white/80 mt-[12px]" style={{ lineHeight: '1.7' }}>
-                  للاستفسارات أو الشكاوى المتعلقة بهذه الشروط، يرجى التواصل معنا عبر المنصة.
-                  For inquiries or complaints related to these terms, please contact us through the platform.
-                </p>
-              </div>
-
+              ))}
             </div>
 
-            {/* Footer tagline */}
             <div className="mt-[40px] lg:mt-[56px] flex items-center justify-center" style={{ gap: '8px' }}>
               <span className="text-[18px]">🇸🇦</span>
               <p className="font-ibm-plex text-[16px] lg:text-[18px] font-medium text-white/80">Saudi-born. Built for real impact.</p>
             </div>
 
-            {/* Back to homepage button */}
             <div className="mt-[24px] lg:mt-[32px] flex justify-center">
               <Link
                 href="/"
@@ -172,7 +71,7 @@ export default function TermsPage() {
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M19 12H5M12 19l-7-7 7-7" />
                 </svg>
-                العودة للصفحة الرئيسية
+                {t('العودة للصفحة الرئيسية', 'Back to homepage')}
               </Link>
             </div>
           </div>

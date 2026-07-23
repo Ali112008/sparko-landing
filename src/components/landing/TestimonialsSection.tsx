@@ -2,18 +2,22 @@
 
 import Image from 'next/image';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
+import { useLang } from '@/context/LanguageContext';
 
 const testimonials = [
-  { id: 1, name: 'لحظة السؤال', isPlayButton: true },
-  { id: 2, name: 'الخطوة الأولى', isPlayButton: false },
-  { id: 3, name: 'يشتغل فعليا', isPlayButton: false },
-  { id: 4, name: 'الأثر مثبت', isPlayButton: false },
-  { id: 5, name: 'يدنا بيده', isPlayButton: false },
-  { id: 6, name: 'يستفيد و يفيد', isPlayButton: false },
-  { id: 7, name: 'الفوز المستحق', isPlayButton: false },
+  { id: 1, ar: 'لحظة السؤال', en: 'The Question Moment', isPlayButton: true },
+  { id: 2, ar: 'الخطوة الأولى', en: 'The First Step', isPlayButton: false },
+  { id: 3, ar: 'يشتغل فعليا', en: 'It Actually Works', isPlayButton: false },
+  { id: 4, ar: 'الأثر مثبت', en: 'Proven Impact', isPlayButton: false },
+  { id: 5, ar: 'يدنا بيده', en: 'Hand in Hand', isPlayButton: false },
+  { id: 6, ar: 'يستفيد و يفيد', en: 'Benefits & Contributes', isPlayButton: false },
+  { id: 7, ar: 'الفوز المستحق', en: 'Deserved Win', isPlayButton: false },
 ];
 
 export default function TestimonialsSection() {
+  const { lang } = useLang();
+  const t = (ar: string, en: string) => lang === 'ar' ? ar : en;
+
   return (
     <section id="testimonials" className="relative py-[56px] lg:py-[96px] overflow-hidden">
       <div className="relative z-10 max-w-[88%] lg:max-w-[86%] mx-auto">
@@ -26,7 +30,7 @@ export default function TestimonialsSection() {
             padding: '44px',
           }}
         >
-          {/* Figma: HorizontalBorder+Blur - blue glow line at bottom */}
+          {/* Blue glow line at bottom */}
           <div
             className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[103%] h-[1px]"
             style={{
@@ -35,11 +39,9 @@ export default function TestimonialsSection() {
             }}
           />
 
-          {/* Figma: Frame 2121453366 - Title area, VERTICAL, itemSpacing: 24, counterAxisAlignItems: CENTER */}
+          {/* Title area */}
           <div className="flex flex-col items-center text-center gap-[24px] mb-[44px]">
-            {/* Figma: Group 1000004750 - Heading with logo */}
             <div className="flex flex-col items-center">
-              {/* Figma: 40px w700 lh:48px white, IBM Plex Sans Arabic */}
               <h1 className="font-ibm-plex text-[40px] font-bold text-white leading-[48px]">
                 &ldquo;{' '}
                 <Image
@@ -49,32 +51,27 @@ export default function TestimonialsSection() {
                   height={66}
                   className="inline-block h-[1.4em] w-auto align-middle mx-[4px]"
                 />{' '}
-                التدريب الميداني يتحول إلى نجاح حقيقي{' '}
+                {t('التدريب الميداني يتحول إلى نجاح حقيقي', 'Field training turns into real success')}{' '}
                 &rdquo;
               </h1>
             </div>
-
-            {/* Figma: Container - 20px w400 lh:28px white, letterSpacing: 0.16px */}
             <p
               className="font-ibm-plex text-[20px] font-normal leading-[28px] text-white"
               style={{ letterSpacing: '0.16px' }}
             >
-              &ldquo;نتيجة حقيقية … تتكرر كل يوم&rdquo;
+              &ldquo;{t('نتيجة حقيقية … تتكرر كل يوم', 'A real result… repeated every day')}&rdquo;
             </p>
           </div>
 
-          {/* Figma: Frame 2121453292 - Avatars row, HORIZONTAL, SPACE_BETWEEN, CENTER, itemSpacing: 24 */}
+          {/* Avatars row */}
           <div className="flex items-center justify-between">
-            {/* Figma: Left arrow - weui:arrow-filled */}
-            <button className="text-white hover:text-white/80 transition-colors flex-shrink-0" aria-label="السابق">
+            <button className="text-white hover:text-white/80 transition-colors flex-shrink-0" aria-label={t('السابق', 'Previous')}>
               <ChevronRight className="w-[18px] h-[36px]" />
             </button>
 
-            {/* Figma: Frame 1686552644 - Avatars container, HORIZONTAL, itemSpacing: 64 */}
             <div className="flex items-center gap-[64px] overflow-x-auto scrollbar-hide">
               {testimonials.map((person) => (
                 <div key={person.id} className="flex flex-col items-center flex-shrink-0">
-                  {/* Figma: Avatar - 80x80, cornerRadius: 50 (circle), border: 1.5px orange 0.8 opacity, shadow */}
                   <div
                     className="w-[80px] h-[80px] bg-[#020913] rounded-full flex items-center justify-center overflow-hidden"
                     style={{
@@ -84,22 +81,20 @@ export default function TestimonialsSection() {
                   >
                     <Image
                       src={person.isPlayButton ? '/avatar-play.png' : '/avatar-person.png'}
-                      alt={person.name}
+                      alt={lang === 'ar' ? person.ar : person.en}
                       width={80}
                       height={80}
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  {/* Figma: Heading 3 - 20px w600 lh:32px white, IBM Plex Sans Arabic */}
                   <p className="font-ibm-plex text-[20px] font-semibold leading-[32px] text-white text-center whitespace-nowrap">
-                    {person.name}
+                    {lang === 'ar' ? person.ar : person.en}
                   </p>
                 </div>
               ))}
             </div>
 
-            {/* Figma: Right arrow - weui:arrow-filled */}
-            <button className="text-white hover:text-white/80 transition-colors flex-shrink-0" aria-label="التالي">
+            <button className="text-white hover:text-white/80 transition-colors flex-shrink-0" aria-label={t('التالي', 'Next')}>
               <ChevronLeft className="w-[18px] h-[36px]" />
             </button>
           </div>

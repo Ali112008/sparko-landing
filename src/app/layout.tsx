@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Cairo, Tajawal, IBM_Plex_Sans_Arabic } from "next/font/google";
+import { LanguageProvider } from "@/context/LanguageContext";
+import DirectionManager from "@/components/DirectionManager";
 import "./globals.css";
 
 const cairo = Cairo({
@@ -40,7 +42,10 @@ export default function RootLayout({
       <body
         className={`${cairo.variable} ${tajawal.variable} ${ibmPlexSansArabic.variable} antialiased font-ibm-plex`}
       >
-        {children}
+        <LanguageProvider>
+          <DirectionManager />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );
