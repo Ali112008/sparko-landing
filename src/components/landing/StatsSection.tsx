@@ -30,14 +30,17 @@ export default function StatsSection() {
             }}
           />
 
-          {/* Main content: padding matches QuoteSection (py-[44px] px-[48px]) */}
-          {/* RTL: Trophy+Text first in DOM → appears on RIGHT, Stats second → appears on LEFT */}
-          {/* Figma: HORIZONTAL flex, items centered, gap 44px between each child */}
-          <div className="flex items-center py-[44px] px-[48px]" style={{ gap: '44px' }}>
-            {/* Trophy + "منذ 2015" block — appears on RIGHT side in RTL */}
-            {/* Figma: HORIZONTAL flex, items centered, gap 44px */}
-            <div className="flex items-center flex-shrink-0" style={{ gap: '44px' }}>
-              {/* Trophy image — Figma: 143x126 */}
+          {/* Main content — spacious premium layout */}
+          {/* Padding increased for generous spacing */}
+          <div className="flex items-center py-[56px] lg:py-[72px] px-[48px] lg:px-[64px]" style={{ gap: '48px' }}>
+
+            {/* Trophy + "منذ 2015" block — ~30% width, on FAR RIGHT in RTL */}
+            {/* RTL: first child in flex → appears on right/start side */}
+            <div
+              className="flex items-center flex-shrink-0"
+              style={{ gap: '32px', width: '30%' }}
+            >
+              {/* Trophy image */}
               <div className="w-[143px] h-[126px] flex-shrink-0">
                 <Image
                   src="/stats-image.png"
@@ -45,27 +48,24 @@ export default function StatsSection() {
                   width={143}
                   height={126}
                   className="w-full h-full object-contain"
+                  priority
                 />
               </div>
 
               {/* Text block - "منذ 2015" */}
-              {/* Figma: VERTICAL flex, gap 16px, textAlign right */}
               <div className="flex flex-col" style={{ gap: '16px' }}>
-                {/* Figma: 24px w700 lh31.2px white, IBM Plex Sans Arabic */}
+                {/* Arabic text */}
                 <p className="font-ibm-plex text-[24px] font-bold leading-[31.2px] text-white text-right">
                   منذ 2015 ،<br />نتائج مستمرة حتى اليوم
                 </p>
-                {/* Figma: 18px w700 lh23.4px rgb(255,85,0), IBM Plex Sans Arabic, letterSpacing 0 */}
-                <p
-                  className="font-ibm-plex text-[18px] font-bold leading-[23.4px] text-sparko-orange text-right"
-                >
+                {/* English text — orange accent */}
+                <p className="font-ibm-plex text-[18px] font-bold leading-[23.4px] text-sparko-orange text-right">
                   Since 2015 ,<br />results that continue
                 </p>
               </div>
             </div>
 
-            {/* Vertical divider — Figma: 1.5px stroke, white at 24% opacity, self-stretch */}
-            {/* Spacing handled by parent flex gap: 44px on each side */}
+            {/* Vertical divider — 1.5px, white at ~24% opacity */}
             <div
               className="flex-shrink-0"
               style={{
@@ -75,13 +75,20 @@ export default function StatsSection() {
               }}
             />
 
-            {/* 4 Stat items — appears on LEFT side in RTL */}
-            {/* Center-aligned: icon, Arabic text, English translation all centered */}
-            {/* Each item: flex-1 with basis 0 for equal distribution */}
-            <div className="flex items-center flex-1 min-w-0" style={{ gap: '40px' }}>
+            {/* 4 Feature items — ~70% width, on LEFT side in RTL */}
+            {/* Use direction:ltr to preserve visual order matching reference (not auto-mirrored by RTL) */}
+            {/* Order from left to right: نتائج تتكرر → نتائج تُقاس → تقييم مبني → تجارب موثقة */}
+            <div
+              className="flex items-center min-w-0"
+              style={{ gap: '24px', width: '70%', direction: 'ltr' }}
+            >
               {stats.map((stat, index) => (
-                <div key={index} className="flex flex-col items-center min-w-0 text-center" style={{ flex: '1 1 0px', gap: '12px' }}>
-                  {/* Icon - centered */}
+                <div
+                  key={index}
+                  className="flex flex-col items-center min-w-0 text-center"
+                  style={{ flex: '1 1 0px', gap: '16px' }}
+                >
+                  {/* Orange line icon */}
                   <div className="w-[44px] h-[44px] flex items-center justify-center flex-shrink-0">
                     <Image
                       src={stat.icon}
@@ -91,23 +98,22 @@ export default function StatsSection() {
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  {/* Text frame — Figma: gap 8px, centered alignment */}
-                  <div className="flex flex-col items-center min-w-0" style={{ gap: '8px' }}>
-                    {/* Arabic text — centered */}
-                    <p
-                      className="font-ibm-plex text-[24px] font-bold leading-[28.8px] text-white text-center"
-                      style={{ overflowWrap: 'break-word' }}
-                    >
-                      {stat.ar}
-                    </p>
-                    {/* English translation — Figma: 18px w400 lh27px white, letterSpacing 0 */}
-                    <p
-                      className="font-ibm-plex text-[18px] font-normal leading-[27px] text-white text-center"
-                      style={{ hyphens: 'none', overflowWrap: 'break-word' }}
-                    >
-                      {stat.en}
-                    </p>
-                  </div>
+
+                  {/* Arabic heading — RTL text alignment within centered item */}
+                  <p
+                    className="font-ibm-plex text-[20px] lg:text-[24px] font-bold leading-[28px] text-white text-center"
+                    style={{ overflowWrap: 'break-word', direction: 'rtl' }}
+                  >
+                    {stat.ar}
+                  </p>
+
+                  {/* English subtitle */}
+                  <p
+                    className="font-ibm-plex text-[14px] lg:text-[18px] font-normal leading-[24px] text-white/70 text-center"
+                    style={{ overflowWrap: 'break-word' }}
+                  >
+                    {stat.en}
+                  </p>
                 </div>
               ))}
             </div>
