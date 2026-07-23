@@ -57,7 +57,7 @@ export default function HeroSection() {
         <div className="px-[24px] lg:px-[100px] pb-[32px] lg:pb-[64px]">
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-[32px] lg:gap-0">
             {/* Illustration side */}
-            <div className="w-full lg:w-[52%] flex-shrink-0 relative flex items-center justify-center lg:order-2">
+            <div className="w-full lg:w-[60%] flex-shrink-0 relative flex items-center justify-center lg:order-2">
               <Image
                 src="/design-hero-left.png"
                 alt="Sparko Career Journey"
@@ -68,7 +68,7 @@ export default function HeroSection() {
               />
               {/* Orange Quote Card */}
               <div
-                className="absolute bottom-[2%] start-[4%] z-10 bg-sparko-orange rounded-[20px] max-w-[280px] overflow-visible"
+                className="absolute bottom-[2%] end-[-80px] z-10 bg-sparko-orange rounded-[20px] max-w-[280px] overflow-visible"
                 style={{ boxShadow: '0 12px 28px rgba(255,85,0,0.3)' }}
               >
                 <div className="flex justify-center -mt-[28px] mb-[4px]">
@@ -92,7 +92,7 @@ export default function HeroSection() {
             </div>
 
             {/* Text side */}
-            <div className="w-full lg:w-[42%] lg:pe-[40px] xl:pe-[56px] flex flex-col items-center lg:items-start lg:order-1">
+            <div className="w-full lg:w-[40%] lg:pe-[40px] xl:pe-[56px] flex flex-col items-center lg:items-start lg:order-1">
               <div className="inline-flex items-center gap-[6px] px-[12px] py-[6px] bg-gray-200 rounded-full mb-[16px]">
                 <span className="w-[6px] h-[6px] bg-green-500 rounded-full" />
                 <span className="font-ibm-plex text-[14px] text-gray-700 font-medium">
