@@ -68,7 +68,7 @@ export default function HeroSection() {
               />
               {/* Orange Quote Card */}
               <div
-                className="absolute bottom-[2%] start-[4%] lg:start-[-120px] z-10 bg-sparko-orange rounded-[20px] max-w-[280px]"
+                className="absolute bottom-[2%] end-[-10px] z-10 bg-sparko-orange rounded-[20px] max-w-[280px]"
                 style={{ boxShadow: '0 12px 28px rgba(255,85,0,0.3)' }}
               >
                 <div className="flex justify-center -mt-[28px] mb-[4px]">
