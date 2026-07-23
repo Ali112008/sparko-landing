@@ -47,18 +47,36 @@ export default function HeroSection() {
                 className="w-full max-h-[420px] lg:max-h-[520px] object-contain"
                 priority
               />
-              {/* Orange Quote Card */}
+              {/* Orange Quote Card — redesigned with avatar */}
               <div
-                className="absolute bottom-[2%] left-[4%] z-10 bg-sparko-orange rounded-[20px] px-[24px] py-[20px] max-w-[280px]"
+                className="absolute bottom-[2%] left-[4%] z-10 bg-sparko-orange rounded-[20px] max-w-[280px] overflow-visible"
                 style={{ boxShadow: '0 12px 28px rgba(255,85,0,0.3)' }}
               >
-                <span className="font-ibm-plex text-white/80 text-[40px] font-light leading-none">&ldquo;</span>
-                <p className="font-ibm-plex text-white text-[23px] font-semibold leading-[44px] mt-[-8px]">
-                  تجربة مختلفة تعتبر نقطة تحول في مساري المهني
-                </p>
-                <p className="font-ibm-plex text-white text-[16px] font-normal mt-[8px]">
-                  Majed Baqshan<br />Since 2015
-                </p>
+                {/* Avatar — circular, overlapping the top border */}
+                <div className="flex justify-center -mt-[28px] mb-[4px]">
+                  <div
+                    className="w-[56px] h-[56px] rounded-full overflow-hidden flex-shrink-0"
+                    style={{ border: '3px solid white', boxShadow: '0 4px 8px rgba(0,0,0,0.15)' }}
+                  >
+                    <Image
+                      src="/avatar-person.png"
+                      alt="Majed Baqshan"
+                      width={56}
+                      height={56}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                {/* Quote content */}
+                <div className="px-[24px] pb-[20px]" style={{ paddingTop: '8px' }}>
+                  <span className="font-ibm-plex text-white/80 text-[40px] font-light leading-none">&ldquo;</span>
+                  <p className="font-ibm-plex text-white text-[23px] font-semibold leading-[44px] mt-[-8px]">
+                    تجربة مختلفة تعتبر نقطة تحول في مساري المهني
+                  </p>
+                  <p className="font-ibm-plex text-white text-[16px] font-normal mt-[8px]">
+                    Majed Baqshan<br />Since 2015
+                  </p>
+                </div>
               </div>
             </div>
 
