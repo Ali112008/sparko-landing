@@ -1,5 +1,8 @@
 'use client';
 
+import Image from 'next/image';
+import Link from 'next/link';
+
 export default function PrivacyPage() {
   return (
     <section className="relative py-[40px] lg:py-[80px]">
@@ -13,6 +16,13 @@ export default function PrivacyPage() {
           }}
         >
           <div className="py-[48px] lg:py-[64px] px-[32px] lg:px-[64px]">
+            {/* Logo */}
+            <div className="flex justify-center mb-[24px]">
+              <Link href="/">
+                <Image src="/sparko-logo-white.png" alt="Sparko." width={120} height={57} className="h-[36px] lg:h-[44px] w-auto" priority />
+              </Link>
+            </div>
+
             {/* Title */}
             <h1 className="font-ibm-plex text-[28px] lg:text-[40px] font-bold text-white text-center mb-[8px]">
               سياسة الخصوصية وحماية البيانات
