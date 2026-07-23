@@ -41,16 +41,14 @@ export default function StatsSection() {
               style={{ gap: '32px', width: '30%' }}
             >
               {/* Trophy image */}
-              <div className="w-[180px] h-[160px] flex-shrink-0">
-                <Image
-                  src="/stats-image.png"
-                  alt="Sparko Trophy"
-                  width={180}
-                  height={160}
-                  className="w-full h-full object-contain"
-                  priority
-                />
-              </div>
+              <Image
+                src="/stats-image.png"
+                alt="Sparko Trophy"
+                width={220}
+                height={194}
+                className="w-[220px] h-auto flex-shrink-0 object-contain"
+                priority
+              />
 
               {/* Text block - "منذ 2015" */}
               <div className="flex flex-col" style={{ gap: '16px' }}>
