@@ -24,20 +24,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Desktop scaler: renders layout at 1440px width, then zooms down on mobile */
-.desktop-scaler {
-  min-width: 1440px;
-}
-
-@media (max-width: 1439px) {
-  .desktop-scaler {
-    zoom: calc(100vw / 1440);
-  }
-  body {
-    overflow-x: hidden;
-  }
-}
-
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

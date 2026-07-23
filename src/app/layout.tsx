@@ -33,8 +33,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  width: 'device-width',
-  initialScale: 1,
+  width: 1440,
 };
 
 export default function RootLayout({
@@ -49,9 +48,7 @@ export default function RootLayout({
       >
         <LanguageProvider>
           <DirectionManager />
-          <div className="desktop-scaler">
-            {children}
-          </div>
+          {children}
         </LanguageProvider>
       </body>
     </html>
