@@ -19,7 +19,7 @@ export default function WatchSection() {
             <div className="hidden md:block absolute left-1/2 top-[24px] bottom-[24px] w-px bg-white/20 -translate-x-1/2" />
 
             {/* Right Column (RTL) / First column (LTR) */}
-            <div className="flex flex-col items-center justify-center py-[32px] lg:py-[48px] md:pl-[32px] lg:pl-[56px]">
+            <div className="flex flex-col items-center justify-center py-[32px] lg:py-[48px] md:pe-[32px] lg:pe-[56px]">
               <h3 className="font-ibm-plex text-[18px] sm:text-[24px] lg:text-[32px] font-semibold leading-[1.5] text-center text-white">
                 {t('ما هي تجربة واحدة … هي تجارب تتكرر', 'It\'s not just one experience… it\'s experiences that repeat')}
               </h3>
@@ -47,7 +47,7 @@ export default function WatchSection() {
             </div>
 
             {/* Left Column (RTL) / Second column (LTR) */}
-            <div className="flex flex-col items-center justify-center py-[32px] lg:py-[48px] md:pr-[32px] lg:pr-[56px]">
+            <div className="flex flex-col items-center justify-center py-[32px] lg:py-[48px] md:ps-[32px] lg:ps-[56px]">
               <h3 className="font-ibm-plex text-[18px] sm:text-[24px] lg:text-[32px] font-semibold leading-[1.5] text-center text-white">
                 {t('من تجربة محلية … إلى أثر عالمي', 'From a local experience… to a global impact')}
               </h3>

@@ -40,12 +40,10 @@ export default function StatsSection() {
                 priority
               />
               <div className="flex flex-col" style={{ gap: '16px' }}>
-                <p className="font-ibm-plex text-[24px] font-bold leading-[31.2px] text-white text-right">
+                <p className="font-ibm-plex text-[24px] font-bold leading-[31.2px] text-white text-start">
                   {t('منذ 2015 ،\nنتائج مستمرة حتى اليوم', 'Since 2015,\nresults that continue today')}
                 </p>
-                <p className="font-ibm-plex text-[18px] font-bold leading-[23.4px] text-sparko-orange text-right">
-                  {lang === 'ar' ? 'Since 2015 ,\nresults that continue' : 'Since 2015,\nresults that continue'}
-                </p>
+
               </div>
             </div>
 

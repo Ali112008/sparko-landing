@@ -66,7 +66,7 @@ export default function TestimonialsSection() {
           {/* Avatars row */}
           <div className="flex items-center justify-between">
             <button className="text-white hover:text-white/80 transition-colors flex-shrink-0" aria-label={t('السابق', 'Previous')}>
-              <ChevronRight className="w-[18px] h-[36px]" />
+              {lang === 'ar' ? <ChevronRight className="w-[18px] h-[36px]" /> : <ChevronLeft className="w-[18px] h-[36px]" />}
             </button>
 
             <div className="flex items-center gap-[64px] overflow-x-auto scrollbar-hide">
@@ -95,7 +95,7 @@ export default function TestimonialsSection() {
             </div>
 
             <button className="text-white hover:text-white/80 transition-colors flex-shrink-0" aria-label={t('التالي', 'Next')}>
-              <ChevronLeft className="w-[18px] h-[36px]" />
+              {lang === 'ar' ? <ChevronLeft className="w-[18px] h-[36px]" /> : <ChevronRight className="w-[18px] h-[36px]" />}
             </button>
           </div>
         </div>

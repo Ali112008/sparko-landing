@@ -34,9 +34,6 @@ export default function Footer() {
                 <span className="font-ibm-plex text-[16px] lg:text-[18px] font-semibold text-white">
                   {t('بوابة الجهات', 'Partners Portal')}
                 </span>
-                <span className="font-ibm-plex text-[14px] lg:text-[16px] font-normal text-white/60">
-                  {lang === 'ar' ? 'Partners Portal' : 'بوابة الجهات'}
-                </span>
               </div>
             </div>
 
