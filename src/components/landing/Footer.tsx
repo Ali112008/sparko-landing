@@ -8,39 +8,77 @@ export default function Footer() {
       {/* Main footer card */}
       <div className="max-w-[88%] lg:max-w-[86%] mx-auto">
         <div
-          className="rounded-[24px] border-2 border-white/30 overflow-hidden"
-          style={{ background: 'linear-gradient(180deg, #273C65 0%, #182B51 100%)' }}
+          className="rounded-[24px] overflow-hidden relative"
+          style={{
+            background: 'radial-gradient(circle at center, #20345A 0%, #0C1B3A 100%)',
+            border: '1.5px solid rgba(255, 255, 255, 0.12)',
+            boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
+          }}
         >
-          <div className="py-[40px] lg:py-[56px] px-[32px] lg:px-[80px]">
-            {/* Partners Portal */}
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-[24px] lg:gap-[48px]">
-              {/* Left: Partners Portal info */}
-              <div className="flex items-center gap-[12px] lg:gap-[16px]">
-                <div className="bg-[#020913] rounded-lg px-[16px] py-[8px]">
-                  <p className="font-ibm-plex text-[16px] lg:text-[20px] font-semibold text-white">
-                    بوابة الجهات Partners Portal
-                  </p>
-                </div>
-              </div>
+          <div className="py-[60px] lg:py-[64px] px-[48px] lg:px-[64px]">
+            {/* Top row: two-column layout */}
+            {/* In RTL: first child → right/start side, second child → left/end side */}
+            <div className="flex justify-between items-center">
+              {/* Start side (right in RTL): Logo + Heading + Subtitle */}
+              <div className="flex flex-col" style={{ gap: '12px' }}>
+                {/* Sparko. logo */}
+                <Image
+                  src="/logo.png"
+                  alt="Sparko."
+                  width={51}
+                  height={24}
+                  className="h-[24px] lg:h-[28px] w-auto"
+                />
 
-              {/* Center: Description */}
-              <div className="text-center lg:text-right">
-                <p className="font-ibm-plex text-[14px] lg:text-[20px] font-semibold text-white leading-[1.5]">
+                {/* Heading: Arabic */}
+                <h2
+                  className="font-ibm-plex text-[24px] lg:text-[28px] font-bold text-white text-start"
+                  style={{ lineHeight: '36px' }}
+                >
                   حيث يتحول التدريب الميداني إلى تجربة حقيقية
-                </p>
-                <p className="font-ibm-plex text-[14px] lg:text-[20px] font-semibold text-white/60 leading-[1.5]">
+                </h2>
+
+                {/* Subtitle: English */}
+                <p
+                  className="font-ibm-plex text-[16px] lg:text-[20px] font-normal text-white/70 text-start"
+                  style={{ lineHeight: '28px' }}
+                >
                   Where Field Training Becomes Real Experience
                 </p>
+              </div>
+
+              {/* End side (left in RTL): Partners Portal badge */}
+              <div
+                className="inline-flex items-center shrink-0"
+                style={{
+                  padding: '8px 20px',
+                  background: 'rgba(255, 255, 255, 0.10)',
+                  borderRadius: '50px',
+                  gap: '8px',
+                }}
+              >
+                <span className="font-ibm-plex text-[16px] font-medium text-white">
+                  بوابة الجهات
+                </span>
+                <span className="font-ibm-plex text-[14px] font-normal text-white/60">
+                  Partners Portal
+                </span>
               </div>
             </div>
 
             {/* Divider */}
-            <div className="border-t border-white/10 my-[24px] lg:my-[32px]" />
+            <div className="border-t border-white/[0.12] my-[24px] lg:my-[32px]" />
 
             {/* Saudi-born */}
-            <div className="flex items-center justify-center gap-[8px]">
-              <span className="text-[18px]">🇸🇦</span>
-              <p className="font-ibm-plex text-[16px] lg:text-[20px] font-semibold text-white">
+            <div className="flex items-center justify-center" style={{ gap: '10px' }}>
+              <Image
+                src="/saudi-flag.png"
+                alt="Saudi Arabia"
+                width={16}
+                height={11}
+                className="h-[11px] lg:h-[13px] w-auto object-contain"
+              />
+              <p className="font-ibm-plex text-[16px] lg:text-[18px] font-medium text-white/80">
                 Saudi-born. Built for real impact.
               </p>
             </div>
