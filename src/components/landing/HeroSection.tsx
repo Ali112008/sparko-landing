@@ -19,11 +19,11 @@ export default function HeroSection() {
             <Image src="/logo.png" alt="Sparko" width={132} height={62} className="h-[40px] lg:h-[62px] w-auto" priority />
           </a>
           <div className="hidden md:flex items-center gap-[12px]" dir="ltr">
-            <button className="flex items-center gap-[6px] px-[14px] py-[6px] bg-gray-100 border border-gray-200 rounded-full text-gray-600 text-[13px] hover:bg-gray-200 transition-colors">
+            <button className="font-ibm-plex flex items-center gap-[6px] px-[14px] py-[6px] bg-gray-100 border border-gray-200 rounded-full text-gray-600 text-[13px] hover:bg-gray-200 transition-colors">
               <span>🇸🇦</span>
               <svg className="w-[12px] h-[12px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6" /></svg>
             </button>
-            <button className="flex items-center gap-[4px] px-[16px] py-[6px] bg-gray-100 border border-gray-200 rounded-full text-gray-700 text-[13px] hover:bg-gray-200 transition-colors">
+            <button className="font-ibm-plex flex items-center gap-[4px] px-[16px] py-[6px] bg-gray-100 border border-gray-200 rounded-full text-gray-700 text-[13px] hover:bg-gray-200 transition-colors">
               منظومة <span className="text-sparko-orange font-ibm-plex font-bold">Sparko.</span> المتكاملة
             </button>
           </div>
@@ -52,7 +52,7 @@ export default function HeroSection() {
                 className="absolute bottom-[2%] left-[4%] z-10 bg-sparko-orange rounded-[20px] px-[24px] py-[20px] max-w-[280px]"
                 style={{ boxShadow: '0 12px 28px rgba(255,85,0,0.3)' }}
               >
-                <span className="text-white/80 text-[40px] font-light leading-none">&ldquo;</span>
+                <span className="font-ibm-plex text-white/80 text-[40px] font-light leading-none">&ldquo;</span>
                 <p className="font-ibm-plex text-white text-[23px] font-semibold leading-[44px] mt-[-8px]">
                   تجربة مختلفة تعتبر نقطة تحول في مساري المهني
                 </p>
@@ -88,18 +88,18 @@ export default function HeroSection() {
                 </a>
               </div>
               <div className="flex items-center gap-[12px] justify-center lg:justify-start">
-                <button className="inline-flex items-center gap-[10px] px-[16px] py-[10px] bg-[#253A63] text-white rounded-[12px] text-[12px] hover:bg-[#2F4A7A] transition-colors">
+                <button className="font-ibm-plex inline-flex items-center gap-[10px] px-[16px] py-[10px] bg-[#253A63] text-white rounded-[12px] text-[12px] hover:bg-[#2F4A7A] transition-colors">
                   <svg className="w-[20px] h-[20px] flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 16.56 2.93 11.3 4.7 7.72C5.57 5.94 7.36 4.86 9.28 4.84C10.56 4.81 11.78 5.72 12.57 5.72C13.36 5.72 14.85 4.62 16.4 4.8C17.07 4.83 18.89 5.08 20.07 6.78C19.96 6.85 17.62 8.24 17.65 11.1C17.69 14.52 20.62 15.63 20.65 15.64C20.62 15.72 20.17 17.28 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" /></svg>
-                  <div className="text-right leading-none"><div className="text-[10px] text-white/70">Download on the</div><div className="font-semibold text-[13px] mt-[2px]">App Store</div></div>
+                  <div className="font-ibm-plex text-right leading-none"><div className="text-[10px] text-white/70">Download on the</div><div className="font-semibold text-[13px] mt-[2px]">App Store</div></div>
                 </button>
-                <button className="inline-flex items-center gap-[10px] px-[16px] py-[10px] bg-[#253A63] text-white rounded-[12px] text-[12px] hover:bg-[#2F4A7A] transition-colors">
+                <button className="font-ibm-plex inline-flex items-center gap-[10px] px-[16px] py-[10px] bg-[#253A63] text-white rounded-[12px] text-[12px] hover:bg-[#2F4A7A] transition-colors">
                   <svg className="w-[20px] h-[20px] flex-shrink-0" viewBox="0 0 24 24" fill="none">
                     <path d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12L3.84 21.85C3.34 21.6 3 21.09 3 20.5Z" fill="#4CAF50"/>
                     <path d="M16.81 15.12L6.05 21.34L14.54 12.85L16.81 15.12Z" fill="#F44336"/>
                     <path d="M20.16 10.81C20.5 11.08 20.75 11.5 20.75 12C20.75 12.5 20.5 12.92 20.16 13.19L17.89 14.5L15.39 12L17.89 9.5L20.16 10.81Z" fill="#FFC107"/>
                     <path d="M6.05 2.66L16.81 8.88L14.54 11.15L6.05 2.66Z" fill="#2196F3"/>
                   </svg>
-                  <div className="text-right leading-none"><div className="text-[10px] text-white/70">GET IT ON</div><div className="font-semibold text-[13px] mt-[2px]">Google Play</div></div>
+                  <div className="font-ibm-plex text-right leading-none"><div className="text-[10px] text-white/70">GET IT ON</div><div className="font-semibold text-[13px] mt-[2px]">Google Play</div></div>
                 </button>
               </div>
             </div>
