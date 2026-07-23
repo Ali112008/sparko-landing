@@ -12,7 +12,7 @@ export default function HeroSection() {
     <section className="relative pt-[32px] pb-[16px] lg:pt-[40px] lg:pb-[24px] overflow-hidden">
       {/* White Card */}
       <div
-        className="max-w-[96%] lg:max-w-[94%] mx-auto bg-white rounded-[24px] overflow-visible"
+        className="max-w-[96%] lg:max-w-[94%] mx-auto bg-white rounded-[24px] overflow-hidden"
         style={{
           boxShadow:
             '0 30px 60px rgba(0, 0, 0, 0.35), 0 12px 24px rgba(0, 0, 0, 0.2)',
@@ -68,7 +68,7 @@ export default function HeroSection() {
               />
               {/* Orange Quote Card */}
               <div
-                className="absolute bottom-[2%] end-[4%] lg:end-[-120px] z-10 bg-sparko-orange rounded-[20px] max-w-[280px]"
+                className="absolute bottom-[2%] start-[4%] lg:start-[-120px] z-10 bg-sparko-orange rounded-[20px] max-w-[280px]"
                 style={{ boxShadow: '0 12px 28px rgba(255,85,0,0.3)' }}
               >
                 <div className="flex justify-center -mt-[28px] mb-[4px]">
