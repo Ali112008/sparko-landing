@@ -91,10 +91,10 @@ export default function Footer() {
       <div className="max-w-[88%] lg:max-w-[86%] mx-auto mt-[16px] lg:mt-[24px]">
         <div className="flex flex-col items-center gap-[12px] py-[16px] lg:py-[24px]">
           <div className="flex items-center gap-[24px] lg:gap-[40px]">
-            <a href="#" className="font-ibm-plex text-[14px] lg:text-[16px] font-medium text-white/70 hover:text-white transition-colors">
+            <a href="/privacy" className="font-ibm-plex text-[14px] lg:text-[16px] font-medium text-white/70 hover:text-white transition-colors">
               سياسة الخصوصية و حماية البيانات
             </a>
-            <a href="#" className="font-ibm-plex text-[14px] lg:text-[16px] font-medium text-white/70 hover:text-white transition-colors">
+            <a href="/terms" className="font-ibm-plex text-[14px] lg:text-[16px] font-medium text-white/70 hover:text-white transition-colors">
               الشروط و الأحكام و سياسة الاستخدام
             </a>
           </div>
