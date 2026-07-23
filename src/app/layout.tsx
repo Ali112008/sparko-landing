@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cairo, Tajawal, IBM_Plex_Sans_Arabic } from "next/font/google";
 import { LanguageProvider } from "@/context/LanguageContext";
 import DirectionManager from "@/components/DirectionManager";
@@ -30,6 +30,10 @@ export const metadata: Metadata = {
   description:
     "منصة Sparko للتدريب الميداني الاحترافي - تدريب ميداني حقيقي يمنحك خبرة عملية",
   icons: { icon: "/favicon.ico" },
+};
+
+export const viewport: Viewport = {
+  width: 1440,
 };
 
 export default function RootLayout({

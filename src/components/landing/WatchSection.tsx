@@ -15,8 +15,8 @@ export default function WatchSection() {
           style={{ background: 'linear-gradient(180deg, #273C65 0%, #182B51 100%)' }}
         >
           {/* Upper Two-Column */}
-          <div className="relative grid grid-cols-1 md:grid-cols-2">
-            <div className="hidden md:block absolute left-1/2 top-[24px] bottom-[24px] w-px bg-white/20 -translate-x-1/2" />
+          <div className="relative grid grid-cols-2">
+            <div className="absolute left-1/2 top-[24px] bottom-[24px] w-px bg-white/20 -translate-x-1/2" />
 
             {/* Right Column (RTL) / First column (LTR) */}
             <div className="flex flex-col items-center justify-center py-[20px] sm:py-[32px] lg:py-[48px] md:pe-[32px] lg:pe-[56px]">

@@ -19,11 +19,11 @@ export default function HeroSection() {
         }}
       >
         {/* Navbar */}
-        <div className="flex items-center justify-between px-[16px] sm:px-[24px] lg:px-[100px] py-[16px] sm:py-[20px] lg:py-[32px]">
+        <div className="flex items-center justify-between px-[100px] py-[32px]">
           <a href="#" className="flex items-center">
-            <Image src="/logo.png" alt="Sparko" width={132} height={62} className="h-[40px] lg:h-[62px] w-auto" priority />
+            <Image src="/logo.png" alt="Sparko" width={132} height={62} className="h-[62px] w-auto" priority />
           </a>
-          <div className="hidden md:flex items-center gap-[12px]">
+          <div className="flex items-center gap-[12px]">
             {/* Language toggle — Saudi flag button */}
             <button
               onClick={toggle}
@@ -36,50 +36,40 @@ export default function HeroSection() {
               {t('منظومة', 'Ecosystem')} <span className="text-sparko-orange font-ibm-plex font-bold">Sparko.</span> {t('المتكاملة', 'Integrated')}
             </button>
           </div>
-          {/* Mobile language toggle */}
-          <div className="md:hidden flex items-center gap-[8px]">
-            <button
-              onClick={toggle}
-              className="font-ibm-plex flex items-center gap-[4px] px-[12px] py-[4px] bg-gray-100 border border-gray-200 rounded-full text-gray-600 text-[12px] hover:bg-gray-200 transition-colors"
-            >
-              <span>🇸🇦</span>
-              {lang === 'ar' ? 'AR' : 'EN'}
-            </button>
-          </div>
         </div>
 
         {/* Hero Content */}
-        <div className="px-[16px] sm:px-[24px] lg:px-[100px] pb-[24px] sm:pb-[32px] lg:pb-[64px]">
-          <div className="flex flex-col lg:flex-row items-center lg:items-center gap-[20px] sm:gap-[32px] lg:gap-0">
+        <div className="px-[100px] pb-[64px]">
+          <div className="flex flex-row items-center gap-0">
             {/* Illustration side */}
-            <div className="w-full lg:w-[60%] flex-shrink-0 relative flex items-center justify-center order-2 lg:order-2">
+            <div className="w-[60%] flex-shrink-0 relative flex items-center justify-center order-2">
               <Image
                 src="/design-hero-left.png"
                 alt="Sparko Career Journey"
                 width={636}
                 height={900}
-                className="w-full max-h-[280px] sm:max-h-[340px] lg:max-h-[520px] object-contain"
+                className="w-full max-h-[520px] object-contain"
                 priority
               />
               {/* Orange Quote Card */}
               <div
-                className="absolute bottom-[2%] end-[-10px] z-10 bg-sparko-orange rounded-[16px] lg:rounded-[20px] max-w-[200px] lg:max-w-[280px]"
+                className="absolute bottom-[2%] end-[-10px] z-10 bg-sparko-orange rounded-[20px] max-w-[280px]"
                 style={{ boxShadow: '0 12px 28px rgba(255,85,0,0.3)' }}
               >
-                <div className="flex justify-center -mt-[20px] lg:-mt-[28px] mb-[4px]">
+                <div className="flex justify-center -mt-[28px] mb-[4px]">
                   <div
-                    className="w-[40px] h-[40px] lg:w-[56px] lg:h-[56px] rounded-full overflow-hidden flex-shrink-0"
+                    className="w-[56px] h-[56px] rounded-full overflow-hidden flex-shrink-0"
                     style={{ border: '3px solid white', boxShadow: '0 4px 8px rgba(0,0,0,0.15)' }}
                   >
                     <Image src="/avatar-person.png" alt="Majed Baqshan" width={56} height={56} className="w-full h-full object-cover" />
                   </div>
                 </div>
-                <div className="px-[16px] lg:px-[24px] pb-[16px] lg:pb-[20px]" style={{ paddingTop: '8px' }}>
-                  <span className="font-ibm-plex text-white/80 text-[28px] lg:text-[40px] font-light leading-none">&ldquo;</span>
-                  <p className="font-ibm-plex text-white text-[18px] lg:text-[23px] font-semibold leading-[32px] lg:leading-[44px] mt-[-8px]">
+                <div className="px-[24px] pb-[20px]" style={{ paddingTop: '8px' }}>
+                  <span className="font-ibm-plex text-white/80 text-[40px] font-light leading-none">&ldquo;</span>
+                  <p className="font-ibm-plex text-white text-[23px] font-semibold leading-[44px] mt-[-8px]">
                     {t('تجربة مختلفة تعتبر نقطة تحول في مساري المهني', 'A different experience that was a turning point in my career')}
                   </p>
-                  <p className="font-ibm-plex text-white text-[13px] lg:text-[16px] font-normal mt-[8px]">
+                  <p className="font-ibm-plex text-white text-[16px] font-normal mt-[8px]">
                     Majed Baqshan<br />Since 2015
                   </p>
                 </div>
@@ -87,14 +77,14 @@ export default function HeroSection() {
             </div>
 
             {/* Text side */}
-            <div className="w-full lg:w-[40%] lg:pe-[40px] xl:pe-[56px] flex flex-col items-center lg:items-start order-1 lg:order-1">
+            <div className="w-[40%] pe-[40px] xl:pe-[56px] flex flex-col items-start order-1">
               <div className="inline-flex items-center gap-[6px] px-[12px] py-[6px] bg-gray-200 rounded-full mb-[16px]">
                 <span className="w-[6px] h-[6px] bg-green-500 rounded-full" />
                 <span className="font-ibm-plex text-[14px] text-gray-700 font-medium">
                   {t('نسبة قبول عالية', 'High acceptance rate')}
                 </span>
               </div>
-              <h1 className="font-ibm-plex text-[24px] sm:text-[36px] lg:text-[48px] font-bold leading-[1.25] mb-[12px] text-center lg:text-start">
+              <h1 className="font-ibm-plex text-[48px] font-bold leading-[1.25] mb-[12px] text-start">
                 {lang === 'ar' ? (
                   <>
                     <span className="text-[#0B1A3E]">قصة حقيقية من </span>
@@ -113,18 +103,18 @@ export default function HeroSection() {
                   </>
                 )}
               </h1>
-              <p className="font-ibm-plex text-[16px] sm:text-[20px] lg:text-[24px] text-[#2B2D2F] font-normal mb-[24px] text-center lg:text-start">
+              <p className="font-ibm-plex text-[24px] text-[#2B2D2F] font-normal mb-[24px] text-start">
                 {t('تجربة تعيشها ... و نتيجة تشوفها', 'An experience you live... and a result you see')}
               </p>
               <div className="mb-[20px]">
                 <a
                   href="#contact"
-                  className="inline-flex flex-col items-center justify-center gap-[2px] px-[32px] lg:px-[40px] py-[14px] lg:py-[16px] bg-sparko-orange text-white rounded-full font-ibm-plex font-medium text-[20px] hover:bg-[#E64D00] transition-all duration-300 shadow-lg shadow-sparko-orange/25"
+                  className="inline-flex flex-col items-center justify-center gap-[2px] px-[40px] py-[16px] bg-sparko-orange text-white rounded-full font-ibm-plex font-medium text-[20px] hover:bg-[#E64D00] transition-all duration-300 shadow-lg shadow-sparko-orange/25"
                 >
                   <span>{t('ابدأ رحلتك الآن', 'Start your journey now')}</span>
                 </a>
               </div>
-              <div className="flex items-center gap-[12px] justify-center lg:justify-start">
+              <div className="flex items-center gap-[12px] justify-start">
                 <button className="font-ibm-plex inline-flex items-center gap-[10px] px-[16px] py-[10px] bg-[#253A63] text-white rounded-[12px] text-[12px] hover:bg-[#2F4A7A] transition-colors">
                   <svg className="w-[20px] h-[20px] flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 16.56 2.93 11.3 4.7 7.72C5.57 5.94 7.36 4.86 9.28 4.84C10.56 4.81 11.78 5.72 12.57 5.72C13.36 5.72 14.85 4.62 16.4 4.8C17.07 4.83 18.89 5.08 20.07 6.78C19.96 6.85 17.62 8.24 17.65 11.1C17.69 14.52 20.62 15.63 20.65 15.64C20.62 15.72 20.17 17.28 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" /></svg>
                   <div className="font-ibm-plex text-start leading-none"><div className="text-[10px] text-white/70">Download on the</div><div className="font-semibold text-[13px] mt-[2px]">App Store</div></div>
