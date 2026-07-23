@@ -41,12 +41,12 @@ export default function StatsSection() {
               style={{ gap: '32px', width: '30%' }}
             >
               {/* Trophy image */}
-              <div className="w-[143px] h-[126px] flex-shrink-0">
+              <div className="w-[180px] h-[160px] flex-shrink-0">
                 <Image
                   src="/stats-image.png"
                   alt="Sparko Trophy"
-                  width={143}
-                  height={126}
+                  width={180}
+                  height={160}
                   className="w-full h-full object-contain"
                   priority
                 />
