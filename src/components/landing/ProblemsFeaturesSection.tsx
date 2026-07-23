@@ -35,28 +35,29 @@ export default function ProblemsFeaturesSection() {
         >
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[103%] h-[1px]" style={{ borderTop: '1px solid rgba(43, 127, 255, 0.7)', filter: 'blur(10px)' }} />
 
-          <div className="flex flex-col items-center justify-center py-[44px] px-[44px] gap-[44px]">
+          <div className="flex flex-col items-center justify-center py-[24px] sm:py-[32px] lg:py-[44px] px-[20px] sm:px-[32px] lg:px-[44px] gap-[24px] sm:gap-[32px] lg:gap-[44px]">
             <div className="flex flex-col items-center gap-[24px]">
-              <h2 className="font-ibm-plex text-[40px] leading-[48px] font-bold text-white text-center">
+              <h2 className="font-ibm-plex text-[24px] sm:text-[32px] lg:text-[40px] leading-[30px] sm:leading-[38px] lg:leading-[48px] font-bold text-white text-center">
                 {t('أغلب التجارب تمر بدون أثر', 'Most experiences pass without impact')}
               </h2>
-              <p className="font-ibm-plex text-[24px] leading-[28px] font-normal text-white text-center" style={{ letterSpacing: '0.16px' }}>
+              <p className="font-ibm-plex text-[14px] sm:text-[18px] lg:text-[24px] leading-[20px] sm:leading-[24px] lg:leading-[28px] font-normal text-white text-center" style={{ letterSpacing: '0.16px' }}>
                 {t('Most training experiences pass without impact', 'Most training experiences pass without impact')}
               </p>
             </div>
 
-            {/* 5 icons row */}
-            <div className="flex items-stretch justify-center">
+            {/* 5 icons row — mobile: wrap, desktop: row */}
+            <div className="flex flex-wrap items-stretch justify-center gap-[16px] sm:gap-[24px] lg:gap-0">
               {topFeatureIcons.map((icon, index) => (
                 <div key={index} className="flex items-center">
+                  {/* Divider only visible on desktop */}
                   {index > 0 && (
-                    <div className="w-px flex-shrink-0" style={{ height: '120px', marginLeft: '40px', marginRight: '40px', background: 'rgba(255, 255, 255, 0.24)' }} />
+                    <div className="hidden lg:block w-px flex-shrink-0" style={{ height: '120px', marginLeft: '40px', marginRight: '40px', background: 'rgba(255, 255, 255, 0.24)' }} />
                   )}
-                  <div className="flex flex-col items-center text-center" style={{ gap: '16px' }}>
-                    <div className="w-[72px] h-[72px] flex items-center justify-center">
+                  <div className="flex flex-col items-center text-center" style={{ gap: '12px sm:gap-[16px]' }}>
+                    <div className="w-[48px] h-[48px] sm:w-[60px] sm:h-[60px] lg:w-[72px] lg:h-[72px] flex items-center justify-center">
                       <Image src={icon} alt={lang === 'ar' ? topFeaturesAr[index] : topFeaturesEn[index]} width={72} height={72} className="w-full h-full object-contain brightness-0 invert" />
                     </div>
-                    <p className="font-ibm-plex text-[18px] leading-[28px] font-semibold text-white">
+                    <p className="font-ibm-plex text-[14px] sm:text-[16px] lg:text-[18px] leading-[20px] sm:leading-[24px] lg:leading-[28px] font-semibold text-white">
                       {lang === 'ar' ? topFeaturesAr[index] : topFeaturesEn[index]}
                     </p>
                   </div>
@@ -77,17 +78,17 @@ export default function ProblemsFeaturesSection() {
         >
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[103%] h-[1px]" style={{ borderTop: '1px solid rgba(43, 127, 255, 0.7)', filter: 'blur(10px)' }} />
 
-          <div className="flex flex-col items-center py-[44px] px-[44px]" style={{ gap: '44px' }}>
+          <div className="flex flex-col items-center py-[24px] sm:py-[32px] lg:py-[44px] px-[20px] sm:px-[32px] lg:px-[44px]" style={{ gap: '24px sm:gap-[32px] lg:gap-[44px]' }}>
             <div className="flex flex-col items-center gap-[24px]">
-              <h2 className="font-ibm-plex text-[40px] leading-[48px] font-bold text-sparko-orange text-center">
+              <h2 className="font-ibm-plex text-[24px] sm:text-[32px] lg:text-[40px] leading-[30px] sm:leading-[38px] lg:leading-[48px] font-bold text-sparko-orange text-center">
                 {t('هنا كل شيء محسوب', 'Here, everything is calculated')}
               </h2>
-              <p className="font-ibm-plex text-[24px] leading-[28px] font-normal text-[#2B2D2F] text-center" style={{ letterSpacing: '0.16px' }}>
+              <p className="font-ibm-plex text-[14px] sm:text-[18px] lg:text-[24px] leading-[20px] sm:leading-[24px] lg:leading-[28px] font-normal text-[#2B2D2F] text-center" style={{ letterSpacing: '0.16px' }}>
                 {t('Here, everything is calculated', 'Here, everything is calculated')}
               </p>
             </div>
 
-            <p className="font-ibm-plex text-[36px] leading-[48px] font-bold text-sparko-green text-center">
+            <p className="font-ibm-plex text-[24px] sm:text-[32px] lg:text-[36px] leading-[32px] sm:leading-[40px] lg:leading-[48px] font-bold text-sparko-green text-center">
               {t('كل خطوة لها هدف ... وكل تجربة لها نتيجة', 'Every step has a goal... and every experience has a result')}
             </p>
 

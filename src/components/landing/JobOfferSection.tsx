@@ -26,7 +26,7 @@ export default function JobOfferSection() {
         >
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[103%] h-[1px] z-10" style={{ borderTop: '1px solid rgba(43, 127, 255, 0.7)', filter: 'blur(10px)' }} />
 
-          <div className="flex items-center px-[32px] lg:px-[120px] py-[40px] lg:py-[88px]" style={{ gap: '44px' }}>
+          <div className="flex flex-col lg:flex-row items-center px-[24px] sm:px-[32px] lg:px-[120px] py-[32px] sm:py-[40px] lg:py-[88px]" style={{ gap: '24px sm:gap-[32px] lg:gap-[44px]' }}>
             {/* Circle area */}
             <div className="flex-shrink-0 relative overflow-visible" style={{ width: 'clamp(140px, 18vw, 220px)', height: 'clamp(140px, 18vw, 220px)' }}>
               <Image src="/joboffer-circle.png" alt="Briefcase" width={420} height={400} className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" style={{ width: 'clamp(267px, 36vw, 420px)', height: 'clamp(254px, 33vw, 400px)', objectFit: 'contain' }} priority />

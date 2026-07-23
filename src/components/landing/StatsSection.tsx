@@ -27,8 +27,41 @@ export default function StatsSection() {
         >
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[103%] h-[1px]" style={{ borderTop: '1px solid rgba(43, 127, 255, 0.7)', filter: 'blur(10px)' }} />
 
-          <div className="flex items-center py-[56px] lg:py-[72px] px-[48px] lg:px-[64px]" style={{ gap: '48px' }}>
+          {/* ===== MOBILE LAYOUT ===== */}
+          <div className="flex flex-col items-center py-[32px] sm:py-[40px] px-[24px] sm:px-[32px] lg:hidden" style={{ gap: '24px' }}>
+            {/* Trophy */}
+            <Image
+              src="/stats-image.png"
+              alt="Sparko Trophy"
+              width={160}
+              height={140}
+              className="w-[140px] sm:w-[160px] h-auto object-contain"
+              priority
+            />
+            <p className="font-ibm-plex text-[20px] sm:text-[24px] font-bold text-white text-center leading-[1.3]">
+              {t('منذ 2015 ، نتائج مستمرة حتى اليوم', 'Since 2015, results that continue today')}
+            </p>
 
+            {/* Divider */}
+            <div className="w-full h-px" style={{ background: 'rgba(255, 255, 255, 0.24)' }} />
+
+            {/* 2×2 grid on mobile */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 w-full" style={{ gap: '16px' }}>
+              {stats.map((stat, index) => (
+                <div key={index} className="flex flex-col items-center text-center" style={{ gap: '12px' }}>
+                  <div className="w-[36px] h-[36px] sm:w-[44px] sm:h-[44px] flex items-center justify-center flex-shrink-0">
+                    <Image src={stat.icon} alt={lang === 'ar' ? stat.ar : stat.en} width={44} height={44} className="w-full h-full object-contain" />
+                  </div>
+                  <p className="font-ibm-plex text-[14px] sm:text-[18px] lg:text-[24px] font-bold leading-[20px] sm:leading-[28px] text-white text-center" style={{ overflowWrap: 'break-word' }}>
+                    {lang === 'ar' ? stat.ar : stat.en}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ===== DESKTOP LAYOUT ===== */}
+          <div className="hidden lg:flex items-center py-[72px] px-[64px]" style={{ gap: '48px' }}>
             {/* Trophy + text block */}
             <div className="flex items-center flex-shrink-0" style={{ gap: '32px', width: '30%' }}>
               <Image
@@ -43,7 +76,6 @@ export default function StatsSection() {
                 <p className="font-ibm-plex text-[24px] font-bold leading-[31.2px] text-white text-start">
                   {t('منذ 2015 ،\nنتائج مستمرة حتى اليوم', 'Since 2015,\nresults that continue today')}
                 </p>
-
               </div>
             </div>
 
@@ -57,7 +89,7 @@ export default function StatsSection() {
                   <div className="w-[44px] h-[44px] flex items-center justify-center flex-shrink-0">
                     <Image src={stat.icon} alt={lang === 'ar' ? stat.ar : stat.en} width={44} height={44} className="w-full h-full object-contain" />
                   </div>
-                  <p className="font-ibm-plex text-[20px] lg:text-[24px] font-bold leading-[28px] text-white text-center" style={{ overflowWrap: 'break-word' }}>
+                  <p className="font-ibm-plex text-[24px] font-bold leading-[28px] text-white text-center" style={{ overflowWrap: 'break-word' }}>
                     {lang === 'ar' ? stat.ar : stat.en}
                   </p>
                 </div>
