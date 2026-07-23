@@ -19,7 +19,7 @@ export default function HeroSection() {
         }}
       >
         {/* Navbar */}
-        <div className="flex items-center justify-between px-[24px] lg:px-[100px] py-[20px] lg:py-[32px]">
+        <div className="flex items-center justify-between px-[16px] sm:px-[24px] lg:px-[100px] py-[16px] sm:py-[20px] lg:py-[32px]">
           <a href="#" className="flex items-center">
             <Image src="/logo.png" alt="Sparko" width={132} height={62} className="h-[40px] lg:h-[62px] w-auto" priority />
           </a>
@@ -36,7 +36,7 @@ export default function HeroSection() {
               {t('منظومة', 'Ecosystem')} <span className="text-sparko-orange font-ibm-plex font-bold">Sparko.</span> {t('المتكاملة', 'Integrated')}
             </button>
           </div>
-          {/* Mobile menu */}
+          {/* Mobile language toggle */}
           <div className="md:hidden flex items-center gap-[8px]">
             <button
               onClick={toggle}
@@ -45,25 +45,20 @@ export default function HeroSection() {
               <span>🇸🇦</span>
               {lang === 'ar' ? 'AR' : 'EN'}
             </button>
-            <button className="text-gray-600" aria-label={t('القائمة', 'Menu')}>
-              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-                <line x1="4" x2="20" y1="12" y2="12" /><line x1="4" x2="20" y1="6" y2="6" /><line x1="4" x2="20" y1="18" y2="18" />
-              </svg>
-            </button>
           </div>
         </div>
 
         {/* Hero Content */}
-        <div className="px-[24px] lg:px-[100px] pb-[32px] lg:pb-[64px]">
-          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-[32px] lg:gap-0">
+        <div className="px-[16px] sm:px-[24px] lg:px-[100px] pb-[24px] sm:pb-[32px] lg:pb-[64px]">
+          <div className="flex flex-col lg:flex-row items-center lg:items-center gap-[20px] sm:gap-[32px] lg:gap-0">
             {/* Illustration side */}
-            <div className="w-full lg:w-[60%] flex-shrink-0 relative flex items-center justify-center lg:order-2">
+            <div className="w-full lg:w-[60%] flex-shrink-0 relative flex items-center justify-center order-2 lg:order-2">
               <Image
                 src="/design-hero-left.png"
                 alt="Sparko Career Journey"
                 width={636}
                 height={900}
-                className="w-full max-h-[420px] lg:max-h-[520px] object-contain"
+                className="w-full max-h-[280px] sm:max-h-[340px] lg:max-h-[520px] object-contain"
                 priority
               />
               {/* Orange Quote Card */}
@@ -92,7 +87,7 @@ export default function HeroSection() {
             </div>
 
             {/* Text side */}
-            <div className="w-full lg:w-[40%] lg:pe-[40px] xl:pe-[56px] flex flex-col items-center lg:items-start lg:order-1">
+            <div className="w-full lg:w-[40%] lg:pe-[40px] xl:pe-[56px] flex flex-col items-center lg:items-start order-1 lg:order-1">
               <div className="inline-flex items-center gap-[6px] px-[12px] py-[6px] bg-gray-200 rounded-full mb-[16px]">
                 <span className="w-[6px] h-[6px] bg-green-500 rounded-full" />
                 <span className="font-ibm-plex text-[14px] text-gray-700 font-medium">

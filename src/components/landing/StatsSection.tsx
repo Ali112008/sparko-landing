@@ -15,7 +15,7 @@ export default function StatsSection() {
   const t = (ar: string, en: string) => lang === 'ar' ? ar : en;
 
   return (
-    <section className="relative py-[24px] lg:py-[40px]">
+    <section className="relative py-[16px] sm:py-[24px] lg:py-[40px]">
       <div className="max-w-[88%] lg:max-w-[86%] mx-auto">
         <div
           className="rounded-[24px] overflow-hidden relative"
@@ -28,7 +28,7 @@ export default function StatsSection() {
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[103%] h-[1px]" style={{ borderTop: '1px solid rgba(43, 127, 255, 0.7)', filter: 'blur(10px)' }} />
 
           {/* ===== MOBILE LAYOUT ===== */}
-          <div className="flex flex-col items-center py-[32px] sm:py-[40px] px-[24px] sm:px-[32px] lg:hidden" style={{ gap: '24px' }}>
+          <div className="flex flex-col items-center py-[24px] sm:py-[32px] px-[20px] sm:px-[24px] lg:hidden" style={{ gap: '16px sm:gap-[20px]' }}>
             {/* Trophy */}
             <Image
               src="/stats-image.png"

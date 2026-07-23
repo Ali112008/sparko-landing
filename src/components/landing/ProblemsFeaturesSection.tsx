@@ -21,7 +21,7 @@ export default function ProblemsFeaturesSection() {
   const t = (ar: string, en: string) => lang === 'ar' ? ar : en;
 
   return (
-    <section className="relative py-6 sm:py-10 lg:py-14">
+    <section className="relative py-[16px] sm:py-8 lg:py-14">
       <div className="max-w-[88%] lg:max-w-[86%] mx-auto">
         {/* ========== PART 1 — DARK BLUE TOP PANEL ========== */}
         <div
@@ -35,29 +35,29 @@ export default function ProblemsFeaturesSection() {
         >
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[103%] h-[1px]" style={{ borderTop: '1px solid rgba(43, 127, 255, 0.7)', filter: 'blur(10px)' }} />
 
-          <div className="flex flex-col items-center justify-center py-[24px] sm:py-[32px] lg:py-[44px] px-[20px] sm:px-[32px] lg:px-[44px] gap-[24px] sm:gap-[32px] lg:gap-[44px]">
+          <div className="flex flex-col items-center justify-center py-[20px] sm:py-[28px] lg:py-[44px] px-[16px] sm:px-[24px] lg:px-[44px] gap-[16px] sm:gap-[24px] lg:gap-[44px]">
             <div className="flex flex-col items-center gap-[24px]">
-              <h2 className="font-ibm-plex text-[24px] sm:text-[32px] lg:text-[40px] leading-[30px] sm:leading-[38px] lg:leading-[48px] font-bold text-white text-center">
+              <h2 className="font-ibm-plex text-[20px] sm:text-[28px] lg:text-[40px] leading-[26px] sm:leading-[36px] lg:leading-[48px] font-bold text-white text-center">
                 {t('أغلب التجارب تمر بدون أثر', 'Most experiences pass without impact')}
               </h2>
-              <p className="font-ibm-plex text-[14px] sm:text-[18px] lg:text-[24px] leading-[20px] sm:leading-[24px] lg:leading-[28px] font-normal text-white text-center" style={{ letterSpacing: '0.16px' }}>
+              <p className="font-ibm-plex text-[12px] sm:text-[16px] lg:text-[24px] leading-[16px] sm:leading-[22px] lg:leading-[28px] font-normal text-white text-center" style={{ letterSpacing: '0.16px' }}>
                 {t('Most training experiences pass without impact', 'Most training experiences pass without impact')}
               </p>
             </div>
 
             {/* 5 icons row — mobile: wrap, desktop: row */}
-            <div className="flex flex-wrap items-stretch justify-center gap-[16px] sm:gap-[24px] lg:gap-0">
+            <div className="flex flex-wrap items-stretch justify-center gap-[12px] sm:gap-[16px] lg:gap-0">
               {topFeatureIcons.map((icon, index) => (
                 <div key={index} className="flex items-center">
                   {/* Divider only visible on desktop */}
                   {index > 0 && (
                     <div className="hidden lg:block w-px flex-shrink-0" style={{ height: '120px', marginLeft: '40px', marginRight: '40px', background: 'rgba(255, 255, 255, 0.24)' }} />
                   )}
-                  <div className="flex flex-col items-center text-center" style={{ gap: '12px sm:gap-[16px]' }}>
-                    <div className="w-[48px] h-[48px] sm:w-[60px] sm:h-[60px] lg:w-[72px] lg:h-[72px] flex items-center justify-center">
+                  <div className="flex flex-col items-center text-center" style={{ gap: '8px sm:gap-[12px]' }}>
+                    <div className="w-[36px] h-[36px] sm:w-[48px] sm:h-[48px] lg:w-[72px] lg:h-[72px] flex items-center justify-center">
                       <Image src={icon} alt={lang === 'ar' ? topFeaturesAr[index] : topFeaturesEn[index]} width={72} height={72} className="w-full h-full object-contain brightness-0 invert" />
                     </div>
-                    <p className="font-ibm-plex text-[14px] sm:text-[16px] lg:text-[18px] leading-[20px] sm:leading-[24px] lg:leading-[28px] font-semibold text-white">
+                    <p className="font-ibm-plex text-[12px] sm:text-[14px] lg:text-[18px] leading-[16px] sm:leading-[20px] lg:leading-[28px] font-semibold text-white">
                       {lang === 'ar' ? topFeaturesAr[index] : topFeaturesEn[index]}
                     </p>
                   </div>
@@ -78,17 +78,17 @@ export default function ProblemsFeaturesSection() {
         >
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[103%] h-[1px]" style={{ borderTop: '1px solid rgba(43, 127, 255, 0.7)', filter: 'blur(10px)' }} />
 
-          <div className="flex flex-col items-center py-[24px] sm:py-[32px] lg:py-[44px] px-[20px] sm:px-[32px] lg:px-[44px]" style={{ gap: '24px sm:gap-[32px] lg:gap-[44px]' }}>
-            <div className="flex flex-col items-center gap-[24px]">
-              <h2 className="font-ibm-plex text-[24px] sm:text-[32px] lg:text-[40px] leading-[30px] sm:leading-[38px] lg:leading-[48px] font-bold text-sparko-orange text-center">
+          <div className="flex flex-col items-center py-[20px] sm:py-[28px] lg:py-[44px] px-[16px] sm:px-[24px] lg:px-[44px]" style={{ gap: '16px sm:gap-[24px] lg:gap-[44px]' }}>
+            <div className="flex flex-col items-center gap-[16px] sm:gap-[20px]">
+              <h2 className="font-ibm-plex text-[20px] sm:text-[28px] lg:text-[40px] leading-[26px] sm:leading-[36px] lg:leading-[48px] font-bold text-sparko-orange text-center">
                 {t('هنا كل شيء محسوب', 'Here, everything is calculated')}
               </h2>
-              <p className="font-ibm-plex text-[14px] sm:text-[18px] lg:text-[24px] leading-[20px] sm:leading-[24px] lg:leading-[28px] font-normal text-[#2B2D2F] text-center" style={{ letterSpacing: '0.16px' }}>
+              <p className="font-ibm-plex text-[12px] sm:text-[16px] lg:text-[24px] leading-[16px] sm:leading-[22px] lg:leading-[28px] font-normal text-[#2B2D2F] text-center" style={{ letterSpacing: '0.16px' }}>
                 {t('Here, everything is calculated', 'Here, everything is calculated')}
               </p>
             </div>
 
-            <p className="font-ibm-plex text-[24px] sm:text-[32px] lg:text-[36px] leading-[32px] sm:leading-[40px] lg:leading-[48px] font-bold text-sparko-green text-center">
+            <p className="font-ibm-plex text-[18px] sm:text-[24px] lg:text-[36px] leading-[24px] sm:leading-[32px] lg:leading-[48px] font-bold text-sparko-green text-center">
               {t('كل خطوة لها هدف ... وكل تجربة لها نتيجة', 'Every step has a goal... and every experience has a result')}
             </p>
 
@@ -116,10 +116,10 @@ export default function ProblemsFeaturesSection() {
 
             {/* ===== MOBILE/TABLET ===== */}
             <div className="lg:hidden">
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-5">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-5">
                 {bottomFeatures.map((card, index) => (
-                  <div key={index} className="bg-white flex flex-col items-center text-center min-h-[180px] sm:min-h-[200px] justify-center" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)', borderRadius: '24px', padding: '16px', gap: '16px', border: '1px solid rgba(0, 0, 0, 0.24)' }}>
-                    <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center">
+                  <div key={index} className="bg-white flex flex-col items-center text-center min-h-[140px] sm:min-h-[180px] justify-center" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)', borderRadius: '16px', padding: '12px', gap: '12px', border: '1px solid rgba(0, 0, 0, 0.24)' }}>
+                    <div className="w-10 h-10 sm:w-14 sm:h-14 flex items-center justify-center">
                       <Image src={card.icon} alt={lang === 'ar' ? card.ar : card.en} width={56} height={56} className="w-full h-full object-contain" />
                     </div>
                     <p className="font-ibm-plex text-xs sm:text-sm font-semibold text-[#2B2D2F] leading-snug">
@@ -130,7 +130,7 @@ export default function ProblemsFeaturesSection() {
                   </div>
                 ))}
               </div>
-              <div className="flex justify-center mt-8">
+              <div className="flex justify-center mt-4 sm:mt-8">
                 <Image src="/phone-mockup.png" alt="Sparko App" width={280} height={560} className="w-[240px] sm:w-[280px] h-auto object-contain" />
               </div>
             </div>
