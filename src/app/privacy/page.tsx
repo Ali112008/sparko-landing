@@ -137,6 +137,20 @@ export default function PrivacyPage() {
               <span className="text-[18px]">🇸🇦</span>
               <p className="font-ibm-plex text-[16px] lg:text-[18px] font-medium text-white/80">Saudi-born. Built for real impact.</p>
             </div>
+
+            {/* Back to homepage button */}
+            <div className="mt-[24px] lg:mt-[32px] flex justify-center">
+              <Link
+                href="/"
+                className="font-ibm-plex inline-flex items-center justify-center gap-[8px] px-[32px] py-[12px] rounded-full text-white text-[16px] font-medium hover:bg-white/20 transition-colors"
+                style={{ background: 'rgba(255, 255, 255, 0.10)' }}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                العودة للصفحة الرئيسية
+              </Link>
+            </div>
           </div>
         </div>
       </div>
