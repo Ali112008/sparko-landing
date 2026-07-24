@@ -45,9 +45,6 @@ export default function Footer() {
                 <p className="font-ibm-plex text-[20px] font-semibold text-white text-start" style={{ lineHeight: '32px' }}>
                   {t('حيث يتحول التدريب الميداني إلى تجربة حقيقية', 'Where Field Training Becomes Real Experience')}
                 </p>
-                <p className="font-ibm-plex text-[20px] font-semibold text-white text-start" style={{ lineHeight: '32px' }}>
-                  {lang === 'ar' ? 'Where Field Training Becomes Real Experience' : 'حيث يتحول التدريب الميداني إلى تجربة حقيقية'}
-                </p>
               </div>
             </div>
 
@@ -55,7 +52,7 @@ export default function Footer() {
             {/* Text: "بوابة الجهات Partners Portal", fontSize=20, fontWeight=600, color=white */}
             {/* Badge frame fill: visible=false (NO background container, just plain text) */}
             <span className="font-ibm-plex text-[20px] font-semibold text-white" style={{ lineHeight: '32px' }}>
-              {t('بوابة الجهات Partners Portal', 'Partners Portal')}
+              {t('بوابة الجهات', 'Partners Portal')}
             </span>
           </div>
 
@@ -69,7 +66,7 @@ export default function Footer() {
           {/* Text: "🇸🇦 Saudi-born. Built for real impact." fontSize=20, fontWeight=600, color=white */}
           <div className="flex items-center justify-center w-full">
             <p className="font-ibm-plex text-[20px] font-semibold text-white text-center" style={{ lineHeight: '32px' }}>
-              🇸🇦 Saudi-born. Built for real impact.
+              🇸🇦 {t('سعودي المنشأ. مبني لأثر حقيقي.', 'Saudi-born. Built for real impact.')}
             </p>
           </div>
         </div>

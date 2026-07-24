@@ -21,10 +21,8 @@ export default function HeroSection() {
         {/* In RTL: text content aligns to start (right), images on end (left) */}
         {/* Proportional padding: 100px→75px for 1440px viewport */}
         <div className="px-[5%] pb-[64px]">
-          {/* Navbar Row — Logo LEFT, Language Toggle + Ecosystem RIGHT */}
-          {/* direction: ltr forces flex row to always be left-to-right regardless of page direction */}
-          {/* This keeps the logo on the physical LEFT and toggle on the physical RIGHT */}
-          <div className="flex items-center justify-between pt-[24px]" style={{ paddingBottom: '16px', direction: 'ltr' }}>
+          {/* Navbar Row — Layout follows page direction: RTL→Logo RIGHT/Toggle LEFT, LTR→Logo LEFT/Toggle RIGHT */}
+          <div className="flex items-center justify-between pt-[24px]" style={{ paddingBottom: '16px' }}>
             <a href="#" className="flex items-center">
               <Image src="/logo.png" alt="Sparko" width={150} height={70} className="h-[70px] w-auto" priority />
             </a>
@@ -224,7 +222,7 @@ export default function HeroSection() {
                   <p className="font-ibm-plex text-white font-normal text-start"
                     style={{ fontSize: '16px', lineHeight: '24px', marginTop: '12px' }}
                   >
-                    Majed Baqshan<br />Since 2015
+                    Majed Baqshan<br />{t('منذ 2015', 'Since 2015')}
                   </p>
                 </div>
               </div>

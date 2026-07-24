@@ -52,7 +52,7 @@ export default function WatchSection() {
                 {t('من تجربة محلية … إلى أثر عالمي', 'From a local experience… to a global impact')}
               </h3>
               <p className="text-white/60 font-ibm-plex text-[20px] font-normal mt-[6px]">
-                {t('What started here… reached the world', 'What started here… reached the world')}
+                {t('ما بدأ هنا… وصل العالم', 'What started here… reached the world')}
               </p>
               {/* Play button */}
               <div className="mt-[48px] flex flex-col items-center gap-[12px]">
