@@ -36,7 +36,8 @@ export default function Footer() {
             {/* Figma: Container=VERTICAL gap=12, containing logo(120x57) + tagline text */}
             {/* Badge frame fill: visible=false (no background) */}
             <div className="flex flex-col" style={{ gap: '12px' }}>
-              <Image src="/sparko-logo-white.png" alt="Sparko." width={120} height={57} className="h-[44px] w-auto" priority />
+              {/* Figma: logo — 120×57px exact */}
+              <Image src="/sparko-logo-white.png" alt="Sparko." width={120} height={57} className="inline-block" style={{ width: '120px', height: '57px' }} priority />
               {/* From Figma: ONE text node "حيث يتحول...\r\nWhere..." */}
               {/* Both lines SAME style: fontSize=20, fontWeight=600, color=white(#FFFFFF), lineHeight=32 */}
               {/* textAlignHorizontal: RIGHT (= START in RTL) */}
