@@ -34,10 +34,20 @@ export default function Footer() {
                 </p>
               </div>
 
-              {/* Partners Portal badge */}
-              <div className="inline-flex items-center shrink-0 self-start" style={{ padding: '8px 20px', background: 'rgba(255, 255, 255, 0.10)', borderRadius: '50px', gap: '8px' }}>
-                <span className="font-ibm-plex text-[18px] font-semibold text-white">
-                  {t('بوابة الشركاء', 'Partners Portal')}
+              {/* Partners Portal badge — pill shape with glass effect */}
+              <div
+                className="inline-flex items-center shrink-0 self-start"
+                style={{
+                  padding: '6px 16px',
+                  background: 'rgba(30, 41, 59, 0.7)',
+                  borderRadius: '9999px',
+                  gap: '8px',
+                  border: '1px solid rgba(255, 255, 255, 0.15)',
+                  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -2px rgba(0, 0, 0, 0.1)',
+                }}
+              >
+                <span className="font-ibm-plex text-[14px] font-medium text-white">
+                  {t('بوابة الجهات', 'Partners Portal')}
                 </span>
               </div>
             </div>
