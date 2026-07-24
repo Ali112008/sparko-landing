@@ -21,11 +21,19 @@ export default function HeroSection() {
         {/* In RTL: text content aligns to start (right), images on end (left) */}
         {/* Proportional padding: 100px→75px for 1440px viewport */}
         <div className="px-[5%] pb-[64px]">
-          {/* Navbar Row — Layout follows page direction: RTL→Logo RIGHT/Toggle LEFT, LTR→Logo LEFT/Toggle RIGHT */}
-          <div className="flex items-center justify-between pt-[24px]" style={{ paddingBottom: '16px' }}>
+          {/* Navbar Row — Layout follows page direction naturally */}
+          {/* RTL (Arabic): Logo on START side (RIGHT), Toggle on END side (LEFT) */}
+          {/* LTR (English): Logo on START side (LEFT), Toggle on END side (RIGHT) */}
+          {/* Using dir attribute to explicitly follow language direction */}
+          <div
+            className="flex items-center justify-between pt-[24px]"
+            style={{ paddingBottom: '16px' }}
+          >
+            {/* Logo — always at START side (RIGHT in RTL, LEFT in LTR) */}
             <a href="#" className="flex items-center">
               <Image src="/logo.png" alt="Sparko" width={150} height={70} className="h-[70px] w-auto" priority />
             </a>
+            {/* Toggle group — always at END side (LEFT in RTL, RIGHT in LTR) */}
             <div className="flex items-center" style={{ gap: '23px' }}>
               {/* Saudi Flag / Language Toggle — Figma order: Flag first (closer to center) */}
               <button
@@ -191,7 +199,7 @@ export default function HeroSection() {
                     className="w-[64px] h-[64px] rounded-full overflow-hidden flex-shrink-0"
                     style={{ border: '2px solid #FF5500' }}
                   >
-                    <Image src="/avatar-person.png" alt="Majed Baqshan" width={64} height={64} className="w-full h-full object-cover" />
+                    <Image src="/avatar-person.png" alt={t('ماجد بقشان', 'Majed Baqshan')} width={64} height={64} className="w-full h-full object-cover" />
                   </div>
                 </div>
 
@@ -222,7 +230,7 @@ export default function HeroSection() {
                   <p className="font-ibm-plex text-white font-normal text-start"
                     style={{ fontSize: '16px', lineHeight: '24px', marginTop: '12px' }}
                   >
-                    Majed Baqshan<br />{t('منذ 2015', 'Since 2015')}
+                    {t('ماجد بقشان', 'Majed Baqshan')}<br />{t('منذ 2015', 'Since 2015')}
                   </p>
                 </div>
               </div>
