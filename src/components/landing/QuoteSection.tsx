@@ -75,18 +75,7 @@ export default function QuoteSection() {
               {t('هذا مكان " يصنع نتيجتك "', 'This is a place that " makes your result "')}
             </p>
 
-            {/* Line 3 — Figma: 334:200 */}
-            {/* English translation subtitle */}
-            {/* fontSize=20, fontWeight=400 (Regular), lh=28, ls=0.16, white, CENTER */}
-            {/* In Arabic mode: show English. In English mode: show Arabic. */}
-            <p
-              className="font-ibm-plex text-[20px] font-normal text-white"
-              style={{ lineHeight: '28px', letterSpacing: '0.16px', textAlign: 'center' }}
-            >
-              {lang === 'ar'
-                ? "If you're looking for training, this isn't a training place…! This is a place that \" makes your result \""
-                : 'إذا كنت تبحث عن تدريب ، هذا مو مكان تدريب … ! هذا مكان " يصنع نتيجتك "'}
-            </p>
+
           </div>
         </div>
       </div>
