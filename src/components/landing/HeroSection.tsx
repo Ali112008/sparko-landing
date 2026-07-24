@@ -27,10 +27,10 @@ export default function HeroSection() {
           <button
             onClick={toggle}
             className="font-ibm-plex flex items-center justify-center gap-[8px] px-[12px] py-[6px] rounded-full text-[#2B2D2F] text-[13px] hover:bg-[#C8C8C8] transition-colors"
-            style={{ background: 'rgba(175,175,175,1)' }}
+            style={{ background: 'rgba(175,175,175,1)', border: '0.8px solid rgba(126,126,126,0.2)' }}
           >
-            {/* Chevron/Arrow vector — Figma: 15x6, fill=#2B2D2F */}
-            <svg className="w-[15px] h-[6px]" viewBox="0 0 15 6" fill="#2B2D2F">
+            {/* Chevron/Arrow vector — Figma: 15x6, fill=#2B2D2F, opacity=0.6 */}
+            <svg className="w-[15px] h-[6px]" viewBox="0 0 15 6" fill="#2B2D2F" opacity="0.6">
               <path d="M7.5 6L0 0h15L7.5 6z" />
             </svg>
             <span className="text-[22px]">🇸🇦</span>
@@ -40,7 +40,7 @@ export default function HeroSection() {
           {/* Pill: pad=16/16/6/6, fill=#AFAFAF, cornerRadius=50, spacing=8 */}
           <button
             className="font-ibm-plex flex items-center justify-center gap-[8px] px-[16px] py-[6px] rounded-full text-[#2B2D2F] hover:bg-[#C8C8C8] transition-colors"
-            style={{ background: 'rgba(175,175,175,1)', fontSize: '12.8px', fontWeight: 500 }}
+            style={{ background: 'rgba(175,175,175,1)', fontSize: '12.8px', fontWeight: 500, border: '0.8px solid rgba(126,126,126,0.2)' }}
           >
             {t('منظومة', 'Ecosystem')} <span className="text-sparko-orange font-ibm-plex font-bold">Sparko.</span> {t('المتكاملة', 'Integrated')}
           </button>
@@ -82,7 +82,7 @@ export default function HeroSection() {
               {/* Contains ONLY TEXT "نسبة قبول عالية" — NO green dot, NO vector */}
               {/* Text: fontSize=14, wt=500, #2B2D2F, lh=19.2 */}
               <div className="inline-flex items-center gap-[8px] px-[16px] py-[6px] rounded-full"
-                style={{ background: 'rgba(175,175,175,1)' }}
+                style={{ background: 'rgba(175,175,175,1)', border: '0.8px solid rgba(255,255,255,0.2)' }}
               >
                 <span className="font-ibm-plex text-[14px] text-[#2B2D2F] font-medium" style={{ lineHeight: '19.2px' }}>
                   {t('نسبة قبول عالية', 'High acceptance rate')}
@@ -110,15 +110,9 @@ export default function HeroSection() {
                 </h1>
                 <h1 className="font-ibm-plex font-bold text-start" style={{ fontSize: '48px', lineHeight: '60px' }}>
                   {lang === 'ar' ? (
-                    <>
-                      <span className="text-[#2B2D2F]">إلى </span>
-                      <span className="text-sparko-orange">عرض وظيفي</span>
-                    </>
+                    <span className="text-sparko-orange">إلى عرض وظيفي</span>
                   ) : (
-                    <>
-                      <span className="text-[#0B1A3E]">to a </span>
-                      <span className="text-sparko-orange">Job Offer</span>
-                    </>
+                    <span className="text-sparko-orange">to a Job Offer</span>
                   )}
                 </h1>
               </div>
@@ -201,7 +195,7 @@ export default function HeroSection() {
                 <div className="flex justify-center -mt-[31px] mb-[0px]">
                   <div
                     className="w-[64px] h-[64px] rounded-full overflow-hidden flex-shrink-0"
-                    style={{ border: '3px solid white', boxShadow: '0 4px 8px rgba(0,0,0,0.15)' }}
+                    style={{ border: '2px solid #FF5500' }}
                   >
                     <Image src="/avatar-person.png" alt="Majed Baqshan" width={64} height={64} className="w-full h-full object-cover" />
                   </div>
@@ -211,16 +205,14 @@ export default function HeroSection() {
                 {/* Figma: VERTICAL, spacing=12, pad=24 all, fill=#FF5500, cornerRadius=20 */}
                 {/* Shadows: 0 0 15px rgba(0,0,0,0.07), 0 25px 50px -12px rgba(0,0,0,0.25) */}
                 <div
-                  className="rounded-[20px] px-[24px] pb-[20px]"
+                  className="rounded-[20px] p-[24px]"
                   style={{
                     background: '#FF5500',
-                    paddingTop: '12px',
                     boxShadow: '0 0 15px rgba(0,0,0,0.07), 0 25px 50px -12px rgba(0,0,0,0.25)',
                   }}
                 >
                   {/* Quote mark " — Figma: fontSize=80, wt=400, white, ls=0.16 */}
-                  {/* Proportional for 1440px: fontSize≈60px */}
-                  <span className="font-ibm-plex text-white text-[60px] font-light leading-none" style={{ letterSpacing: '0.16px' }}>&ldquo;</span>
+                  <span className="font-ibm-plex text-white text-[80px] font-normal leading-none" style={{ letterSpacing: '0.16px' }}>&ldquo;</span>
 
                   {/* Quote text */}
                   {/* Figma: fontSize=23.2, wt=600, white, lh=44, textAlign=RIGHT */}
