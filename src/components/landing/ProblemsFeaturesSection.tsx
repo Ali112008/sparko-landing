@@ -37,8 +37,8 @@ export default function ProblemsFeaturesSection() {
   const t = (ar: string, en: string) => lang === 'ar' ? ar : en;
 
   return (
-    <section className="relative py-14">
-      <div className="max-w-[86%] mx-auto">
+    <section className="relative py-[45px]">
+      <div className="max-w-[87.5%] mx-auto">
         {/* ========== DARK BLUE TOP PANEL ========== */}
         {/* Figma: 180:5807 — Background+Border+Shadow */}
         {/* VERTICAL, CENTER-CENTER, padding=44, itemSpacing=44 */}
@@ -52,11 +52,11 @@ export default function ProblemsFeaturesSection() {
             background: 'linear-gradient(180deg, #273C65 0%, #182B51 100%)',
             border: '1.5px solid rgba(255, 254, 254, 0.4)',
             boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
-            borderRadius: '24px 24px 0 0',
+            borderRadius: '18px 18px 0 0',
           }}
         >
           {/* Figma: Container (180:5812) — VERTICAL, itemSpacing=24, CENTER */}
-          <div className="flex flex-col items-center justify-center py-[44px] px-[44px]" style={{ gap: '44px' }}>
+          <div className="flex flex-col items-center justify-center py-[33px] px-[33px]" style={{ gap: '33px' }}>
             {/* Heading + Subtitle */}
             {/* Figma: Container — VERTICAL, itemSpacing=24, CENTER */}
             <div className="flex flex-col items-center text-center" style={{ gap: '24px' }}>
@@ -129,11 +129,11 @@ export default function ProblemsFeaturesSection() {
           style={{
             border: '1.5px solid rgba(255, 254, 254, 0.4)',
             boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
-            borderRadius: '0 0 24px 24px',
+            borderRadius: '0 0 18px 18px',
           }}
         >
           {/* Figma: Container — VERTICAL, itemSpacing=24, CENTER */}
-          <div className="flex flex-col items-center py-[44px] px-[44px]" style={{ gap: '44px' }}>
+          <div className="flex flex-col items-center py-[33px] px-[33px]" style={{ gap: '33px' }}>
             {/* Heading + Subtitle */}
             <div className="flex flex-col items-center text-center" style={{ gap: '24px' }}>
               {/* Heading: "هنا كل شيء محسوب" (fontSize=40, wt=700, #FF5500, lh=48) */}

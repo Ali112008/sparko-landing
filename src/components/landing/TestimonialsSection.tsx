@@ -22,10 +22,10 @@ export default function TestimonialsSection() {
   const t = (ar: string, en: string) => lang === 'ar' ? ar : en;
 
   return (
-    <section id="testimonials" className="relative py-[96px] overflow-hidden">
+    <section id="testimonials" className="relative py-[45px] overflow-hidden">
       {/* Figma: Frame 2121453265 (180:5759) — VERTICAL, spacing=100, counterAxisAlignItems=CENTER */}
       {/* Inside: Background+Border+Shadow (180:5760) — the dark card */}
-      <div className="relative z-10 max-w-[86%] mx-auto">
+      <div className="relative z-10 max-w-[87.5%] mx-auto">
         {/* ===== DARK CARD CONTAINER ===== */}
         {/* Figma: Background+Border+Shadow (180:5760) */}
         {/* VERTICAL, center-center, spacing=44, pad=44 all, cornerRadius=24 */}
@@ -34,12 +34,12 @@ export default function TestimonialsSection() {
         {/* shadow: DROP_SHADOW rgba(0,0,0,0.25) offset(0,25) radius=50 spread=-12 */}
         {/* HorizontalBorder+Blur: ABSOLUTE, stroke rgba(43,127,255,1), strokeWeight=1 — blue glow line */}
         <div
-          className="rounded-[24px] overflow-hidden relative"
+          className="rounded-[18px] overflow-hidden relative"
           style={{
             background: 'linear-gradient(180deg, #273C65 0%, #182B51 100%)',
             border: '1px solid rgba(255, 255, 255, 0.4)',
             boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
-            padding: '44px',
+            padding: '33px',
           }}
         >
           {/* Blue glow line at bottom — ABSOLUTE */}
@@ -54,7 +54,7 @@ export default function TestimonialsSection() {
 
           {/* ===== CONTENT AREA ===== */}
           {/* Figma: VERTICAL, center-center, spacing=44 */}
-          <div className="flex flex-col items-center justify-center" style={{ gap: '44px' }}>
+          <div className="flex flex-col items-center justify-center" style={{ gap: '33px' }}>
             {/* ===== TITLE AREA ===== */}
             {/* Figma: Frame 2121453366 (302:8003) — VERTICAL, center, spacing=24 */}
             {/* Contains: heading group + subtitle */}

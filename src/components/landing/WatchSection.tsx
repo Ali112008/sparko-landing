@@ -8,10 +8,10 @@ export default function WatchSection() {
   const t = (ar: string, en: string) => lang === 'ar' ? ar : en;
 
   return (
-    <section className="relative py-[56px]">
-      <div className="max-w-[86%] mx-auto">
+    <section className="relative py-[45px]">
+      <div className="max-w-[87.5%] mx-auto">
         <div
-          className="rounded-[24px] border-2 border-white/30 overflow-hidden"
+          className="rounded-[18px] border-2 border-white/30 overflow-hidden"
           style={{ background: 'linear-gradient(180deg, #273C65 0%, #182B51 100%)' }}
         >
           {/* Upper Two-Column */}

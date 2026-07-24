@@ -8,19 +8,19 @@ export default function CTASection() {
   const t = (ar: string, en: string) => lang === 'ar' ? ar : en;
 
   return (
-    <section className="relative py-[40px]">
-      <div className="max-w-[86%] mx-auto">
+    <section className="relative py-[45px]">
+      <div className="max-w-[87.5%] mx-auto">
         <div
-          className="rounded-[24px] overflow-hidden relative"
+          className="rounded-[18px] overflow-hidden relative"
           style={{
             background: 'radial-gradient(circle at center, #21355A 0%, #0C1B3A 100%)',
             border: '1.5px solid rgba(255, 255, 255, 0.12)',
             boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
           }}
         >
-          <div className="flex flex-col items-center py-[64px] px-[80px]" style={{ gap: '24px' }}>
+          <div className="flex flex-col items-center py-[33px] px-[36px]" style={{ gap: '18px' }}>
             {/* Pill/Badge */}
-            <div className="inline-flex items-center" style={{ gap: '8px', padding: '6px 16px', background: 'rgba(255, 255, 255, 0.10)', borderRadius: '50px' }}>
+            <div className="inline-flex items-center" style={{ gap: '6px', padding: '5px 12px', background: 'rgba(255, 255, 255, 0.10)', borderRadius: '50px' }}>
               <span className="font-ibm-plex text-[16px] font-medium text-white">
                 {t('منظومة', 'Ecosystem')}
               </span>
@@ -31,12 +31,12 @@ export default function CTASection() {
             </div>
 
             {/* Heading */}
-            <h2 className="font-ibm-plex text-[40px] font-bold text-white text-center" style={{ lineHeight: '1.4' }}>
+            <h2 className="font-ibm-plex text-[30px] font-bold text-white text-center" style={{ lineHeight: '1.4' }}>
               {t('جاهز أنت الآن تبني قصة نجاحك؟', 'Are you ready to build your success story?')}
             </h2>
 
             {/* Subtitle */}
-            <p className="font-ibm-plex text-[24px] font-normal text-white/70 text-center" style={{ lineHeight: '1.5', letterSpacing: '0.16px' }}>
+            <p className="font-ibm-plex text-[18px] font-normal text-white/70 text-center" style={{ lineHeight: '1.5', letterSpacing: '0.12px' }}>
               {t('تجربة تعيشها ... و نتيجة تشوفها', 'An experience you live... and a result you see')}
             </p>
 
@@ -46,11 +46,11 @@ export default function CTASection() {
               className="inline-flex flex-col items-center justify-center font-ibm-plex"
               style={{
                 gap: '2px',
-                padding: '16px 40px',
+                padding: '12px 30px',
                 background: '#FF5500',
                 borderRadius: '40px',
                 color: '#FFFFFF',
-                fontSize: '20px',
+                fontSize: '15px',
                 fontWeight: 500,
                 boxShadow: '0px 10px 15px -3px rgba(255, 85, 0, 0.25)',
               }}

@@ -85,8 +85,8 @@ export default function JobOfferSection() {
   // Actually, both are on the opaque side; order just affects which is more to the left/right
 
   return (
-    <section className="relative py-[30px]">
-      <div className="max-w-[86%] mx-auto">
+    <section className="relative py-[45px]">
+      <div className="max-w-[87.5%] mx-auto">
         {/* ── THE CARD ── */}
         <div
           className="rounded-[18px] overflow-hidden relative"
@@ -94,6 +94,7 @@ export default function JobOfferSection() {
             background: 'radial-gradient(circle at center, #21355A 0%, #0C1B3A 100%)',
             border: '1.5px solid rgba(255, 255, 255, 0.12)',
             boxShadow: '0px 19px 38px -9px rgba(0, 0, 0, 0.25)',
+            height: '300px',
           }}
         >
           {/* ── VIGNETTE ── Figma: 180:5957 has visible=false on fill, so NOT rendered */}
@@ -118,6 +119,7 @@ export default function JobOfferSection() {
             RTL stops:  0% rgba(102,102,102,0) | 38.52% rgba(17,24,39,0.72) | 100% rgba(17,24,39,0.9)
           */}
           <div
+            key={isRTL ? 'rtl-bg' : 'ltr-bg'}
             style={{
               direction: 'ltr',
               display: 'flex',

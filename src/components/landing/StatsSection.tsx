@@ -15,20 +15,20 @@ export default function StatsSection() {
   const t = (ar: string, en: string) => lang === 'ar' ? ar : en;
 
   return (
-    <section className="relative py-[40px]">
-      <div className="max-w-[86%] mx-auto">
+    <section className="relative py-[45px]">
+      <div className="max-w-[87.5%] mx-auto">
         {/* Figma: 180:5911 — Background+Border+Shadow */}
         {/* VERTICAL, CENTER-CENTER, padding 44/48/44/48, cornerRadius=24 */}
         {/* fill: radial-gradient(#21355A → #0C1B3A) */}
         {/* stroke: rgba(255,255,255,0.12), strokeWeight=1.5, INSIDE */}
         {/* shadow: rgba(0,0,0,0.25) offset(0,25) radius=50 spread=-12 */}
         <div
-          className="rounded-[24px] overflow-hidden relative"
+          className="rounded-[18px] overflow-hidden relative"
           style={{
             background: 'radial-gradient(circle at center, #21355A 0%, #0C1B3A 100%)',
             border: '1.5px solid rgba(255, 255, 255, 0.12)',
             boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
-            padding: '44px 48px',
+            padding: '33px 36px',
           }}
         >
           {/* Decorative vignette overlay — Figma: 180:5915 */}
@@ -49,11 +49,11 @@ export default function StatsSection() {
           {/* HORIZONTAL, CENTER, itemSpacing=44 */}
           {/* Order reversed: text+trophy → divider → stat items */}
           {/* So Trophy appears on START side (RIGHT in RTL) */}
-          <div className="flex items-center" style={{ gap: '44px' }}>
+          <div className="flex items-center" style={{ gap: '33px' }}>
             {/* Figma: 180:5947 — Text+Image frame */}
             {/* HORIZONTAL, CENTER, itemSpacing=44 */}
             {/* Contains: text frame (229×124) + image frame (143×126) */}
-            <div className="flex items-center flex-shrink-0" style={{ gap: '44px' }}>
+            <div className="flex items-center flex-shrink-0" style={{ gap: '33px' }}>
               {/* Trophy image — Figma: 180:5952 */}
               {/* 143×126, IMAGE fill, scaleMode=STRETCH */}
               {/* Shadow: rgba(255,167,38,0.6) offset(0,5) radius=100 — orange glow */}
@@ -78,7 +78,7 @@ export default function StatsSection() {
               {/* Text frame — Figma: 180:5948 */}
               {/* VERTICAL, counterAxis=MAX, itemSpacing=16 */}
               {/* Single language only per user rule */}
-              <div className="flex flex-col" style={{ gap: '16px' }}>
+              <div className="flex flex-col" style={{ gap: '12px' }}>
                 {lang === 'ar' && (
                   <p
                     className="font-ibm-plex text-[24px] font-bold text-white text-start"
@@ -105,7 +105,7 @@ export default function StatsSection() {
             {/* Figma: 180:5917 — Stat items row */}
             {/* HORIZONTAL, SPACE_BETWEEN, CENTER, itemSpacing=40 */}
             {/* 4 items, each layoutGrow=1 (equal width) */}
-            <div className="flex items-center flex-1" style={{ gap: '40px' }}>
+            <div className="flex items-center flex-1" style={{ gap: '30px' }}>
               {stats.map((stat, index) => (
                 <div
                   key={index}

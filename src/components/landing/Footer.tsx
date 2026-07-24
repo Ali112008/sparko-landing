@@ -9,21 +9,21 @@ export default function Footer() {
   const t = (ar: string, en: string) => lang === 'ar' ? ar : en;
 
   return (
-    <footer className="relative pt-[40px] pb-0">
+    <footer className="relative pt-[45px] pb-0">
       {/* Main card — From Figma: Frame 2121453293 > Background+Border+Shadow */}
       {/* Card: 1680x324, cornerRadius=24, border white 1.5px, shadow drop(0,25,50,rgba(0,0,0,0.25)) */}
       {/* Card fill: GRADIENT_RADIAL center(#21355A → #0C1B3A) */}
       {/* Card padding: 44 all sides, itemSpacing=32, layoutMode=VERTICAL */}
       {/* primaryAxisAlignItems=CENTER, counterAxisAlignItems=CENTER */}
-      <div className="max-w-[86%] mx-auto">
+      <div className="max-w-[87.5%] mx-auto">
         <div
-          className="rounded-[24px] overflow-hidden relative flex flex-col items-center justify-center"
+          className="rounded-[18px] overflow-hidden relative flex flex-col items-center justify-center"
           style={{
             background: 'radial-gradient(circle at center, #21355A 0%, #0C1B3A 100%)',
             border: '1.5px solid rgba(255, 255, 255, 0.12)',
             boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
-            padding: '44px',
-            gap: '32px',
+            padding: '33px',
+            gap: '24px',
           }}
         >
           {/* Top row: Logo+Tagline (START/right in RTL) | Badge (END/left in RTL) */}
@@ -76,8 +76,8 @@ export default function Footer() {
       {/* VERTICAL, itemSpacing=4, primaryAxisAlignItems=CENTER, counterAxisAlignItems=MAX */}
       {/* Padding: L=44, R=44, T=0, B=0 */}
       {/* Links are RIGHT-aligned (START in RTL) with full white color */}
-      <div className="max-w-[86%] mx-auto mt-[24px]" style={{ paddingLeft: '44px', paddingRight: '44px' }}>
-        <div className="flex flex-col" style={{ gap: '4px' }}>
+      <div className="max-w-[87.5%] mx-auto mt-[18px]" style={{ paddingLeft: '33px', paddingRight: '33px' }}>
+        <div className="flex flex-col" style={{ gap: '3px' }}>
           <Link
             href="/privacy"
             className="font-ibm-plex text-[16px] font-medium text-white hover:text-white/80 transition-colors text-start"
@@ -101,7 +101,7 @@ export default function Footer() {
       {/* Text: "© Sparko جميع الحقوق محفوظة" fontSize=16, fontWeight=500, color=white */}
       {/* letterSpacing=0.4, textAlign=RIGHT, CENTERED in frame */}
       {/* Footer root itemSpacing=24 between card, links, and copyright */}
-      <div className="max-w-[86%] mx-auto mt-[24px]" style={{ paddingLeft: '44px', paddingRight: '44px' }}>
+      <div className="max-w-[87.5%] mx-auto mt-[18px]" style={{ paddingLeft: '33px', paddingRight: '33px' }}>
         <p className="font-ibm-plex text-[16px] font-medium text-white text-center" style={{ lineHeight: '32px', letterSpacing: '0.4px' }}>
           © Sparko {t('جميع الحقوق محفوظة', 'All rights reserved')}
         </p>

@@ -7,20 +7,20 @@ export default function QuoteSection() {
   const t = (ar: string, en: string) => lang === 'ar' ? ar : en;
 
   return (
-    <section className="relative py-[40px]">
-      <div className="max-w-[86%] mx-auto">
+    <section className="relative py-[45px]">
+      <div className="max-w-[87.5%] mx-auto">
         {/* Figma: 334:191 — Background+Border+Shadow */}
         {/* HORIZONTAL, CENTER-CENTER, padding: 48/48/44/44, cornerRadius=24 */}
         {/* fill: radial-gradient(#21355A → #0C1B3A) */}
         {/* stroke: rgba(255,255,255,0.12), strokeWeight=1.5, INSIDE */}
         {/* shadow: rgba(0,0,0,0.25) offset(0,25) radius=50 spread=-12 */}
         <div
-          className="rounded-[24px] overflow-hidden relative flex items-center justify-center"
+          className="rounded-[18px] overflow-hidden relative flex items-center justify-center"
           style={{
             background: 'radial-gradient(circle at center, #21355A 0%, #0C1B3A 100%)',
             border: '1.5px solid rgba(255, 255, 255, 0.12)',
             boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
-            padding: '44px 48px',
+            padding: '33px 36px',
           }}
         >
           {/* Decorative gradient overlay — Figma: 334:192 */}
@@ -54,7 +54,7 @@ export default function QuoteSection() {
           {/* Figma: 334:196 — Container (HORIZONTAL, SPACE_BETWEEN) */}
           {/* Figma: 334:197 — Frame 2121453283 (VERTICAL, CENTER-CENTER, itemSpacing=24) */}
           {/* 3 text nodes stacked vertically with 24px gap */}
-          <div className="flex flex-col items-center text-center" style={{ gap: '24px' }}>
+          <div className="flex flex-col items-center text-center" style={{ gap: '18px' }}>
             {/* Line 1 — Figma: 334:198 */}
             {/* "إذا كنت تبحث عن تدريب ، هذا مو مكان تدريب … !" */}
             {/* fontSize=36, fontWeight=500 (Medium), lh=48, white, CENTER */}

@@ -8,12 +8,12 @@ export default function HeroSection() {
   const t = (ar: string, en: string) => lang === 'ar' ? ar : en;
 
   return (
-    <section className="relative pt-[40px] pb-[24px] overflow-hidden">
+    <section className="relative py-[45px] overflow-hidden">
       {/* ===== WHITE CARD CONTAINER ===== */}
       {/* Figma: Container 316:11703 — VERTICAL layout, spacing=100, pad L/R=100, white, cornerRadius=24 */}
       {/* NO effects/shadows. NO strokes. Proportional: pad 100px→75px for 1440px viewport */}
       <div
-        className="max-w-[94%] mx-auto bg-white rounded-[24px] overflow-hidden relative"
+        className="max-w-[97.5%] mx-auto bg-white rounded-[18px] overflow-hidden relative"
       >
         {/* ===== CONTENT AREA ===== */}
         {/* Figma: Frame 2121453282 (316:11705) — VERTICAL, spacing=150, counterAxisAlignItems=MAX */}
