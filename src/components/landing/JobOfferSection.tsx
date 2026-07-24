@@ -6,6 +6,7 @@ import { useLang } from '@/context/LanguageContext';
 export default function JobOfferSection() {
   const { lang } = useLang();
   const t = (ar: string, en: string) => lang === 'ar' ? ar : en;
+  const isRTL = lang === 'ar';
 
   return (
     <section className="relative py-[40px]">
@@ -13,9 +14,8 @@ export default function JobOfferSection() {
         {/* Figma: 180:5953 — Background+Border+Shadow (THE CARD) */}
         {/* 1680×400, cornerRadius=24, clipsContent=true */}
         {/* fill: radial-gradient(#21355A → #0C1B3A) */}
-        {/* stroke: rgba(255,255,254,1) at 0.12 opacity, 1.5px, INSIDE */}
+        {/* stroke: rgba(255,255,255,0.12), 1.5px, INSIDE */}
         {/* shadow: rgba(0,0,0,0.25) offset(0,25) radius=50 spread=-12 */}
-        {/* NO padding on card — padding is on content frame */}
         <div
           className="rounded-[24px] overflow-hidden relative"
           style={{
@@ -24,7 +24,8 @@ export default function JobOfferSection() {
             boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
           }}
         >
-          {/* Decorative vignette overlay — Figma: 180:5957 */}
+          {/* Figma: 180:5957 — Decorative vignette overlay */}
+          {/* radial-gradient(ellipse, transparent center → dark edges) */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
@@ -32,38 +33,39 @@ export default function JobOfferSection() {
             }}
           />
 
-          {/* Blue glow line — Figma: 180:5955 (visible=false, kept for consistency) */}
+          {/* Figma: 180:5955 — Blue glow line at bottom */}
+          {/* visible=false in Figma, kept for consistency */}
           <div
             className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[103%] h-[1px] pointer-events-none z-10"
             style={{ borderTop: '1px solid rgba(43, 127, 255, 0.7)', filter: 'blur(10px)' }}
           />
 
-          {/* Figma: 180:5958 — Frame (CONTENT FRAME) */}
+          {/* Figma: 180:5958 — Frame (CONTENT FRAME with background image) */}
           {/* 1678×397, HORIZONTAL, CENTER, itemSpacing=44 */}
           {/* padding: L=120, R=120, T=0, B=0 */}
-          {/* Background fills (3 layers): solid white → texture → linear gradient overlay */}
-          {/* Layout: HORIZONTAL, counterAxisAlignItems=CENTER */}
-          {/* primaryAxisAlignItems=MAX → items pushed to end */}
+          {/* primaryAxisAlignItems=MAX → justify-end */}
+          {/* Background: 3 layers — solid white → IMAGE → GRADIENT_LINEAR overlay */}
+          {/* Gradient direction depends on language:
+              RTL (node 304:8669): LEFT transparent → RIGHT opaque dark
+              LTR (node 180:5958): LEFT opaque dark → RIGHT transparent */}
           <div
-            className="flex items-center relative"
+            className="flex items-center justify-end relative"
             style={{
               padding: '0px 120px',
               gap: '44px',
-              background: `
-                linear-gradient(to left, rgba(17,24,39,1) 0%, rgba(17,24,39,0.8) 61.5%, rgba(102,102,102,0) 100%),
-                url('/joboffer-bg-texture.png'),
-                white`,
+              minHeight: '397px',
+              background: isRTL
+                ? `linear-gradient(to right, rgba(102,102,102,0) 0%, rgba(17,24,39,0.72) 38.52%, rgba(17,24,39,0.9) 100%), url('/joboffer-bg-optimized.png'), white`
+                : `linear-gradient(to right, rgba(17,24,39,1) 0%, rgba(17,24,39,0.8) 61.48%, rgba(102,102,102,0) 100%), url('/joboffer-bg-optimized.png'), white`,
               backgroundSize: 'cover, cover, auto',
               backgroundPosition: 'center, center, center',
-              minHeight: '397px',
             }}
           >
-            {/* Figma: 180:5959 — Frame 2121453282 (ICON CIRCLE AREA) */}
-            {/* 220×220, cornerRadius=110 (circle), padding=22 all */}
-            {/* stroke: rgba(255,85,0,1) at 0.6 opacity, 2.5px, INSIDE */}
-            {/* shadow: rgba(255,85,0,1) offset(0,-3) radius=100 (upward orange glow) */}
-            {/* background blur: 50px */}
-            {/* Contains: Ellipse 176×176 + work icon 120×120 */}
+            {/* Figma: 180:5959 — Frame 2121453282 (ICON CIRCLE) */}
+            {/* 220×220, cornerRadius=110 (circle), padding=22 */}
+            {/* stroke: rgba(255,85,0,0.6), 2.5px, INSIDE */}
+            {/* shadow: rgba(255,85,0,1) offset(0,-3) radius=100 — upward orange glow */}
+            {/* backdropFilter: blur(50px) */}
             <div
               className="flex-shrink-0 rounded-full flex items-center justify-center"
               style={{
@@ -75,9 +77,9 @@ export default function JobOfferSection() {
                 backdropFilter: 'blur(50px)',
               }}
             >
-              {/* Inner ellipse ring — Figma: 180:5960 */}
+              {/* Inner ellipse — Figma: 180:5960 */}
               {/* 176×176, orange stroke 2.5px@60%, layer blur 1px */}
-              {/* This creates the double ring effect */}
+              {/* Creates double ring effect */}
               <div
                 className="rounded-full flex items-center justify-center"
                 style={{
@@ -87,23 +89,21 @@ export default function JobOfferSection() {
                   filter: 'blur(1px)',
                 }}
               >
-                {/* Work icon — Figma: 180:5962 (fluent-mdl2:work) */}
-                {/* 120×120, ABSOLUTE positioned in Figma, orange fill vectors */}
-                {/* Using PNG fallback image */}
+                {/* Work/briefcase icon — Figma: 180:5962 (fluent-mdl2:work) */}
+                {/* 120×120, orange fill vectors */}
                 <Image
                   src="/icon-joboffer-briefcase.svg"
                   alt="Work"
                   width={120}
                   height={120}
                   className="w-[120px] h-[120px] object-contain"
-                  style={{ filter: 'blur(0px)' }}
                 />
               </div>
             </div>
 
-            {/* Figma: 180:5964 — Container (TEXT CONTAINER) */}
+            {/* Figma: 180:5964 — Container (TEXT) */}
             {/* 662×152, VERTICAL, CENTER, itemSpacing=24 */}
-            {/* layoutSizingHorizontal: HUG */}
+            {/* layoutSizingHorizontal: FIXED (662px) */}
             <div className="flex flex-col items-center text-center" style={{ gap: '24px', maxWidth: '662px' }}>
               {/* Text 1 — Figma: 180:5965 */}
               {/* "النتيجة التي تستحقها كل تجربة حقيقية" */}
@@ -113,15 +113,13 @@ export default function JobOfferSection() {
                 className="font-ibm-plex text-[32px] font-normal text-white text-center w-full"
                 style={{ lineHeight: '28px', letterSpacing: '0.16px' }}
               >
-                {t('النتيجة التي تستحقها كل تجربة حقيقية', 'The result that every real experience deserves')}
+                {t('النتيجة التي تستحقها كل تجربة حقيقية', 'The result you deserve for every real experience')}
               </p>
 
-              {/* Figma: 180:5966 — Heading 2 */}
-              {/* HORIZONTAL, CENTER, itemSpacing=12 */}
-              {/* Contains: "عرض وظيفي" text + check icon */}
+              {/* Figma: 180:5966 — Heading row (HORIZONTAL, CENTER, itemSpacing=12) */}
               <div className="flex items-center justify-center" style={{ gap: '12px' }}>
                 {/* Text 2 — Figma: 180:5967 */}
-                {/* "عرض وظيفي" — fontSize=40, wt=700, lh=48, #FF5500 (orange), LEFT */}
+                {/* "عرض وظيفي" — fontSize=40, wt=700, lh=48, #FF5500, CENTER */}
                 <p
                   className="font-ibm-plex text-[40px] font-bold"
                   style={{ lineHeight: '48px', color: '#FF5500' }}
@@ -129,8 +127,8 @@ export default function JobOfferSection() {
                   {t('عرض وظيفي', 'Job Offer')}
                 </p>
 
-                {/* Check icon — Figma: 180:5968 (lets-icons:done-ring-round) */}
-                {/* 48×48, contains Group with orange stroke vectors */}
+                {/* Check/done icon — Figma: 180:5968 (lets-icons:done-ring-round) */}
+                {/* 48×48, orange stroke vectors */}
                 {/* Shadow: rgba(255,85,0,1) offset(0,4) radius=24 */}
                 <div className="flex-shrink-0" style={{ width: '48px', height: '48px' }}>
                   <Image
