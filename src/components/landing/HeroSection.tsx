@@ -27,20 +27,20 @@ export default function HeroSection() {
           <button
             onClick={toggle}
             className="font-ibm-plex flex items-center justify-center gap-[8px] px-[12px] py-[6px] rounded-full text-[#2B2D2F] text-[13px] hover:bg-[#C8C8C8] transition-colors"
-            style={{ background: 'rgba(175,175,175,1)', border: '0.8px solid rgba(126,126,126,0.2)' }}
+            style={{ background: 'rgba(175,175,175,0.1)', border: '0.8px solid rgba(126,126,126,0.2)' }}
           >
             {/* Chevron/Arrow vector — Figma: 15x6, fill=#2B2D2F, opacity=0.6 */}
             <svg className="w-[15px] h-[6px]" viewBox="0 0 15 6" fill="#2B2D2F" opacity="0.6">
               <path d="M7.5 6L0 0h15L7.5 6z" />
             </svg>
-            <span className="text-[22px]">🇸🇦</span>
+            <span className="text-[22px]">{lang === 'ar' ? '🇸🇦' : '🇬🇧'}</span>
           </button>
           {/* Ecosystem Badge */}
           {/* Figma: Group 1000004760 — "منظومة المتكاملة" + mini Sparko logo */}
           {/* Pill: pad=16/16/6/6, fill=#AFAFAF, cornerRadius=50, spacing=8 */}
           <button
             className="font-ibm-plex flex items-center justify-center gap-[8px] px-[16px] py-[6px] rounded-full text-[#2B2D2F] hover:bg-[#C8C8C8] transition-colors"
-            style={{ background: 'rgba(175,175,175,1)', fontSize: '12.8px', fontWeight: 500, border: '0.8px solid rgba(126,126,126,0.2)' }}
+            style={{ background: 'rgba(175,175,175,0.1)', fontSize: '12.8px', fontWeight: 500, border: '0.8px solid rgba(126,126,126,0.2)' }}
           >
             {t('منظومة', 'Ecosystem')} <span className="text-sparko-orange font-ibm-plex font-bold">Sparko.</span> {t('المتكاملة', 'Integrated')}
           </button>
@@ -82,7 +82,7 @@ export default function HeroSection() {
               {/* Contains ONLY TEXT "نسبة قبول عالية" — NO green dot, NO vector */}
               {/* Text: fontSize=14, wt=500, #2B2D2F, lh=19.2 */}
               <div className="inline-flex items-center gap-[8px] px-[16px] py-[6px] rounded-full"
-                style={{ background: 'rgba(175,175,175,1)', border: '0.8px solid rgba(255,255,255,0.2)' }}
+                style={{ background: 'rgba(175,175,175,0.2)', border: '0.8px solid rgba(255,255,255,0.2)' }}
               >
                 <span className="font-ibm-plex text-[14px] text-[#2B2D2F] font-medium" style={{ lineHeight: '19.2px' }}>
                   {t('نسبة قبول عالية', 'High acceptance rate')}
@@ -99,20 +99,26 @@ export default function HeroSection() {
                   {lang === 'ar' ? (
                     <>
                       <span className="text-[#2B2D2F]">قصة حقيقية من </span>
-                      <span className="text-[#2B2D2F]">التدريب الميداني</span>
+                      <span className="text-[#FF5500]">التدريب الميداني</span>
                     </>
                   ) : (
                     <>
                       <span className="text-[#0B1A3E]">A true story from </span>
-                      <span className="text-[#0B1A3E]">Field Training</span>
+                      <span className="text-[#FF5500]">Field Training</span>
                     </>
                   )}
                 </h1>
                 <h1 className="font-ibm-plex font-bold text-start" style={{ fontSize: '48px', lineHeight: '60px' }}>
                   {lang === 'ar' ? (
-                    <span className="text-sparko-orange">إلى عرض وظيفي</span>
+                    <>
+                      <span className="text-[#2B2D2F]">إلى </span>
+                      <span className="text-[#FF5500]">عرض وظيفي</span>
+                    </>
                   ) : (
-                    <span className="text-sparko-orange">to a Job Offer</span>
+                    <>
+                      <span className="text-[#0B1A3E]">to a </span>
+                      <span className="text-[#FF5500]">Job Offer</span>
+                    </>
                   )}
                 </h1>
               </div>
@@ -133,8 +139,8 @@ export default function HeroSection() {
               {/* NO arrow icon in Figma — just text */}
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-[8px] px-[24px] py-[8px] bg-sparko-orange text-white rounded-[40px] font-ibm-plex font-medium hover:bg-[#E64D00] transition-all duration-300"
-                style={{ fontSize: '20px', fontWeight: 500, lineHeight: '24px' }}
+                className="inline-flex items-center justify-center gap-[8px] px-[24px] py-[8px] text-white rounded-[40px] font-ibm-plex font-medium hover:bg-[#E64D00] transition-all duration-300"
+                style={{ fontSize: '20px', fontWeight: 500, lineHeight: '24px', background: '#FF5500', border: '1.6px solid #FF5500' }}
               >
                 <span>{t('ابدأ رحلتك الآن', 'Start your journey now')}</span>
               </a>
@@ -207,7 +213,7 @@ export default function HeroSection() {
                 <div
                   className="rounded-[20px] p-[24px]"
                   style={{
-                    background: '#FF5500',
+                    background: 'rgba(255,85,0,0.8)',
                     boxShadow: '0 0 15px rgba(0,0,0,0.07), 0 25px 50px -12px rgba(0,0,0,0.25)',
                   }}
                 >
