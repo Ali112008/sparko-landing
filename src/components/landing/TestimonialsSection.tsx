@@ -70,7 +70,8 @@ export default function TestimonialsSection() {
                   alt="Sparko."
                   width={140}
                   height={66}
-                  className="inline-block h-[1.4em] w-auto align-middle mx-[4px]"
+                  className="inline-block align-middle mx-[4px]"
+                  style={{ height: '66px', width: '140px' }}
                 />{' '}
                 {t('التدريب الميداني يتحول إلى نجاح حقيقي', 'Field training turns into real success')}{' '}
                 &rdquo;
