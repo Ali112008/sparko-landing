@@ -65,8 +65,10 @@ export default function TestimonialsSection() {
               {/* Logo (140x66) positioned inline within the text line */}
               <h1 className="font-ibm-plex text-[40px] font-bold text-white" style={{ lineHeight: '48px', textAlign: 'center' }}>
                 &ldquo;{' '}
+                {/* Figma: logo (261:140) — 140×66.225px, purple+orange vectors */}
+                {/* Using white logo version for dark background */}
                 <Image
-                  src="/logo.png"
+                  src="/sparko-logo-white.png"
                   alt="Sparko."
                   width={140}
                   height={66}
