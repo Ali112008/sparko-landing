@@ -6,17 +6,88 @@ import { useLang } from '@/context/LanguageContext';
 export default function JobOfferSection() {
   const { lang } = useLang();
   const t = (ar: string, en: string) => lang === 'ar' ? ar : en;
+  const isRTL = lang === 'ar';
 
-  // Proportional scaling: Figma_px × 0.75 for 1440px viewport
-  // Figma layout: Icon LEFT, Text RIGHT, pushed to RIGHT side (primaryAxisAlignItems=MAX)
-  // ALL flex properties as inline styles to avoid Tailwind RTL behavior conflicts
+  // ═══════════════════════════════════════════════════════════════
+  // FIGMA EXACT SPECIFICATIONS — Node 180:5953 (LTR card)
+  // Scaled ×0.75 for 1440px viewport (Figma = 1920px)
+  // ═══════════════════════════════════════════════════════════════
+
+  // CARD (180:5953): 1680×400 → 1260×300
+  // cornerRadius=24 → 18, fill: radial-gradient(#21355A→#0C1B3A)
+  // stroke: rgba(255,255,255,0.12) 1.5px
+  // shadow: 0px 25px 50px -12px rgba(0,0,0,0.25)
+
+  // CONTENT FRAME (180:5958): 1678×397 → ~1258×298
+  // Fills stack (bottom to top):
+  //   1) Solid white
+  //   2) IMAGE — scaleMode=STRETCH (background photo)
+  //   3) GRADIENT_LINEAR — language-dependent overlay
+  //
+  // LTR gradient (180:5958):
+  //   0%   → rgba(17,24,39, 1.0)   — fully opaque LEFT (text side)
+  //   61.5% → rgba(17,24,39, 0.8)  — 80% opacity middle
+  //   100% → rgba(102,102,102, 0)  — transparent RIGHT (photo side)
+  //
+  // RTL gradient (304:8669, opacity 0.9 on fill):
+  //   0%   → rgba(102,102,102, 0)   — transparent LEFT (photo side)
+  //   38.5% → rgba(17,24,39, 0.72)  — 72% opacity middle (0.8×0.9)
+  //   100% → rgba(17,24,39, 0.9)   — 90% opacity RIGHT (text side) (1.0×0.9)
+  //
+  // Layout: paddingLeft/Right=120→90, itemSpacing=44→33
+  // primaryAxisAlignItems=MIN (items start from LEFT)
+  // counterAxisAlignItems=CENTER
+  //
+  // Children positions (LTR):
+  //   Icon circle: left=120, right=1338 → LEFT side
+  //   Text container: left=384, right=632 → LEFT side (same as icon)
+  //   Photo visible: right side (632+px from right edge)
+
+  // ICON CIRCLE (180:5959): 220→165px, cornerRadius=110→83
+  // padding=22→17, stroke: rgba(255,85,0,0.6) 2.5px→2px
+  // shadow: drop rgba(255,85,0,1) offset(0,-3→-2) radius=100→75
+  // backdropBlur: 50→37.5px
+
+  // INNER ELLIPSE (180:5960): 176→132px
+  // stroke: rgba(255,85,0,0.6) 1.5px→1px, layerBlur: 1→0.75px
+
+  // BRIEFCASE ICON (180:5962): 120→90px, fill: rgba(255,85,0,1)
+
+  // TEXT CONTAINER (180:5964): 662→497px, VERTICAL, CENTER
+  // gap=24→18
+
+  // TEXT 1 (180:5965): "النتيجة التي تستحقها كل تجربة حقيقية"
+  // fontSize=32→24, Regular, lh=28→21, ls=0.16→0.12, white, CENTER
+
+  // HEADING ROW (180:5966): gap=12→9
+  // "عرض وظيفي" (180:5967): fontSize=40→30, Bold, lh=48→36, #FF5500
+  // Check icon (180:5968): 48→36px
+
+  // TEXT 3 (180:5972): "من احدى الجهات بعد انتهاء التدريب وتقييم الأداء"
+  // fontSize=24→18, Regular, lh=28→21, ls=0.16→0.12, white, CENTER
+
+  // ═══════════════════════════════════════════════════════════════
+
+  const gradientLTR = 'linear-gradient(to right, rgba(17,24,39,1) 0%, rgba(17,24,39,0.8) 61.5%, rgba(102,102,102,0) 100%)';
+  const gradientRTL = 'linear-gradient(to right, rgba(102,102,102,0) 0%, rgba(17,24,39,0.72) 38.5%, rgba(17,24,39,0.9) 100%)';
+  const gradientOverlay = isRTL ? gradientRTL : gradientLTR;
+
+  // In LTR: content on LEFT side (opaque gradient) → flex-start (default)
+  // In RTL: content on RIGHT side (opaque gradient) → flex-end
+  // Using direction:ltr so flex properties are always physical LEFT→RIGHT
+  const justifyContent = isRTL ? 'flex-end' : 'flex-start';
+
+  // In RTL (Arabic): icon should appear RIGHT of text visually
+  // In LTR (English): icon should appear LEFT of text visually
+  // Since direction=ltr, flex order is always physical LEFT→RIGHT
+  // RTL flex-end pushes items to RIGHT, so order: [text, icon] → icon on far RIGHT
+  // But in Arabic, icon should be LEFT of text within the content group
+  // Actually, both are on the opaque side; order just affects which is more to the left/right
+
   return (
     <section className="relative py-[30px]">
       <div className="max-w-[86%] mx-auto">
-        {/* Figma: 180:5953 / 304:8664 — Background+Border+Shadow (THE CARD) */}
-        {/* cornerRadius=24→18, fill: radial-gradient(#21355A→#0C1B3A) */}
-        {/* stroke: rgba(255,255,255,0.12), 1.5px, INSIDE */}
-        {/* shadow: rgba(0,0,0,0.25) offset(0,19) radius=38 spread=-9 */}
+        {/* ── THE CARD ── */}
         <div
           className="rounded-[18px] overflow-hidden relative"
           style={{
@@ -25,8 +96,7 @@ export default function JobOfferSection() {
             boxShadow: '0px 19px 38px -9px rgba(0, 0, 0, 0.25)',
           }}
         >
-          {/* Vignette overlay — Figma: 180:5957 */}
-          {/* BELOW content frame (z-[1]) */}
+          {/* ── VIGNETTE ── Figma: 180:5957, below content z-[1] */}
           <div
             className="absolute inset-0 pointer-events-none z-[1]"
             style={{
@@ -34,18 +104,16 @@ export default function JobOfferSection() {
             }}
           />
 
-          {/* Blue glow line — Figma: 180:5955 (visible=false) */}
+          {/* ── BLUE GLOW LINE ── Figma: 180:5955 */}
           <div
             className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[103%] h-[1px] pointer-events-none z-[1]"
             style={{ borderTop: '1px solid rgba(43, 127, 255, 0.7)', filter: 'blur(10px)' }}
           />
 
-          {/* Figma: 180:5958 / 304:8669 — CONTENT FRAME */}
-          {/* ALL flex properties inline to avoid RTL context issues */}
-          {/* direction:ltr + flexDirection:row = LEFT→RIGHT visual order */}
-          {/* justifyContent:flex-end = physical RIGHT side (matching Figma MAX alignment) */}
-          {/* Gradient: LEFT transparent (photo visible) → RIGHT opaque (text readable) */}
-          {/* Z-[2] above vignette so background isn't double-darkened */}
+          {/* ── CONTENT FRAME ── Figma: 180:5958 */}
+          {/* direction:ltr so CSS flex/gradients are always physical */}
+          {/* Gradient + background photo as layered background fills */}
+          {/* Z-[2] above vignette so vignette doesn't double-darken */}
           <div
             className="relative z-[2]"
             style={{
@@ -53,19 +121,16 @@ export default function JobOfferSection() {
               display: 'flex',
               flexDirection: 'row',
               alignItems: 'center',
-              justifyContent: 'flex-end',
+              justifyContent: justifyContent,
               padding: '0px 90px',
               gap: '33px',
               minHeight: '298px',
-              background: `linear-gradient(to right, rgba(102,102,102,0) 0%, rgba(17,24,39,0.72) 38.52%, rgba(17,24,39,0.9) 100%), url('/joboffer-bg-photo.png'), white`,
+              background: `${gradientOverlay}, url('/joboffer-bg-men.png'), white`,
               backgroundSize: 'cover, cover, auto',
-              backgroundPosition: 'left center, left center, center',
+              backgroundPosition: 'center center, center center, center',
             }}
           >
-            {/* Figma: 180:5959 — ICON CIRCLE */}
-            {/* Figma 220→165px, padding=22→17 */}
-            {/* stroke: rgba(255,85,0,0.6) 2px, shadow: 0 -2px 75px rgba(255,85,0,1) */}
-            {/* backdropFilter: blur(50px) */}
+            {/* ── ICON CIRCLE ── Figma: 180:5959 */}
             <div
               className="flex-shrink-0 rounded-full flex items-center justify-center"
               style={{
@@ -74,21 +139,20 @@ export default function JobOfferSection() {
                 padding: '17px',
                 border: '2px solid rgba(255, 85, 0, 0.6)',
                 boxShadow: '0px -2px 75px 0px rgba(255, 85, 0, 1)',
-                backdropFilter: 'blur(50px)',
+                backdropFilter: 'blur(37.5px)',
               }}
             >
-              {/* Inner ellipse — Figma: 180:5960 */}
-              {/* 176→132px, stroke 1.5px@60%, blur(1px) — double ring */}
+              {/* ── INNER ELLIPSE ── Figma: 180:5960 */}
               <div
                 className="rounded-full flex items-center justify-center"
                 style={{
                   width: '132px',
                   height: '132px',
-                  border: '1.5px solid rgba(255, 85, 0, 0.6)',
-                  filter: 'blur(0.5px)',
+                  border: '1px solid rgba(255, 85, 0, 0.6)',
+                  filter: 'blur(0.75px)',
                 }}
               >
-                {/* Briefcase icon — Figma: 180:5962, 120→90px */}
+                {/* ── BRIEFCASE ICON ── Figma: 180:5962 */}
                 <Image
                   src="/icon-joboffer-briefcase.svg"
                   alt="Work"
@@ -99,12 +163,16 @@ export default function JobOfferSection() {
               </div>
             </div>
 
-            {/* Figma: 180:5964 — TEXT CONTAINER */}
-            {/* 662→497px FIXED width (layoutSizingHorizontal: FIXED) */}
-            {/* VERTICAL, CENTER, gap=24→18 */}
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '18px', width: '497px' }}>
-              {/* Text 1 — Figma: 180:5965 */}
-              {/* 32→24px, Regular, lh=28→21, ls=0.12, white, CENTER */}
+            {/* ── TEXT CONTAINER ── Figma: 180:5964 */}
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              textAlign: 'center',
+              gap: '18px',
+              width: '497px',
+            }}>
+              {/* ── TEXT 1 ── Figma: 180:5965 */}
               <p
                 className="font-ibm-plex text-[24px] font-normal text-white w-full"
                 style={{ lineHeight: '21px', letterSpacing: '0.12px', textAlign: 'center' }}
@@ -112,11 +180,15 @@ export default function JobOfferSection() {
                 {t('النتيجة التي تستحقها كل تجربة حقيقية', 'The result you deserve for every real experience')}
               </p>
 
-              {/* Heading row — Figma: 180:5966 */}
-              {/* gap=12→9, direction:ltr for consistent physical layout */}
-              {/* Arabic: check icon LEFT, text RIGHT; English: text LEFT, icon RIGHT */}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '9px', direction: 'ltr' }}>
-                {lang === 'ar' ? (
+              {/* ── HEADING ROW ── Figma: 180:5966 */}
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '9px',
+                direction: 'ltr',
+              }}>
+                {isRTL ? (
                   <>
                     <div className="flex-shrink-0" style={{ width: '36px', height: '36px' }}>
                       <Image
@@ -125,7 +197,7 @@ export default function JobOfferSection() {
                         width={36}
                         height={36}
                         className="w-full h-full object-contain"
-                        style={{ filter: 'drop-shadow(0px 3px 18px rgba(255, 85, 0, 1))' }}
+                        style={{ filter: 'drop-shadow(0px 2px 14px rgba(255, 85, 0, 1))' }}
                         priority
                       />
                     </div>
@@ -151,7 +223,7 @@ export default function JobOfferSection() {
                         width={36}
                         height={36}
                         className="w-full h-full object-contain"
-                        style={{ filter: 'drop-shadow(0px 3px 18px rgba(255, 85, 0, 1))' }}
+                        style={{ filter: 'drop-shadow(0px 2px 14px rgba(255, 85, 0, 1))' }}
                         priority
                       />
                     </div>
@@ -159,8 +231,7 @@ export default function JobOfferSection() {
                 )}
               </div>
 
-              {/* Text 3 — Figma: 180:5972 */}
-              {/* 24→18px, Regular, lh=28→21, ls=0.12, white, CENTER */}
+              {/* ── TEXT 3 ── Figma: 180:5972 */}
               <p
                 className="font-ibm-plex text-[18px] font-normal text-white w-full"
                 style={{ lineHeight: '21px', letterSpacing: '0.12px', textAlign: 'center' }}
