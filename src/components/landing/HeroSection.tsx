@@ -53,7 +53,7 @@ export default function HeroSection() {
             </div>
             {/* Logo — SECOND child → inline-END side (LEFT in RTL, RIGHT in LTR) → above illustration/quote card */}
             <a href="#" className="flex items-center">
-              <Image src="/logo.png" alt="Sparko" width={150} height={70} className="h-[70px] w-auto" priority />
+              <Image src="/logo.png" alt="Sparko" width={170} height={80} className="h-[80px] w-auto" priority />
             </a>
           </div>
 
