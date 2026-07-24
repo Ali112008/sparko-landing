@@ -22,19 +22,16 @@ export default function HeroSection() {
         {/* Proportional padding: 100px→75px for 1440px viewport */}
         {/* Figma: Container pad L100→75 R100→75 T0 B0 */}
         <div className="px-[75px] pb-[75px]">
-          {/* Navbar Row — Layout follows page direction naturally */}
-          {/* RTL (Arabic): Logo on START side (RIGHT), Toggle on END side (LEFT) */}
-          {/* LTR (English): Logo on START side (LEFT), Toggle on END side (RIGHT) */}
-          {/* Using dir attribute to explicitly follow language direction */}
+          {/* Navbar Row — Logo ABOVE illustration side (END), Toggle on text side (START) */}
+          {/* RTL (Arabic): Toggle RIGHT (above text), Logo LEFT (above illustration) */}
+          {/* LTR (English): Toggle LEFT (above text), Logo RIGHT (above illustration) */}
+          {/* Toggle group is FIRST child (inline-START), Logo is SECOND child (inline-END) */}
           <div
             className="flex items-center justify-between pt-[24px]"
             style={{ paddingBottom: '16px' }}
           >
-            {/* Logo — always at START side (RIGHT in RTL, LEFT in LTR) */}
-            <a href="#" className="flex items-center">
-              <Image src="/logo.png" alt="Sparko" width={150} height={70} className="h-[70px] w-auto" priority />
-            </a>
-            {/* Toggle group — always at END side (LEFT in RTL, RIGHT in LTR) */}
+            {/* Toggle group — FIRST child = inline-START side */}
+            {/* RTL: START = RIGHT (above text), LTR: START = LEFT (above text) */}
             <div className="flex items-center" style={{ gap: '23px' }}>
               {/* Saudi Flag / Language Toggle — Figma order: Flag first (closer to center) */}
               <button
@@ -56,6 +53,11 @@ export default function HeroSection() {
                 {t('منظومة', 'Ecosystem')} <span className="text-sparko-orange font-ibm-plex font-bold">Sparko.</span> {t('المتكاملة', 'Integrated')}
               </button>
             </div>
+            {/* Logo — SECOND child = inline-END side */}
+            {/* RTL: END = LEFT (above illustration/quote), LTR: END = RIGHT (above illustration/quote) */}
+            <a href="#" className="flex items-center">
+              <Image src="/logo.png" alt="Sparko" width={170} height={80} className="h-[80px] w-auto" priority />
+            </a>
           </div>
 
           {/* Gap between navbar and text content */}
