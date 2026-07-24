@@ -21,19 +21,15 @@ export default function HeroSection() {
         {/* In RTL: text content aligns to start (right), images on end (left) */}
         {/* Proportional padding: 100px→75px for 1440px viewport */}
         <div className="px-[5%] pb-[64px]">
-          {/* Navbar Row — Layout follows page direction naturally */}
-          {/* RTL (Arabic): Logo on START side (RIGHT), Toggle on END side (LEFT) */}
-          {/* LTR (English): Logo on START side (LEFT), Toggle on END side (RIGHT) */}
-          {/* Using dir attribute to explicitly follow language direction */}
+          {/* Navbar Row — Logo above illustration side, Toggle above text side */}
+          {/* RTL (Arabic): Toggle RIGHT (above text), Logo LEFT (above illustration/quote) */}
+          {/* LTR (English): Toggle LEFT (above text), Logo RIGHT (above illustration/quote) */}
+          {/* Toggle group is FIRST child → inline-START; Logo is SECOND → inline-END */}
           <div
             className="flex items-center justify-between pt-[24px]"
             style={{ paddingBottom: '16px' }}
           >
-            {/* Logo — always at START side (RIGHT in RTL, LEFT in LTR) */}
-            <a href="#" className="flex items-center">
-              <Image src="/logo.png" alt="Sparko" width={150} height={70} className="h-[70px] w-auto" priority />
-            </a>
-            {/* Toggle group — always at END side (LEFT in RTL, RIGHT in LTR) */}
+            {/* Toggle group — FIRST child → inline-START side (RIGHT in RTL, LEFT in LTR) → above text content */}
             <div className="flex items-center" style={{ gap: '23px' }}>
               {/* Saudi Flag / Language Toggle — Figma order: Flag first (closer to center) */}
               <button
@@ -55,6 +51,10 @@ export default function HeroSection() {
                 {t('منظومة', 'Ecosystem')} <span className="text-sparko-orange font-ibm-plex font-bold">Sparko.</span> {t('المتكاملة', 'Integrated')}
               </button>
             </div>
+            {/* Logo — SECOND child → inline-END side (LEFT in RTL, RIGHT in LTR) → above illustration/quote card */}
+            <a href="#" className="flex items-center">
+              <Image src="/logo.png" alt="Sparko" width={150} height={70} className="h-[70px] w-auto" priority />
+            </a>
           </div>
 
           {/* Gap between navbar and text content */}
