@@ -134,6 +134,8 @@ export default function JobOfferSection() {
           {/* This div only handles flex layout — no background property */}
           <div
             style={{
+              position: 'relative',
+              zIndex: 2,
               direction: 'ltr',
               display: 'flex',
               flexDirection: 'row',
