@@ -136,28 +136,66 @@ export default function JobOfferSection() {
             }}
           >
             {/* ── ICON CIRCLE ── Figma: 180:5959 */}
+            {/* 220→165px, cornerRadius=110→83 */}
+            {/* stroke: rgba(255,85,0,0.6) 2.5→2px INSIDE */}
+            {/* effects: DROP_SHADOW orange offset(0,-3→-2) r=100→75 */}
+            {/*          BACKGROUND_BLUR r=50→37.5 */}
+            {/* fill: visible=false → transparent bg */}
+            {/* All children ABSOLUTE centered for pixel-perfect positioning */}
+            {/* (CSS border reduces content area; absolute centering bypasses this) */}
             <div
-              className="flex-shrink-0 rounded-full flex items-center justify-center"
+              className="flex-shrink-0 rounded-full relative"
               style={{
                 width: '165px',
                 height: '165px',
-                padding: '17px',
                 border: '2px solid rgba(255, 85, 0, 0.6)',
+                boxSizing: 'border-box',
                 boxShadow: '0px -2px 75px 0px rgba(255, 85, 0, 1)',
                 backdropFilter: 'blur(37.5px)',
               }}
             >
               {/* ── INNER ELLIPSE ── Figma: 180:5960 */}
+              {/* 176→132px, stroke: rgba(255,85,0,0.6) 2.5→2px INSIDE */}
+              {/* fill: visible=false, LAYER_BLUR r=1→0.75px */}
+              {/* Absolute centered: left edge at 16.5px from outer boundary ≈ Figma 22×0.75 */}
               <div
-                className="rounded-full flex items-center justify-center"
+                className="rounded-full pointer-events-none"
                 style={{
+                  position: 'absolute',
+                  left: '50%',
+                  top: '50%',
+                  transform: 'translate(-50%, -50%)',
                   width: '132px',
                   height: '132px',
-                  border: '1px solid rgba(255, 85, 0, 0.6)',
+                  border: '2px solid rgba(255, 85, 0, 0.6)',
+                  boxSizing: 'border-box',
                   filter: 'blur(0.75px)',
                 }}
+              />
+
+              {/* ── ORANGE GLOW ── Figma: 180:5961 */}
+              {/* 147×134 → 110×101px, fill rgba(255,85,0,0.24) */}
+              {/* LAYER_BLUR r=50→37.5px → soft orange glow */}
+              <div
+                className="rounded-full pointer-events-none"
+                style={{
+                  position: 'absolute',
+                  left: '50%',
+                  top: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  width: '110px',
+                  height: '101px',
+                  background: 'rgba(255, 85, 0, 0.24)',
+                  filter: 'blur(37.5px)',
+                }}
+              />
+
+              {/* ── BRIEFCASE ICON ── Figma: 180:5962 */}
+              {/* 120→90px, ABSOLUTE centered */}
+              <div
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center"
+                style={{ width: '90px', height: '90px' }}
               >
-                {/* ── BRIEFCASE ICON ── Figma: 180:5962 */}
                 <Image
                   src="/icon-joboffer-briefcase.svg"
                   alt="Work"
