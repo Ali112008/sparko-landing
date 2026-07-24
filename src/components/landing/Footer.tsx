@@ -20,45 +20,41 @@ export default function Footer() {
             boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
           }}
         >
-          <div className="py-[80px] px-[64px]">
-            {/* Top row: Logo+Taglines (START/right in RTL) | Badge (END/left in RTL) */}
-            <div className="flex flex-row justify-between items-start" style={{ gap: '0px' }}>
-              {/* Brand side — Logo + Arabic tagline + English tagline */}
+          {/* Card padding: T=44 B=44 L=44 R=44, gap=32 (from Figma) */}
+          <div className="py-[44px] px-[44px]" style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+            {/* Top row: Logo+Taglines (START/right in RTL) | Badge text (END/left in RTL) */}
+            {/* From Figma: Frame 2121453284 = HORIZONTAL, gap=898 (justify-between) */}
+            <div className="flex flex-row justify-between items-start">
+              {/* Brand side — Logo + Taglines (both Arabic and English) */}
+              {/* From Figma: Frame 1686552645 = Container, gap=12, VERTICAL */}
               <div className="flex flex-col items-start" style={{ gap: '12px' }}>
                 <Image src="/sparko-logo-white.png" alt="Sparko." width={120} height={57} className="h-[44px] w-auto" priority />
-                <p className="font-ibm-plex text-[28px] font-bold text-white text-start" style={{ lineHeight: '1.4' }}>
-                  {t('حيث يتحول التدريب الميداني إلى تجربة حقيقية', 'Where Field Training Becomes Real Experience')}
-                </p>
-                <p className="font-ibm-plex text-[16px] font-normal text-white/60 text-start" style={{ lineHeight: '1.5' }}>
-                  {lang === 'ar' ? 'Where Field Training Becomes Real Experience' : 'حيث يتحول التدريب الميداني إلى تجربة حقيقية'}
-                </p>
+                {/* From Figma: Tagline = ONE text node "حيث يتحول...\nWhere..." size=20 wt=600 */}
+                <div className="flex flex-col" style={{ gap: '0px' }}>
+                  <p className="font-ibm-plex text-[20px] font-semibold text-white text-start" style={{ lineHeight: '1.4' }}>
+                    {t('حيث يتحول التدريب الميداني إلى تجربة حقيقية', 'Where Field Training Becomes Real Experience')}
+                  </p>
+                  <p className="font-ibm-plex text-[20px] font-semibold text-white/70 text-start" style={{ lineHeight: '1.4' }}>
+                    {lang === 'ar' ? 'Where Field Training Becomes Real Experience' : 'حيث يتحول التدريب الميداني إلى تجربة حقيقية'}
+                  </p>
+                </div>
               </div>
 
-              {/* Partners Portal badge — pill shape with glass effect */}
-              <div
-                className="inline-flex items-center shrink-0 self-start"
-                style={{
-                  padding: '6px 16px',
-                  background: 'rgba(30, 41, 59, 0.7)',
-                  borderRadius: '9999px',
-                  gap: '8px',
-                  border: '1px solid rgba(255, 255, 255, 0.15)',
-                  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -2px rgba(0, 0, 0, 0.1)',
-                }}
-              >
-                <span className="font-ibm-plex text-[14px] font-medium text-white">
-                  {t('بوابة الجهات', 'Partners Portal')}
-                </span>
-              </div>
+              {/* Badge — plain text "بوابة الجهات Partners Portal" */}
+              {/* From Figma: NO pill shape, just text size=20 wt=600 color=#FFFFFF */}
+              <span className="font-ibm-plex text-[20px] font-semibold text-white">
+                {t('بوابة الجهات Partners Portal', 'Partners Portal')}
+              </span>
             </div>
 
-            {/* Divider */}
-            <div className="my-[40px]" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.12)' }} />
+            {/* Divider line — From Figma: Line 6 width=1589 */}
+            <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.12)' }} />
 
             {/* Saudi-born tagline — centered */}
+            {/* From Figma: size=20 wt=600 color=#FFFFFF CENTERED */}
             <div className="flex items-center justify-center" style={{ gap: '8px' }}>
-              <span className="text-[18px]">🇸🇦</span>
-              <p className="font-ibm-plex text-[18px] font-medium text-white/80">
+              <span className="text-[20px]">🇸🇦</span>
+              <p className="font-ibm-plex text-[20px] font-semibold text-white">
                 Saudi-born. Built for real impact.
               </p>
             </div>
@@ -66,24 +62,27 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom bar — OUTSIDE the card */}
-      <div className="max-w-[86%] mx-auto mt-[24px]">
-        <div className="flex flex-row justify-between items-center py-[24px]">
-          {/* Links — on the start side (right in RTL) */}
-          <div className="flex items-center" style={{ gap: '40px' }}>
-            <Link href="/privacy" className="font-ibm-plex text-[16px] font-medium text-white/70 hover:text-white transition-colors">
-              {t('سياسة الخصوصية و حماية البيانات', 'Privacy & Data Protection Policy')}
-            </Link>
-            <Link href="/terms" className="font-ibm-plex text-[16px] font-medium text-white/70 hover:text-white transition-colors">
-              {t('الشروط و الأحكام و سياسة الاستخدام', 'Terms, Conditions & Acceptable Use')}
-            </Link>
-          </div>
-
-          {/* Copyright — on the end side (left in RTL) */}
-          <p className="font-ibm-plex text-[14px] font-medium text-white/50">
-            © Sparko {t('جميع الحقوق محفوظة', 'All rights reserved')}
-          </p>
+      {/* Links + Copyright — OUTSIDE the card */}
+      {/* From Figma: Frame 2121453290 = VERTICAL layout, gap=4, padding L=44 R=44 */}
+      {/* Links are START-aligned (right in RTL) */}
+      <div className="max-w-[86%] mx-auto mt-[24px]" style={{ paddingLeft: '44px', paddingRight: '44px' }}>
+        {/* Links — VERTICAL stacked, gap=4 */}
+        <div className="flex flex-col items-start" style={{ gap: '4px' }}>
+          <Link href="/privacy" className="font-ibm-plex text-[16px] font-medium text-white/70 hover:text-white transition-colors">
+            {t('سياسة الخصوصية و حماية البيانات', 'Privacy & Data Protection Policy')}
+          </Link>
+          <Link href="/terms" className="font-ibm-plex text-[16px] font-medium text-white/70 hover:text-white transition-colors">
+            {t('الشروط و الأحكام و سياسة الاستخدام', 'Terms, Conditions & Acceptable Use')}
+          </Link>
         </div>
+      </div>
+
+      {/* Copyright — CENTERED */}
+      {/* From Figma: Frame 2121453291 CENTERED, padding L=44 R=44 */}
+      <div className="max-w-[86%] mx-auto mt-[4px]" style={{ paddingLeft: '44px', paddingRight: '44px' }}>
+        <p className="font-ibm-plex text-[16px] font-medium text-white/50 text-center">
+          © Sparko {t('جميع الحقوق محفوظة', 'All rights reserved')}
+        </p>
       </div>
     </footer>
   );
