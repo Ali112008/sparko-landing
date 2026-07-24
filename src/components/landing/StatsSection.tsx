@@ -49,7 +49,8 @@ export default function StatsSection() {
           {/* HORIZONTAL, CENTER, itemSpacing=44 */}
           {/* Order reversed: text+trophy → divider → stat items */}
           {/* So Trophy appears on START side (RIGHT in RTL) */}
-          <div className="flex items-center" style={{ gap: '33px' }}>
+          {/* z-10 so vignette overlay doesn't darken text/icons */}
+          <div className="relative z-10 flex items-center" style={{ gap: '33px' }}>
             {/* Figma: 180:5947 — Text+Image frame */}
             {/* HORIZONTAL, CENTER, itemSpacing=44 */}
             {/* Contains: text frame (229×124) + image frame (143×126) */}
