@@ -63,19 +63,20 @@ export default function TestimonialsSection() {
               {/* Figma: Group 1000004750 (302:8002) — 884x66 */}
               {/* Text: " مع [Sparko logo] التدريب الميداني يتحول إلى نجاح حقيقي " (fontSize=40, wt=700, white, lh=48, CENTER) */}
               {/* Logo (140x66) positioned inline within the text line */}
-              <h1 className="font-ibm-plex text-[40px] font-bold text-white" style={{ lineHeight: '48px', textAlign: 'center' }}>
+              <h1 className="font-ibm-plex text-[40px] font-bold text-white inline-flex items-center flex-wrap justify-center" style={{ lineHeight: '48px', textAlign: 'center' }}>
                 &ldquo;{' '}
+                {t('مع', 'With')}{' '}
                 {/* Figma: logo (261:140) — 140×66.225px, purple+orange vectors */}
-                {/* Using white logo version for dark background */}
+                {/* Using orange/colored logo version for dark background */}
                 <Image
-                  src="/sparko-logo-white.png"
+                  src="/logo.png"
                   alt="Sparko."
-                  width={140}
-                  height={66}
+                  width={132}
+                  height={62}
                   className="inline-block align-middle mx-[4px]"
-                  style={{ height: '66px', width: '140px' }}
+                  style={{ height: '62px', width: '132px' }}
                 />{' '}
-                {t('التدريب الميداني يتحول إلى نجاح حقيقي', 'Field training turns into real success')}{' '}
+                {t('التدريب الميداني يتحول إلى نجاح حقيقي', 'Field Training turns into real success')}{' '}
                 &rdquo;
               </h1>
 

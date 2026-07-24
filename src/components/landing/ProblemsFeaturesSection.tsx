@@ -60,25 +60,13 @@ export default function ProblemsFeaturesSection() {
             {/* Heading + Subtitle */}
             {/* Figma: Container — VERTICAL, itemSpacing=24, CENTER */}
             <div className="flex flex-col items-center text-center" style={{ gap: '24px' }}>
-              {/* Heading: " مع Sparko. التدريب الميداني يتحول إلى نجاح حقيقي " (fontSize=40, wt=700, white, lh=48) */}
-              {/* Figma: Group 1000004750 — HORIZONTAL row: heading text + orange Sparko logo */}
-              <h2 className="font-ibm-plex text-[40px] font-bold text-white text-center inline-flex items-center flex-wrap justify-center" style={{ lineHeight: '48px' }}>
-                {lang === 'ar' ? (
-                  <> " مع{' '}
-                    <span className="text-sparko-orange font-bold">Sparko.</span>{' '}
-                    التدريب الميداني يتحول إلى نجاح حقيقي " 
-                  </>
-                ) : (
-                  <> " With{' '}
-                    <span className="text-sparko-orange font-bold">Sparko.</span>{' '}
-                    Field Training becomes real success " 
-                  </>
-                )}
+              {/* Heading: "أغلب التجارب تمر بدون أثر" (fontSize=40, wt=700, white, lh=48) */}
+              <h2 className="font-ibm-plex text-[40px] font-bold text-white text-center" style={{ lineHeight: '48px' }}>
+                {t('أغلب التجارب تمر بدون أثر', 'Most experiences pass without impact')}
               </h2>
-              {/* Subtitle: " نتيجة حقيقية … تتكرر كل يوم " (fontSize=20, wt=400, white, lh=28, ls=0.16) */}
-              {/* Figma: Container (180:5765) — VERTICAL, CENTER */}
-              <p className="font-ibm-plex text-[20px] font-normal text-white text-center" style={{ lineHeight: '28px', letterSpacing: '0.16px' }}>
-                {t('" نتيجة حقيقية … تتكرر كل يوم "', '" A real result... repeated every day "')}
+              {/* Subtitle: "Most training experiences pass without impact" (fontSize=24, wt=400, white, lh=28, ls=0.16) */}
+              <p className="font-ibm-plex text-[24px] font-normal text-white text-center" style={{ lineHeight: '28px', letterSpacing: '0.16px' }}>
+                {t('أغلب تجارب التدريب تمر بدون أثر', 'Most training experiences pass without impact')}
               </p>
             </div>
 
