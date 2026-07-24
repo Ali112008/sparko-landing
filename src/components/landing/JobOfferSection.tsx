@@ -125,7 +125,7 @@ export default function JobOfferSection() {
               padding: '0px 90px',
               gap: '33px',
               minHeight: '298px',
-              background: `${gradientOverlay}, url('/joboffer-bg-men.png'), white`,
+              background: `${gradientOverlay}, url('/joboffer-bg-original.png'), white`,
               backgroundSize: 'cover, cover, auto',
               backgroundPosition: 'center center, center center, center',
             }}
