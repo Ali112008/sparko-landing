@@ -142,7 +142,7 @@ export default function ProblemsFeaturesSection() {
               </h2>
               {/* Subtitle: "Here, everything is calculated" (fontSize=24, wt=400, #2B2D2F, lh=28, ls=0.16) */}
               <p className="font-ibm-plex text-[24px] font-normal text-[#2B2D2F] text-center" style={{ lineHeight: '28px', letterSpacing: '0.16px' }}>
-                {t('Here, everything is calculated', 'Here, everything is calculated')}
+                {t('هنا كل شيء محسوب', 'Here, everything is calculated')}
               </p>
             </div>
 
