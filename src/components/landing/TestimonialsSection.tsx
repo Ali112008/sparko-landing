@@ -37,7 +37,7 @@ export default function TestimonialsSection() {
           className="rounded-[18px] overflow-hidden relative"
           style={{
             background: 'linear-gradient(180deg, #273C65 0%, #182B51 100%)',
-            border: '1px solid rgba(255, 255, 255, 0.4)',
+            border: '1.5px solid rgba(255, 255, 255, 0.4)',
             boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
             padding: '33px',
           }}

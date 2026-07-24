@@ -70,19 +70,18 @@ export default function JobOfferSection() {
 
   const gradientLTR = 'linear-gradient(to right, rgba(17,24,39,1) 0%, rgba(17,24,39,0.8) 61.5%, rgba(102,102,102,0) 100%)';
   const gradientRTL = 'linear-gradient(to right, rgba(102,102,102,0) 0%, rgba(17,24,39,0.72) 38.5%, rgba(17,24,39,0.9) 100%)';
-  const gradientOverlay = isRTL ? gradientRTL : gradientLTR;
+  // ── LAYOUT LOGIC ──
+  // Arabic (RTL): icon+text on LEFT → gradient opaque LEFT → transparent RIGHT
+  //   (Same as Figma LTR gradient, because Arabic content is on the LEFT side)
+  // English (LTR): icon+text on RIGHT → gradient opaque RIGHT → transparent LEFT
+  //   (Same as Figma RTL gradient, because English content is on the RIGHT side)
+  // Background image stays in the SAME position regardless of language
+  const gradientOverlay = isRTL ? gradientLTR : gradientRTL;
 
-  // In LTR: content on LEFT side (opaque gradient) → flex-start (default)
-  // In RTL: content on RIGHT side (opaque gradient) → flex-end
   // Using direction:ltr so flex properties are always physical LEFT→RIGHT
-  const justifyContent = isRTL ? 'flex-end' : 'flex-start';
-
-  // In RTL (Arabic): icon should appear RIGHT of text visually
-  // In LTR (English): icon should appear LEFT of text visually
-  // Since direction=ltr, flex order is always physical LEFT→RIGHT
-  // RTL flex-end pushes items to RIGHT, so order: [text, icon] → icon on far RIGHT
-  // But in Arabic, icon should be LEFT of text within the content group
-  // Actually, both are on the opaque side; order just affects which is more to the left/right
+  // Arabic: content LEFT → flex-start
+  // English: content RIGHT → flex-end
+  const justifyContent = isRTL ? 'flex-start' : 'flex-end';
 
   return (
     <section className="relative py-[45px]">
@@ -119,7 +118,6 @@ export default function JobOfferSection() {
             RTL stops:  0% rgba(102,102,102,0) | 38.52% rgba(17,24,39,0.72) | 100% rgba(17,24,39,0.9)
           */}
           <div
-            key={isRTL ? 'rtl-bg' : 'ltr-bg'}
             style={{
               direction: 'ltr',
               display: 'flex',
@@ -208,7 +206,9 @@ export default function JobOfferSection() {
             </div>
 
             {/* ── TEXT CONTAINER ── Figma: 180:5964 */}
+            {/* direction matches text language for proper bidi rendering */}
             <div style={{
+              direction: isRTL ? 'rtl' : 'ltr',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
