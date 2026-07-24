@@ -104,19 +104,34 @@ export default function JobOfferSection() {
             style={{ borderTop: '1px solid rgba(43, 127, 255, 0.7)', filter: 'blur(10px)' }}
           />
 
+          {/* ── BACKGROUND PHOTO ── Figma: fill #2 (IMAGE) */}
+          {/* SEPARATED from gradient overlay so it NEVER re-evaluates on language change */}
+          {/* This is the KEY fix for the language-switch image bug */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: 'url("/joboffer-bg-original.png")',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center 15%',
+              backgroundRepeat: 'no-repeat',
+            }}
+          />
+
+          {/* ── GRADIENT OVERLAY ── Figma: fill #3 (GRADIENT_LINEAR) */}
+          {/* SEPARATED div — only THIS changes on language toggle */}
+          {/* Arabic: opaque LEFT → transparent RIGHT (gradientLTR) */}
+          {/* English: transparent LEFT → opaque RIGHT (gradientRTL) */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{ background: gradientOverlay }}
+          />
+
           {/* ── CONTENT FRAME ── Figma: 180:5958 */}
           {/* Figma: layoutSizingHorizontal=FIXED (1678px) → covers entire card */}
           {/* Figma: layoutSizingVertical=FILL → fills parent height */}
           {/* direction:ltr so CSS flex/gradients are always physical */}
-          {/* Gradient overlay + background photo as layered background fills */}
-          {/*
-            Figma fills (bottom → top):
-              1) Solid white (opaque base)
-              2) IMAGE — scaleMode=STRETCH, imageTransform [[1.0,0.0,0.0],[0.0,0.3549,0.0972]]
-              3) GRADIENT_LINEAR — dark overlay from left→right (LTR) or reversed (RTL)
-            LTR stops:  0% rgba(17,24,39,1) | 61.48% rgba(17,24,39,0.8) | 100% rgba(102,102,102,0)
-            RTL stops:  0% rgba(102,102,102,0) | 38.52% rgba(17,24,39,0.72) | 100% rgba(17,24,39,0.9)
-          */}
+          {/* Background fills are now in SEPARATE divs above (image + gradient) */}
+          {/* This div only handles flex layout — no background property */}
           <div
             style={{
               direction: 'ltr',
@@ -128,10 +143,6 @@ export default function JobOfferSection() {
               gap: '33px',
               width: '100%',
               height: '100%',
-              background: `${gradientOverlay}, url('/joboffer-bg-original.png'), white`,
-              backgroundSize: 'cover, cover, auto',
-              backgroundPosition: 'center center, center 15%, center',
-              backgroundRepeat: 'no-repeat, no-repeat, no-repeat',
             }}
           >
             {/* ── ICON CIRCLE ── Figma: 180:5959 */}
