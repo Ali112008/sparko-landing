@@ -47,73 +47,13 @@ export default function StatsSection() {
 
           {/* Figma: 180:5916 — Frame 2121453276 */}
           {/* HORIZONTAL, CENTER, itemSpacing=44 */}
-          {/* Children: stat items row → divider → text+image frame */}
+          {/* Order reversed: text+trophy → divider → stat items */}
+          {/* So Trophy appears on START side (RIGHT in RTL) */}
           <div className="flex items-center" style={{ gap: '44px' }}>
-            {/* Figma: 180:5917 — Stat items row */}
-            {/* HORIZONTAL, SPACE_BETWEEN, CENTER, itemSpacing=40 */}
-            {/* 4 items, each layoutGrow=1 (equal width) */}
-            <div className="flex items-center flex-1" style={{ gap: '40px' }}>
-              {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center"
-                  style={{ flex: '1 1 0px', gap: '12px' }}
-                >
-                  {/* Icon — Figma: 44×44, stroke #FF5500 */}
-                  <div className="w-[44px] h-[44px] flex items-center justify-center flex-shrink-0">
-                    <Image src={stat.icon} alt={lang === 'ar' ? stat.arTitle : stat.enTitle} width={44} height={44} className="w-full h-full object-contain" />
-                  </div>
-                  {/* Text frame — VERTICAL, CENTER, itemSpacing=8 */}
-                  {/* Single language only per user rule */}
-                  <div className="flex flex-col items-center text-center" style={{ gap: '8px' }}>
-                    {/* Title — Figma: fontSize=24, wt=700, lh=28.8, white, CENTER */}
-                    <p
-                      className="font-ibm-plex text-[24px] font-bold text-white text-center"
-                      style={{ lineHeight: '28.8px' }}
-                    >
-                      {t(stat.arTitle, stat.enTitle)}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Vertical divider — Figma: 180:5946, Line 2 */}
-            {/* stroke rgba(255,255,255,0.24), strokeWeight=1.5, height=148.5 */}
-            <div className="flex-shrink-0" style={{ width: '1.5px', alignSelf: 'stretch', background: 'rgba(255, 255, 255, 0.24)' }} />
-
             {/* Figma: 180:5947 — Text+Image frame */}
             {/* HORIZONTAL, CENTER, itemSpacing=44 */}
             {/* Contains: text frame (229×124) + image frame (143×126) */}
             <div className="flex items-center flex-shrink-0" style={{ gap: '44px' }}>
-              {/* Text frame — Figma: 180:5948 */}
-              {/* VERTICAL, counterAxis=MAX (right-aligned in RTL), itemSpacing=16 */}
-              {/* Single language only per user rule */}
-              <div className="flex flex-col" style={{ gap: '16px' }}>
-                {/* Arabic text — Figma: 180:5949 */}
-                {/* "منذ 2015 ،\nنتائج مستمرة حتى اليوم" */}
-                {/* fontSize=24, wt=700, lh=31.2, white, textAlign RIGHT */}
-                {lang === 'ar' && (
-                  <p
-                    className="font-ibm-plex text-[24px] font-bold text-white text-start"
-                    style={{ lineHeight: '31.2px' }}
-                  >
-                    منذ 2015 ،<br />نتائج مستمرة حتى اليوم
-                  </p>
-                )}
-                {/* English text — Figma: 180:5950 */}
-                {/* "Since 2015 ,\n results that continue" */}
-                {/* fontSize=18, wt=700, lh=23.4, #FF5500 (orange), textAlign RIGHT */}
-                {lang === 'en' && (
-                  <p
-                    className="font-ibm-plex text-[18px] font-bold text-start"
-                    style={{ lineHeight: '23.4px', color: '#FF5500' }}
-                  >
-                    Since 2015,<br />results that continue today
-                  </p>
-                )}
-              </div>
-
               {/* Trophy image — Figma: 180:5952 */}
               {/* 143×126, IMAGE fill, scaleMode=STRETCH */}
               {/* Shadow: rgba(255,167,38,0.6) offset(0,5) radius=100 — orange glow */}
@@ -134,6 +74,57 @@ export default function StatsSection() {
                   priority
                 />
               </div>
+
+              {/* Text frame — Figma: 180:5948 */}
+              {/* VERTICAL, counterAxis=MAX, itemSpacing=16 */}
+              {/* Single language only per user rule */}
+              <div className="flex flex-col" style={{ gap: '16px' }}>
+                {lang === 'ar' && (
+                  <p
+                    className="font-ibm-plex text-[24px] font-bold text-white text-start"
+                    style={{ lineHeight: '31.2px' }}
+                  >
+                    منذ 2015 ،<br />نتائج مستمرة حتى اليوم
+                  </p>
+                )}
+                {lang === 'en' && (
+                  <p
+                    className="font-ibm-plex text-[18px] font-bold text-start"
+                    style={{ lineHeight: '23.4px', color: '#FF5500' }}
+                  >
+                    Since 2015,<br />results that continue today
+                  </p>
+                )}
+              </div>
+            </div>
+
+            {/* Vertical divider — Figma: 180:5946, Line 2 */}
+            {/* stroke rgba(255,255,255,0.24), strokeWeight=1.5 */}
+            <div className="flex-shrink-0" style={{ width: '1.5px', alignSelf: 'stretch', background: 'rgba(255, 255, 255, 0.24)' }} />
+
+            {/* Figma: 180:5917 — Stat items row */}
+            {/* HORIZONTAL, SPACE_BETWEEN, CENTER, itemSpacing=40 */}
+            {/* 4 items, each layoutGrow=1 (equal width) */}
+            <div className="flex items-center flex-1" style={{ gap: '40px' }}>
+              {stats.map((stat, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-center"
+                  style={{ flex: '1 1 0px', gap: '12px' }}
+                >
+                  {/* Icon — Figma: 44×44, stroke #FF5500 */}
+                  <div className="w-[44px] h-[44px] flex items-center justify-center flex-shrink-0">
+                    <Image src={stat.icon} alt={lang === 'ar' ? stat.arTitle : stat.enTitle} width={44} height={44} className="w-full h-full object-contain" />
+                  </div>
+                  {/* Title — Figma: fontSize=24, wt=700, lh=28.8, white, CENTER */}
+                  <p
+                    className="font-ibm-plex text-[24px] font-bold text-white text-center"
+                    style={{ lineHeight: '28.8px' }}
+                  >
+                    {t(stat.arTitle, stat.enTitle)}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
