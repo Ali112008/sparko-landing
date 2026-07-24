@@ -66,7 +66,7 @@ export default function ProblemsFeaturesSection() {
               </h2>
               {/* Subtitle: "Most training experiences pass without impact" (fontSize=24, wt=400, white, lh=28, ls=0.16) */}
               <p className="font-ibm-plex text-[24px] font-normal text-white text-center" style={{ lineHeight: '28px', letterSpacing: '0.16px' }}>
-                {t('Most training experiences pass without impact', 'Most training experiences pass without impact')}
+                {t('أغلب تجارب التدريب تمر بدون أثر', 'Most training experiences pass without impact')}
               </p>
             </div>
 
