@@ -4,10 +4,10 @@ import Image from 'next/image';
 import { useLang } from '@/context/LanguageContext';
 
 const stats = [
-  { icon: '/icon-stats-thumb.png', ar: 'نتائج تتكرر… وليست صدفة', en: 'Repeatable results — not luck' },
-  { icon: '/icon-stats-clock.png', ar: 'نتائج تُقاس بوضوح', en: 'Clearly measurable outcomes' },
-  { icon: '/icon-stats-grid.png', ar: 'تقييم مبني على الأداء', en: 'Performance-based evaluation' },
-  { icon: '/icon-stats-person.png', ar: 'تجارب موثقة', en: 'Documented experiences' },
+  { icon: '/icon-stats-thumb.png', arTitle: 'نتائج تتكرر… وليست صدفة', enTitle: 'Repeatable results — not luck' },
+  { icon: '/icon-stats-clock.png', arTitle: 'نتائج تُقاس بوضوح', enTitle: 'Clearly measurable outcomes' },
+  { icon: '/icon-stats-grid.png', arTitle: 'تقييم مبني على الأداء', enTitle: 'Performance-based evaluation' },
+  { icon: '/icon-stats-person.png', arTitle: 'تجارب موثقة', enTitle: 'Documented experiences' },
 ];
 
 export default function StatsSection() {
@@ -17,50 +17,123 @@ export default function StatsSection() {
   return (
     <section className="relative py-[40px]">
       <div className="max-w-[86%] mx-auto">
+        {/* Figma: 180:5911 — Background+Border+Shadow */}
+        {/* VERTICAL, CENTER-CENTER, padding 44/48/44/48, cornerRadius=24 */}
+        {/* fill: radial-gradient(#21355A → #0C1B3A) */}
+        {/* stroke: rgba(255,255,255,0.12), strokeWeight=1.5, INSIDE */}
+        {/* shadow: rgba(0,0,0,0.25) offset(0,25) radius=50 spread=-12 */}
         <div
           className="rounded-[24px] overflow-hidden relative"
           style={{
             background: 'radial-gradient(circle at center, #21355A 0%, #0C1B3A 100%)',
             border: '1.5px solid rgba(255, 255, 255, 0.12)',
-            boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.35)',
+            boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
+            padding: '44px 48px',
           }}
         >
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[103%] h-[1px]" style={{ borderTop: '1px solid rgba(43, 127, 255, 0.7)', filter: 'blur(10px)' }} />
+          {/* Decorative vignette overlay — Figma: 180:5915 */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: 'radial-gradient(ellipse at center, rgba(3,9,20,0) 20%, rgba(3,9,20,0.8) 95%)',
+            }}
+          />
 
-          {/* ===== DESKTOP LAYOUT (always shown) ===== */}
-          <div className="flex items-center py-[72px] px-[64px]" style={{ gap: '48px' }}>
-            {/* Trophy + text block */}
-            <div className="flex items-center flex-shrink-0" style={{ gap: '32px', width: '30%' }}>
-              <Image
-                src="/stats-image.png"
-                alt="Sparko Trophy"
-                width={160}
-                height={141}
-                className="w-[160px] h-auto flex-shrink-0 object-contain"
-                priority
-              />
-              <div className="flex flex-col" style={{ gap: '16px' }}>
-                <p className="font-ibm-plex text-[24px] font-bold leading-[31.2px] text-white text-start">
-                  {t('منذ 2015 ،\nنتائج مستمرة حتى اليوم', 'Since 2015,\nresults that continue today')}
-                </p>
-              </div>
-            </div>
+          {/* Blue glow line — Figma: 180:5913 (visible=false, kept for consistency) */}
+          <div
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[103%] h-[1px] pointer-events-none"
+            style={{ borderTop: '1px solid rgba(43, 127, 255, 0.7)', filter: 'blur(10px)' }}
+          />
 
-            {/* Vertical divider */}
-            <div className="flex-shrink-0" style={{ width: '1.5px', alignSelf: 'stretch', background: 'rgba(255, 255, 255, 0.24)' }} />
-
-            {/* 4 Feature items */}
-            <div className="flex items-center min-w-0" style={{ gap: '24px', width: '70%' }}>
+          {/* Figma: 180:5916 — Frame 2121453276 */}
+          {/* HORIZONTAL, CENTER, itemSpacing=44 */}
+          {/* Children: stat items row → divider → text+image frame */}
+          <div className="flex items-center" style={{ gap: '44px' }}>
+            {/* Figma: 180:5917 — Stat items row */}
+            {/* HORIZONTAL, SPACE_BETWEEN, CENTER, itemSpacing=40 */}
+            {/* 4 items, each layoutGrow=1 (equal width) */}
+            <div className="flex items-center flex-1" style={{ gap: '40px' }}>
               {stats.map((stat, index) => (
-                <div key={index} className="flex flex-col items-center min-w-0 text-center" style={{ flex: '1 1 0px', gap: '16px' }}>
+                <div
+                  key={index}
+                  className="flex flex-col items-center"
+                  style={{ flex: '1 1 0px', gap: '12px' }}
+                >
+                  {/* Icon — Figma: 44×44, stroke #FF5500 */}
                   <div className="w-[44px] h-[44px] flex items-center justify-center flex-shrink-0">
-                    <Image src={stat.icon} alt={lang === 'ar' ? stat.ar : stat.en} width={44} height={44} className="w-full h-full object-contain" />
+                    <Image src={stat.icon} alt={lang === 'ar' ? stat.arTitle : stat.enTitle} width={44} height={44} className="w-full h-full object-contain" />
                   </div>
-                  <p className="font-ibm-plex text-[24px] font-bold leading-[28px] text-white text-center" style={{ overflowWrap: 'break-word' }}>
-                    {lang === 'ar' ? stat.ar : stat.en}
-                  </p>
+                  {/* Text frame — VERTICAL, CENTER, itemSpacing=8 */}
+                  {/* Single language only per user rule */}
+                  <div className="flex flex-col items-center text-center" style={{ gap: '8px' }}>
+                    {/* Title — Figma: fontSize=24, wt=700, lh=28.8, white, CENTER */}
+                    <p
+                      className="font-ibm-plex text-[24px] font-bold text-white text-center"
+                      style={{ lineHeight: '28.8px' }}
+                    >
+                      {t(stat.arTitle, stat.enTitle)}
+                    </p>
+                  </div>
                 </div>
               ))}
+            </div>
+
+            {/* Vertical divider — Figma: 180:5946, Line 2 */}
+            {/* stroke rgba(255,255,255,0.24), strokeWeight=1.5, height=148.5 */}
+            <div className="flex-shrink-0" style={{ width: '1.5px', alignSelf: 'stretch', background: 'rgba(255, 255, 255, 0.24)' }} />
+
+            {/* Figma: 180:5947 — Text+Image frame */}
+            {/* HORIZONTAL, CENTER, itemSpacing=44 */}
+            {/* Contains: text frame (229×124) + image frame (143×126) */}
+            <div className="flex items-center flex-shrink-0" style={{ gap: '44px' }}>
+              {/* Text frame — Figma: 180:5948 */}
+              {/* VERTICAL, counterAxis=MAX (right-aligned in RTL), itemSpacing=16 */}
+              {/* Single language only per user rule */}
+              <div className="flex flex-col" style={{ gap: '16px' }}>
+                {/* Arabic text — Figma: 180:5949 */}
+                {/* "منذ 2015 ،\nنتائج مستمرة حتى اليوم" */}
+                {/* fontSize=24, wt=700, lh=31.2, white, textAlign RIGHT */}
+                {lang === 'ar' && (
+                  <p
+                    className="font-ibm-plex text-[24px] font-bold text-white text-start"
+                    style={{ lineHeight: '31.2px' }}
+                  >
+                    منذ 2015 ،<br />نتائج مستمرة حتى اليوم
+                  </p>
+                )}
+                {/* English text — Figma: 180:5950 */}
+                {/* "Since 2015 ,\n results that continue" */}
+                {/* fontSize=18, wt=700, lh=23.4, #FF5500 (orange), textAlign RIGHT */}
+                {lang === 'en' && (
+                  <p
+                    className="font-ibm-plex text-[18px] font-bold text-start"
+                    style={{ lineHeight: '23.4px', color: '#FF5500' }}
+                  >
+                    Since 2015,<br />results that continue today
+                  </p>
+                )}
+              </div>
+
+              {/* Trophy image — Figma: 180:5952 */}
+              {/* 143×126, IMAGE fill, scaleMode=STRETCH */}
+              {/* Shadow: rgba(255,167,38,0.6) offset(0,5) radius=100 — orange glow */}
+              <div
+                className="flex-shrink-0"
+                style={{
+                  width: '143px',
+                  height: '126px',
+                  filter: 'drop-shadow(0px 5px 100px rgba(255, 167, 38, 0.6))',
+                }}
+              >
+                <Image
+                  src="/stats-image.png"
+                  alt="Sparko Trophy"
+                  width={143}
+                  height={126}
+                  className="w-full h-full object-contain"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>
