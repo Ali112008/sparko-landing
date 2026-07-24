@@ -113,24 +113,22 @@ export default function TestimonialsSection() {
                 {testimonialItems.map((item) => (
                   <div key={item.id} className="flex flex-col items-center justify-center flex-shrink-0" style={{ gap: '20px', paddingLeft: '24px', paddingRight: '24px' }}>
                     {/* Icon Circle */}
-                    {/* Figma: Frame 2121453248 — 80x80 */}
-                    {/* Figma: fill=#000000 (solid, explicit) + IMAGE fill overlay */}
-                    {/* Figma: stroke=rgba(255,85,0,0.8) at 80% opacity, strokeWeight=3 */}
-                    {/* Figma: shadow=rgba(1,7,255,0.24) offset(0,4) radius=4 */}
-                    {/* Figma: cornerRadius=50 */}
-                    {/* Rule: No #000000 fallback for media containers — use section gradient color */}
-                    {/* Circle bg uses section gradient bottom color #182B51 as safe fallback */}
+                    {/* Figma: 80x80, cornerRadius=50 */}
+                    {/* Figma: stroke=rgba(255,85,0,0.8) wt=3, shadow=rgba(1,7,255,0.24) */}
+                    {/* لحظة السؤال: fill=#000000 (solid ONLY, no image) — Figma explicit */}
+                    {/* Other 6 circles: fill=#000000 + IMAGE overlay → use #182B51 safe fallback */}
                     <div
                       className="w-[80px] h-[80px] rounded-full flex items-center justify-center overflow-hidden"
                       style={{
-                        background: '#182B51',
+                        background: item.isPlay ? '#000000' : '#182B51',
                         border: '3px solid rgba(255, 85, 0, 0.8)',
                         boxShadow: '0px 4px 4px rgba(1, 7, 255, 0.24)',
                       }}
                     >
                       {item.isPlay ? (
-                        /* Play icon — Figma: solar:play-bold vector (30x31, white) with shadow rgba(255,255,255,0.25) */
-                        <svg width="30" height="31" viewBox="0 0 30 31" fill="white">
+                        /* Play icon — Figma: solar:play-bold (30x31, white #FFFFFF) */}
+                        {/* Figma shadow: drop-shadow rgba(255,255,255,0.25) offset(0,4) radius=4 */}
+                        <svg width="30" height="31" viewBox="0 0 30 31" fill="white" style={{ filter: 'drop-shadow(0px 4px 4px rgba(255, 255, 255, 0.25))' }}>
                           <path d="M10 6L22 15.5L10 25V6Z" />
                         </svg>
                       ) : (
