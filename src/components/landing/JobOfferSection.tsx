@@ -59,7 +59,7 @@ export default function JobOfferSection() {
               minHeight: '298px',
               background: `linear-gradient(to right, rgba(102,102,102,0) 0%, rgba(17,24,39,0.72) 38.52%, rgba(17,24,39,0.9) 100%), url('/joboffer-bg-photo.png'), white`,
               backgroundSize: 'cover, cover, auto',
-              backgroundPosition: 'center, center, center',
+              backgroundPosition: 'left center, left center, center',
             }}
           >
             {/* Figma: 180:5959 — ICON CIRCLE */}
@@ -85,7 +85,7 @@ export default function JobOfferSection() {
                   width: '132px',
                   height: '132px',
                   border: '1.5px solid rgba(255, 85, 0, 0.6)',
-                  filter: 'blur(1px)',
+                  filter: 'blur(0.5px)',
                 }}
               >
                 {/* Briefcase icon — Figma: 180:5962, 120→90px */}
