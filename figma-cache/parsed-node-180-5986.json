@@ -1,0 +1,718 @@
+{
+  "name": "Frame 2121453293",
+  "type": "FRAME",
+  "position": {
+    "x": -16130.0,
+    "y": 4756.82568359375,
+    "width": 1680.0,
+    "height": 472.0
+  },
+  "itemSpacing": 24.0,
+  "layoutMode": "VERTICAL",
+  "children": [
+    {
+      "name": "Background+Border+Shadow",
+      "type": "FRAME",
+      "position": {
+        "x": -16130.0,
+        "y": 4756.82568359375,
+        "width": 1680.0,
+        "height": 324.0
+      },
+      "fills": [],
+      "strokes": [
+        {
+          "color": {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 1.0
+          },
+          "strokeWeight": 1.5
+        }
+      ],
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 50.0,
+          "color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.25
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 25.0
+          }
+        }
+      ],
+      "cornerRadius": 24.0,
+      "padding": {
+        "paddingLeft": 44.0,
+        "paddingRight": 44.0,
+        "paddingTop": 44.0,
+        "paddingBottom": 44.0
+      },
+      "itemSpacing": 32.0,
+      "layoutMode": "VERTICAL",
+      "children": [
+        {
+          "name": "Gradient",
+          "type": "RECTANGLE",
+          "position": {
+            "x": -16129.0,
+            "y": 4757.82568359375,
+            "width": 1678.0,
+            "height": 322.0
+          },
+          "fills": []
+        },
+        {
+          "name": "HorizontalBorder+Blur",
+          "type": "FRAME",
+          "position": {
+            "x": -16133.4619140625,
+            "y": 5080.82568359375,
+            "width": 1731.95849609375,
+            "height": 400.0
+          },
+          "strokes": [
+            {
+              "color": {
+                "r": 43,
+                "g": 127,
+                "b": 255,
+                "a": 1.0
+              },
+              "strokeWeight": 1.0
+            }
+          ],
+          "effects": [
+            {
+              "type": "LAYER_BLUR",
+              "visible": true,
+              "radius": 10.0,
+              "color": {},
+              "offset": {
+                "x": 0,
+                "y": 0
+              }
+            }
+          ],
+          "cornerRadius": 350.0,
+          "children": [
+            {
+              "name": "Overlay+Shadow",
+              "type": "RECTANGLE",
+              "position": {
+                "x": -16133.4619140625,
+                "y": 5080.82568359375,
+                "width": 1731.95849609375,
+                "height": 400.0
+              },
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 255,
+                    "g": 255,
+                    "b": 255,
+                    "a": 1.0
+                  },
+                  "opacity": 0.0020000000949949026
+                }
+              ],
+              "effects": [
+                {
+                  "type": "DROP_SHADOW",
+                  "visible": true,
+                  "radius": 80.0,
+                  "color": {
+                    "r": 0.23137255012989044,
+                    "g": 0.5098039507865906,
+                    "b": 0.9647058844566345,
+                    "a": 0.6000000238418579
+                  },
+                  "offset": {
+                    "x": 0.0,
+                    "y": 0.0
+                  }
+                }
+              ],
+              "cornerRadius": 350.0
+            }
+          ]
+        },
+        {
+          "name": "Gradient",
+          "type": "RECTANGLE",
+          "position": {
+            "x": -16129.0,
+            "y": 4757.82568359375,
+            "width": 1678.0,
+            "height": 322.0
+          },
+          "fills": []
+        },
+        {
+          "name": "Frame 2121453284",
+          "type": "FRAME",
+          "position": {
+            "x": -16084.5,
+            "y": 4803.943359375,
+            "width": 1589.0,
+            "height": 132.76466369628906
+          },
+          "itemSpacing": 898.0,
+          "layoutMode": "HORIZONTAL",
+          "children": [
+            {
+              "name": "Frame 1686552644",
+              "type": "FRAME",
+              "position": {
+                "x": -16084.5,
+                "y": 4854.32568359375,
+                "width": 243.0,
+                "height": 32.0
+              },
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 2,
+                    "g": 9,
+                    "b": 19,
+                    "a": 1.0
+                  },
+                  "opacity": 1
+                }
+              ],
+              "itemSpacing": 64.0,
+              "layoutMode": "HORIZONTAL",
+              "children": [
+                {
+                  "name": "Container",
+                  "type": "FRAME",
+                  "position": {
+                    "x": -16084.5,
+                    "y": 4854.32568359375,
+                    "width": 243.0,
+                    "height": 32.0
+                  },
+                  "itemSpacing": 12.0,
+                  "layoutMode": "VERTICAL",
+                  "children": [
+                    {
+                      "name": "Heading 3",
+                      "type": "FRAME",
+                      "position": {
+                        "x": -16084.5,
+                        "y": 4854.32568359375,
+                        "width": 243.0,
+                        "height": 32.0
+                      },
+                      "layoutMode": "VERTICAL",
+                      "children": [
+                        {
+                          "name": "بوابة الجهات Partners Portal",
+                          "type": "TEXT",
+                          "position": {
+                            "x": -16084.5,
+                            "y": 4854.32568359375,
+                            "width": 243.0,
+                            "height": 32.0
+                          },
+                          "text": "بوابة الجهات Partners Portal",
+                          "style": {
+                            "fontFamily": "IBM Plex Sans Arabic",
+                            "fontSize": 20.0,
+                            "fontWeight": 600,
+                            "textAlignHorizontal": "RIGHT",
+                            "textAlignVertical": "TOP",
+                            "letterSpacing": 0.0,
+                            "lineHeightPx": 32.0,
+                            "fills": []
+                          },
+                          "fills": [
+                            {
+                              "type": "SOLID",
+                              "color": {
+                                "r": 255,
+                                "g": 255,
+                                "b": 255,
+                                "a": 1.0
+                              },
+                              "opacity": 1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Frame 1686552645",
+              "type": "FRAME",
+              "position": {
+                "x": -14935.5,
+                "y": 4803.943359375,
+                "width": 440.0,
+                "height": 132.76466369628906
+              },
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 2,
+                    "g": 9,
+                    "b": 19,
+                    "a": 1.0
+                  },
+                  "opacity": 1
+                }
+              ],
+              "itemSpacing": 64.0,
+              "layoutMode": "HORIZONTAL",
+              "children": [
+                {
+                  "name": "Container",
+                  "type": "FRAME",
+                  "position": {
+                    "x": -14935.5,
+                    "y": 4803.943359375,
+                    "width": 440.0,
+                    "height": 132.76466369628906
+                  },
+                  "itemSpacing": 12.0,
+                  "layoutMode": "VERTICAL",
+                  "children": [
+                    {
+                      "name": "logo",
+                      "type": "GROUP",
+                      "position": {
+                        "x": -14615.5,
+                        "y": 4803.943359375,
+                        "width": 120.0,
+                        "height": 56.7646598815918
+                      },
+                      "children": [
+                        {
+                          "name": "f5d27e5a0b",
+                          "type": "GROUP",
+                          "position": {
+                            "x": -14615.5,
+                            "y": 4803.943359375,
+                            "width": 120.0,
+                            "height": 56.7646598815918
+                          },
+                          "children": [
+                            {
+                              "name": "Vector",
+                              "type": "VECTOR",
+                              "position": {
+                                "x": -14615.5,
+                                "y": 4803.943359375,
+                                "width": 120.0,
+                                "height": 56.7646598815918
+                              },
+                              "fills": [
+                                {
+                                  "type": "SOLID",
+                                  "color": {
+                                    "r": 108,
+                                    "g": 92,
+                                    "b": 231,
+                                    "a": 1.0
+                                  },
+                                  "opacity": 1
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Group",
+                          "type": "GROUP",
+                          "position": {
+                            "x": -14615.5,
+                            "y": 4803.9423828125,
+                            "width": 121.26994323730469,
+                            "height": 56.7646598815918
+                          },
+                          "children": [
+                            {
+                              "name": "Group",
+                              "type": "GROUP",
+                              "position": {
+                                "x": -14615.5,
+                                "y": 4803.9423828125,
+                                "width": 121.26994323730469,
+                                "height": 56.7646598815918
+                              },
+                              "children": [
+                                {
+                                  "name": "Clip path group",
+                                  "type": "GROUP",
+                                  "position": {
+                                    "x": -14615.5,
+                                    "y": 4803.9423828125,
+                                    "width": 121.26994323730469,
+                                    "height": 56.7646598815918
+                                  },
+                                  "children": [
+                                    {
+                                      "name": "4a4fec82ed",
+                                      "type": "GROUP",
+                                      "position": {
+                                        "x": -14615.5,
+                                        "y": 4803.9423828125,
+                                        "width": 121.26994323730469,
+                                        "height": 56.7646598815918
+                                      },
+                                      "children": [
+                                        {
+                                          "name": "Vector",
+                                          "type": "VECTOR",
+                                          "position": {
+                                            "x": -14615.5,
+                                            "y": 4803.9423828125,
+                                            "width": 121.26994323730469,
+                                            "height": 56.7646598815918
+                                          },
+                                          "fills": [
+                                            {
+                                              "type": "SOLID",
+                                              "color": {
+                                                "r": 108,
+                                                "g": 92,
+                                                "b": 231,
+                                                "a": 1.0
+                                              },
+                                              "opacity": 1
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "Group",
+                                      "type": "GROUP",
+                                      "position": {
+                                        "x": -14614.3974609375,
+                                        "y": 4804.6845703125,
+                                        "width": 117.68862915039062,
+                                        "height": 53.971187591552734
+                                      },
+                                      "children": [
+                                        {
+                                          "name": "Clip path group",
+                                          "type": "GROUP",
+                                          "position": {
+                                            "x": -14556.154296875,
+                                            "y": 4804.6845703125,
+                                            "width": 59.445655822753906,
+                                            "height": 53.448692321777344
+                                          },
+                                          "children": []
+                                        },
+                                        {
+                                          "name": "Clip path group",
+                                          "type": "GROUP",
+                                          "position": {
+                                            "x": -14614.3974609375,
+                                            "y": 4816.83837890625,
+                                            "width": 60.81639862060547,
+                                            "height": 41.817569732666016
+                                          },
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Heading 3",
+                      "type": "FRAME",
+                      "position": {
+                        "x": -14935.5,
+                        "y": 4872.7080078125,
+                        "width": 440.0,
+                        "height": 64.0
+                      },
+                      "layoutMode": "VERTICAL",
+                      "children": [
+                        {
+                          "name": "حيث يتحول التدريب الميداني إلى تجربة حقيقية Where Field Training Becomes Real Experience",
+                          "type": "TEXT",
+                          "position": {
+                            "x": -14935.5,
+                            "y": 4872.7080078125,
+                            "width": 440.0,
+                            "height": 64.0
+                          },
+                          "text": "حيث يتحول التدريب الميداني إلى تجربة حقيقية\r\n Where Field Training Becomes Real Experience",
+                          "style": {
+                            "fontFamily": "IBM Plex Sans Arabic",
+                            "fontSize": 20.0,
+                            "fontWeight": 600,
+                            "textAlignHorizontal": "RIGHT",
+                            "textAlignVertical": "TOP",
+                            "letterSpacing": 0.0,
+                            "lineHeightPx": 32.0,
+                            "fills": []
+                          },
+                          "fills": [
+                            {
+                              "type": "SOLID",
+                              "color": {
+                                "r": 255,
+                                "g": 255,
+                                "b": 255,
+                                "a": 1.0
+                              },
+                              "opacity": 1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Line 6",
+          "type": "LINE",
+          "position": {
+            "x": -16084.5,
+            "y": 4968.707868897708,
+            "width": 1589.0,
+            "height": 0.00013891479193262057
+          },
+          "strokes": [
+            {
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1.0
+              },
+              "strokeWeight": 1.0
+            }
+          ]
+        },
+        {
+          "name": "Frame 2121453285",
+          "type": "FRAME",
+          "position": {
+            "x": -16084.5,
+            "y": 5001.7080078125,
+            "width": 1589.0,
+            "height": 32.0
+          },
+          "itemSpacing": 24.0,
+          "layoutMode": "HORIZONTAL",
+          "children": [
+            {
+              "name": "Frame 2121453286",
+              "type": "FRAME",
+              "position": {
+                "x": -16084.5,
+                "y": 5001.7080078125,
+                "width": 1589.0,
+                "height": 32.0
+              },
+              "itemSpacing": 24.0,
+              "layoutMode": "HORIZONTAL",
+              "children": [
+                {
+                  "name": "🇸🇦 Saudi-born. Built for real impact.",
+                  "type": "TEXT",
+                  "position": {
+                    "x": -15455.0,
+                    "y": 5001.7080078125,
+                    "width": 330.0,
+                    "height": 32.0
+                  },
+                  "text": "🇸🇦 Saudi-born. Built for real impact.",
+                  "style": {
+                    "fontFamily": "IBM Plex Sans Arabic",
+                    "fontSize": 20.0,
+                    "fontWeight": 600,
+                    "textAlignHorizontal": "RIGHT",
+                    "textAlignVertical": "TOP",
+                    "letterSpacing": 0.0,
+                    "lineHeightPx": 32.0,
+                    "fills": []
+                  },
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "color": {
+                        "r": 255,
+                        "g": 255,
+                        "b": 255,
+                        "a": 1.0
+                      },
+                      "opacity": 1
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Frame 2121453290",
+      "type": "FRAME",
+      "position": {
+        "x": -16130.0,
+        "y": 5104.82568359375,
+        "width": 1680.0,
+        "height": 68.0
+      },
+      "padding": {
+        "paddingLeft": 44.0,
+        "paddingRight": 44.0,
+        "paddingTop": 0,
+        "paddingBottom": 0
+      },
+      "itemSpacing": 4.0,
+      "layoutMode": "VERTICAL",
+      "children": [
+        {
+          "name": "سياسة الخصوصية و حماية البيانات",
+          "type": "TEXT",
+          "position": {
+            "x": -14720.0,
+            "y": 5104.82568359375,
+            "width": 226.0,
+            "height": 32.0
+          },
+          "text": "سياسة الخصوصية و حماية البيانات",
+          "style": {
+            "fontFamily": "IBM Plex Sans Arabic",
+            "fontSize": 16.0,
+            "fontWeight": 500,
+            "textAlignHorizontal": "RIGHT",
+            "textAlignVertical": "TOP",
+            "letterSpacing": 0.4000000059604645,
+            "lineHeightPx": 32.0,
+            "fills": []
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1.0
+              },
+              "opacity": 1
+            }
+          ]
+        },
+        {
+          "name": "الشروط و الأحكام و سياسة الاستخدام",
+          "type": "TEXT",
+          "position": {
+            "x": -14721.0,
+            "y": 5140.82568359375,
+            "width": 227.0,
+            "height": 32.0
+          },
+          "text": "الشروط و الأحكام و سياسة الاستخدام",
+          "style": {
+            "fontFamily": "IBM Plex Sans Arabic",
+            "fontSize": 16.0,
+            "fontWeight": 500,
+            "textAlignHorizontal": "RIGHT",
+            "textAlignVertical": "TOP",
+            "letterSpacing": 0.0,
+            "lineHeightPx": 32.0,
+            "fills": []
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1.0
+              },
+              "opacity": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Frame 2121453291",
+      "type": "FRAME",
+      "position": {
+        "x": -16130.0,
+        "y": 5196.82568359375,
+        "width": 1680.0,
+        "height": 32.0
+      },
+      "padding": {
+        "paddingLeft": 44.0,
+        "paddingRight": 44.0,
+        "paddingTop": 0,
+        "paddingBottom": 0
+      },
+      "layoutMode": "VERTICAL",
+      "children": [
+        {
+          "name": "© Sparko جميع الحقوق محفوظة",
+          "type": "TEXT",
+          "position": {
+            "x": -15401.0,
+            "y": 5196.82568359375,
+            "width": 222.0,
+            "height": 32.0
+          },
+          "text": "© Sparko جميع الحقوق محفوظة",
+          "style": {
+            "fontFamily": "IBM Plex Sans Arabic",
+            "fontSize": 16.0,
+            "fontWeight": 500,
+            "textAlignHorizontal": "RIGHT",
+            "textAlignVertical": "TOP",
+            "letterSpacing": 0.4000000059604645,
+            "lineHeightPx": 32.0,
+            "fills": []
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1.0
+              },
+              "opacity": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
