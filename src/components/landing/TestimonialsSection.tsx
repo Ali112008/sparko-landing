@@ -126,8 +126,6 @@ export default function TestimonialsSection() {
                       }}
                     >
                       {item.isPlay ? (
-                        /* Play icon — Figma: solar:play-bold (30x31, white #FFFFFF) */}
-                        {/* Figma shadow: drop-shadow rgba(255,255,255,0.25) offset(0,4) radius=4 */}
                         <svg width="30" height="31" viewBox="0 0 30 31" fill="white" style={{ filter: 'drop-shadow(0px 4px 4px rgba(255, 255, 255, 0.25))' }}>
                           <path d="M10 6L22 15.5L10 25V6Z" />
                         </svg>
