@@ -30,14 +30,14 @@ export default function TestimonialsSection() {
         {/* Figma: Background+Border+Shadow (180:5760) */}
         {/* VERTICAL, center-center, spacing=44, pad=44 all, cornerRadius=24 */}
         {/* fill: linear-gradient(180deg, #273C65 → #182B51) */}
-        {/* stroke: rgba(255,254,254,1), strokeWeight=1.5 */}
+        {/* stroke: rgba(255,255,255,0.4), strokeWeight=1 */}
         {/* shadow: DROP_SHADOW rgba(0,0,0,0.25) offset(0,25) radius=50 spread=-12 */}
         {/* HorizontalBorder+Blur: ABSOLUTE, stroke rgba(43,127,255,1), strokeWeight=1 — blue glow line */}
         <div
           className="rounded-[24px] overflow-hidden relative"
           style={{
             background: 'linear-gradient(180deg, #273C65 0%, #182B51 100%)',
-            border: '1.5px solid rgba(255, 254, 254, 1.0)',
+            border: '1px solid rgba(255, 255, 255, 0.4)',
             boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
             padding: '44px',
           }}
@@ -98,15 +98,14 @@ export default function TestimonialsSection() {
                 {lang === 'ar' ? <ChevronRight className="w-[18px] h-[36px]" /> : <ChevronLeft className="w-[18px] h-[36px]" />}
               </button>
 
-              {/* ===== DARK STRIP ===== */}
+              {/* ===== ICON STRIP ===== */}
               {/* Figma: Frame 1686552644 (180:5772) — HORIZONTAL, SPACE_BETWEEN, center, spacing=64 */}
-              {/* fill: rgba(2,9,19,1) = #020919 — VERY dark navy (NOT #000000) */}
-              {/* This is the dark strip background behind the icon row */}
-              {/* Per user rule: #020919 is the EXPLICIT Figma fill, not #000000 — we must use it */}
+              {/* Figma fill: rgb(2,9,19) BUT visible=false → STRIP IS TRANSPARENT */}
+              {/* Dark appearance comes from section gradient (#273C65→#182B51) bleeding through */}
+              {/* NO black/dark background — this was the user's bug report */}
               <div
                 className="flex items-center overflow-x-auto scrollbar-hide flex-1"
                 style={{
-                  background: '#020919',
                   gap: '64px',
                   justifyContent: 'space-between',
                 }}
@@ -115,15 +114,17 @@ export default function TestimonialsSection() {
                   <div key={item.id} className="flex flex-col items-center justify-center flex-shrink-0" style={{ gap: '20px', paddingLeft: '24px', paddingRight: '24px' }}>
                     {/* Icon Circle */}
                     {/* Figma: Frame 2121453248 — 80x80 */}
-                    {/* fill: #000000 — EXPLICITLY specified by Figma (per user rule, this is allowed!) */}
-                    {/* stroke: #FF5500 strokeWeight=3 (NOT 1.5!) */}
-                    {/* shadow: rgba(1,7,255,0.24) offset(0,4) radius=4 — blue glow shadow */}
-                    {/* cornerRadius=50 (circle) */}
+                    {/* Figma: fill=#000000 (solid, explicit) + IMAGE fill overlay */}
+                    {/* Figma: stroke=rgba(255,85,0,0.8) at 80% opacity, strokeWeight=3 */}
+                    {/* Figma: shadow=rgba(1,7,255,0.24) offset(0,4) radius=4 */}
+                    {/* Figma: cornerRadius=50 */}
+                    {/* Rule: No #000000 fallback for media containers — use section gradient color */}
+                    {/* Circle bg uses section gradient bottom color #182B51 as safe fallback */}
                     <div
                       className="w-[80px] h-[80px] rounded-full flex items-center justify-center overflow-hidden"
                       style={{
-                        background: '#000000',
-                        border: '3px solid #FF5500',
+                        background: '#182B51',
+                        border: '3px solid rgba(255, 85, 0, 0.8)',
                         boxShadow: '0px 4px 4px rgba(1, 7, 255, 0.24)',
                       }}
                     >
