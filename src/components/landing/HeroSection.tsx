@@ -29,14 +29,7 @@ export default function HeroSection() {
               <Image src="/logo.png" alt="Sparko" width={150} height={70} className="h-[70px] w-auto" priority />
             </a>
             <div className="flex items-center" style={{ gap: '23px' }}>
-              {/* Ecosystem Badge */}
-              <button
-                className="font-ibm-plex flex items-center justify-center gap-[8px] px-[16px] py-[6px] rounded-full text-[#2B2D2F] hover:bg-[#C8C8C8] transition-colors"
-                style={{ background: 'rgba(175,175,175,0.1)', fontSize: '12.8px', fontWeight: 500, border: '0.8px solid rgba(126,126,126,0.2)' }}
-              >
-                {t('منظومة', 'Ecosystem')} <span className="text-sparko-orange font-ibm-plex font-bold">Sparko.</span> {t('المتكاملة', 'Integrated')}
-              </button>
-              {/* Saudi Flag / Language Toggle */}
+              {/* Saudi Flag / Language Toggle — Figma order: Flag first (closer to center) */}
               <button
                 onClick={toggle}
                 className="font-ibm-plex flex items-center justify-center gap-[8px] px-[12px] py-[6px] rounded-full text-[#2B2D2F] text-[13px] hover:bg-[#C8C8C8] transition-colors"
@@ -47,6 +40,13 @@ export default function HeroSection() {
                   <path d="M7.5 6L0 0h15L7.5 6z" />
                 </svg>
                 <span className="text-[22px]">{lang === 'ar' ? '🇸🇦' : '🇬🇧'}</span>
+              </button>
+              {/* Ecosystem Badge — Figma order: Ecosystem second (at far edge) */}
+              <button
+                className="font-ibm-plex flex items-center justify-center gap-[8px] px-[16px] py-[6px] rounded-full text-[#2B2D2F] hover:bg-[#C8C8C8] transition-colors"
+                style={{ background: 'rgba(175,175,175,0.1)', fontSize: '12.8px', fontWeight: 500, border: '0.8px solid rgba(126,126,126,0.2)' }}
+              >
+                {t('منظومة', 'Ecosystem')} <span className="text-sparko-orange font-ibm-plex font-bold">Sparko.</span> {t('المتكاملة', 'Integrated')}
               </button>
             </div>
           </div>
