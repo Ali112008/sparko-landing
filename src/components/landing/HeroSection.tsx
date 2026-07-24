@@ -13,7 +13,7 @@ export default function HeroSection() {
       {/* Figma: Container 316:11703 — VERTICAL layout, spacing=100, pad L/R=100, white, cornerRadius=24 */}
       {/* NO effects/shadows. NO strokes. Proportional: pad 100px→75px for 1440px viewport */}
       <div
-        className="max-w-[97.5%] mx-auto bg-white rounded-[18px] overflow-hidden relative"
+        className="max-w-[97.5%] mx-auto bg-white rounded-[24px] overflow-hidden relative"
       >
         {/* ===== CONTENT AREA ===== */}
         {/* Figma: Frame 2121453282 (316:11705) — VERTICAL, spacing=150, counterAxisAlignItems=MAX */}

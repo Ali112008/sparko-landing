@@ -17,13 +17,13 @@ export default function Footer() {
       {/* primaryAxisAlignItems=CENTER, counterAxisAlignItems=CENTER */}
       <div className="max-w-[87.5%] mx-auto">
         <div
-          className="rounded-[18px] overflow-hidden relative flex flex-col items-center justify-center"
+          className="rounded-[24px] overflow-hidden relative flex flex-col items-center justify-center"
           style={{
             background: 'radial-gradient(circle at center, #21355A 0%, #0C1B3A 100%)',
             border: '1.5px solid rgba(255, 255, 255, 0.12)',
             boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
-            padding: '33px',
-            gap: '24px',
+            padding: '44px',
+            gap: '32px',
           }}
         >
           {/* Top row: Logo+Tagline (START/right in RTL) | Badge (END/left in RTL) */}

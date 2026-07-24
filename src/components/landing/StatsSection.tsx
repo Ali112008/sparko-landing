@@ -23,12 +23,12 @@ export default function StatsSection() {
         {/* stroke: rgba(255,255,255,0.12), strokeWeight=1.5, INSIDE */}
         {/* shadow: rgba(0,0,0,0.25) offset(0,25) radius=50 spread=-12 */}
         <div
-          className="rounded-[18px] overflow-hidden relative"
+          className="rounded-[24px] overflow-hidden relative"
           style={{
             background: 'radial-gradient(circle at center, #21355A 0%, #0C1B3A 100%)',
             border: '1.5px solid rgba(255, 255, 255, 0.12)',
             boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
-            padding: '33px 36px',
+            padding: '44px 48px',
           }}
         >
           {/* Decorative vignette overlay — Figma: 180:5915 */}

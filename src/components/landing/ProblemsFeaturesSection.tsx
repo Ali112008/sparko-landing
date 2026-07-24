@@ -52,11 +52,11 @@ export default function ProblemsFeaturesSection() {
             background: 'linear-gradient(180deg, #273C65 0%, #182B51 100%)',
             border: '1.5px solid rgba(255, 254, 254, 0.4)',
             boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
-            borderRadius: '18px 18px 0 0',
+            borderRadius: '24px 24px 0 0',
           }}
         >
           {/* Figma: Container (180:5812) — VERTICAL, itemSpacing=24, CENTER */}
-          <div className="flex flex-col items-center justify-center py-[33px] px-[33px]" style={{ gap: '33px' }}>
+          <div className="flex flex-col items-center justify-center py-[44px] px-[44px]" style={{ gap: '44px' }}>
             {/* Heading + Subtitle */}
             {/* Figma: Container — VERTICAL, itemSpacing=24, CENTER */}
             <div className="flex flex-col items-center text-center" style={{ gap: '24px' }}>
@@ -129,11 +129,11 @@ export default function ProblemsFeaturesSection() {
           style={{
             border: '1.5px solid rgba(255, 254, 254, 0.4)',
             boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
-            borderRadius: '0 0 18px 18px',
+            borderRadius: '0 0 24px 24px',
           }}
         >
           {/* Figma: Container — VERTICAL, itemSpacing=24, CENTER */}
-          <div className="flex flex-col items-center py-[33px] px-[33px]" style={{ gap: '33px' }}>
+          <div className="flex flex-col items-center py-[44px] px-[44px]" style={{ gap: '44px' }}>
             {/* Heading + Subtitle */}
             <div className="flex flex-col items-center text-center" style={{ gap: '24px' }}>
               {/* Heading: "هنا كل شيء محسوب" (fontSize=40, wt=700, #FF5500, lh=48) */}

@@ -34,12 +34,12 @@ export default function TestimonialsSection() {
         {/* shadow: DROP_SHADOW rgba(0,0,0,0.25) offset(0,25) radius=50 spread=-12 */}
         {/* HorizontalBorder+Blur: ABSOLUTE, stroke rgba(43,127,255,1), strokeWeight=1 — blue glow line */}
         <div
-          className="rounded-[18px] overflow-hidden relative"
+          className="rounded-[24px] overflow-hidden relative"
           style={{
             background: 'linear-gradient(180deg, #273C65 0%, #182B51 100%)',
             border: '1.5px solid rgba(255, 255, 255, 0.4)',
             boxShadow: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
-            padding: '33px',
+            padding: '44px',
           }}
         >
           {/* Blue glow line at bottom — ABSOLUTE */}
@@ -54,7 +54,7 @@ export default function TestimonialsSection() {
 
           {/* ===== CONTENT AREA ===== */}
           {/* Figma: VERTICAL, center-center, spacing=44 */}
-          <div className="flex flex-col items-center justify-center" style={{ gap: '33px' }}>
+          <div className="flex flex-col items-center justify-center" style={{ gap: '44px' }}>
             {/* ===== TITLE AREA ===== */}
             {/* Figma: Frame 2121453366 (302:8003) — VERTICAL, center, spacing=24 */}
             {/* Contains: heading group + subtitle */}
