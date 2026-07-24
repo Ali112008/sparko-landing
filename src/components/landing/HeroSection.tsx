@@ -15,50 +15,40 @@ export default function HeroSection() {
       <div
         className="max-w-[94%] mx-auto bg-white rounded-[24px] overflow-hidden relative"
       >
-        {/* ===== LANGUAGE TOGGLE — ABSOLUTE at top-end ===== */}
-        {/* Figma: Frame 2121453381 (335:304) — ABSOLUTE at (1504.8, 70) relative to 1872px container */}
-        {/* Proportional for 1440px: top≈52px, end offset≈75px (matching padding) */}
-        {/* HORIZONTAL, spacing=23 */}
-        {/* Flag pill: HORIZONTAL, center-center, spacing=8, pad=12/12/6/6, fill=#AFAFAF, cornerRadius=50 */}
-        {/* Flag pill children: chevron vector (15x6, fill=#2B2D2F) + 🇸🇦 emoji text (fontSize=22) */}
-        {/* Ecosystem badge: pad=16/16/6/6, fill=#AFAFAF, cornerRadius=50, text "منظومة المتكاملة" (fontSize=12.8) + mini Sparko logo */}
-        <div className="absolute top-[52px] end-[75px] z-20 flex items-center" style={{ gap: '23px' }}>
-          {/* Saudi Flag / Language Toggle */}
-          <button
-            onClick={toggle}
-            className="font-ibm-plex flex items-center justify-center gap-[8px] px-[12px] py-[6px] rounded-full text-[#2B2D2F] text-[13px] hover:bg-[#C8C8C8] transition-colors"
-            style={{ background: 'rgba(175,175,175,0.1)', border: '0.8px solid rgba(126,126,126,0.2)' }}
-          >
-            {/* Chevron/Arrow vector — Figma: 15x6, fill=#2B2D2F, opacity=0.6 */}
-            <svg className="w-[15px] h-[6px]" viewBox="0 0 15 6" fill="#2B2D2F" opacity="0.6">
-              <path d="M7.5 6L0 0h15L7.5 6z" />
-            </svg>
-            <span className="text-[22px]">{lang === 'ar' ? '🇸🇦' : '🇬🇧'}</span>
-          </button>
-          {/* Ecosystem Badge */}
-          {/* Figma: Group 1000004760 — "منظومة المتكاملة" + mini Sparko logo */}
-          {/* Pill: pad=16/16/6/6, fill=#AFAFAF, cornerRadius=50, spacing=8 */}
-          <button
-            className="font-ibm-plex flex items-center justify-center gap-[8px] px-[16px] py-[6px] rounded-full text-[#2B2D2F] hover:bg-[#C8C8C8] transition-colors"
-            style={{ background: 'rgba(175,175,175,0.1)', fontSize: '12.8px', fontWeight: 500, border: '0.8px solid rgba(126,126,126,0.2)' }}
-          >
-            {t('منظومة', 'Ecosystem')} <span className="text-sparko-orange font-ibm-plex font-bold">Sparko.</span> {t('المتكاملة', 'Integrated')}
-          </button>
-        </div>
-
         {/* ===== CONTENT AREA ===== */}
         {/* Figma: Frame 2121453282 (316:11705) — VERTICAL, spacing=150, counterAxisAlignItems=MAX */}
         {/* In Figma LTR: navbar (left) then text content (right, at x=1038) */}
         {/* In RTL: text content aligns to start (right), images on end (left) */}
         {/* Proportional padding: 100px→75px for 1440px viewport */}
         <div className="px-[5%] pb-[64px]">
-          {/* Navbar Row */}
-          {/* Figma: Container (316:11706) — HORIZONTAL, counter=CENTER, paddingTop=24, width=1672 */}
-          {/* Contains ONLY the logo. Language toggle is ABSOLUTE separately. */}
-          <div className="flex items-center pt-[24px]" style={{ paddingBottom: '16px' }}>
+          {/* Navbar Row — Logo LEFT, Language Toggle + Ecosystem RIGHT */}
+          {/* direction: ltr forces flex row to always be left-to-right regardless of page direction */}
+          {/* This keeps the logo on the physical LEFT and toggle on the physical RIGHT */}
+          <div className="flex items-center justify-between pt-[24px]" style={{ paddingBottom: '16px', direction: 'ltr' }}>
             <a href="#" className="flex items-center">
-              <Image src="/logo.png" alt="Sparko" width={132} height={62} className="h-[62px] w-auto" priority />
+              <Image src="/logo.png" alt="Sparko" width={150} height={70} className="h-[70px] w-auto" priority />
             </a>
+            <div className="flex items-center" style={{ gap: '23px' }}>
+              {/* Ecosystem Badge */}
+              <button
+                className="font-ibm-plex flex items-center justify-center gap-[8px] px-[16px] py-[6px] rounded-full text-[#2B2D2F] hover:bg-[#C8C8C8] transition-colors"
+                style={{ background: 'rgba(175,175,175,0.1)', fontSize: '12.8px', fontWeight: 500, border: '0.8px solid rgba(126,126,126,0.2)' }}
+              >
+                {t('منظومة', 'Ecosystem')} <span className="text-sparko-orange font-ibm-plex font-bold">Sparko.</span> {t('المتكاملة', 'Integrated')}
+              </button>
+              {/* Saudi Flag / Language Toggle */}
+              <button
+                onClick={toggle}
+                className="font-ibm-plex flex items-center justify-center gap-[8px] px-[12px] py-[6px] rounded-full text-[#2B2D2F] text-[13px] hover:bg-[#C8C8C8] transition-colors"
+                style={{ background: 'rgba(175,175,175,0.1)', border: '0.8px solid rgba(126,126,126,0.2)' }}
+              >
+                {/* Chevron/Arrow vector — Figma: 15x6, fill=#2B2D2F, opacity=0.6 */}
+                <svg className="w-[15px] h-[6px]" viewBox="0 0 15 6" fill="#2B2D2F" opacity="0.6">
+                  <path d="M7.5 6L0 0h15L7.5 6z" />
+                </svg>
+                <span className="text-[22px]">{lang === 'ar' ? '🇸🇦' : '🇬🇧'}</span>
+              </button>
+            </div>
           </div>
 
           {/* Gap between navbar and text content */}
