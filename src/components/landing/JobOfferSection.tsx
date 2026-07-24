@@ -127,7 +127,12 @@ export default function JobOfferSection() {
               minHeight: '298px',
               background: `${gradientOverlay}, url('/joboffer-bg-original.png'), white`,
               backgroundSize: 'cover, cover, auto',
-              backgroundPosition: 'center center, center center, center',
+              // Figma imageTransform: [[1.0,0.0,0.0],[0.0,0.3549,0.0972]]
+              // Maps fill→source: y_src = 0.3549*y_fill + 0.0972
+              // Visible crop: source y 9.72%→45.20%
+              // CSS % formula: offset=(container_h-bg_h)*P → P≈15%
+              // gives ~9.7%-45.8% crop matching Figma
+              backgroundPosition: 'center center, center 15%, center',
             }}
           >
             {/* ── ICON CIRCLE ── Figma: 180:5959 */}
