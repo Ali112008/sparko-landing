@@ -72,11 +72,9 @@ export default function ProblemsFeaturesSection() {
 
             {/* 5 Problem Icons Row */}
             {/* Figma: 180:5816 — HORIZONTAL, itemSpacing=24 */}
-            {/* Inside: Frame 1686552644 — HORIZONTAL, itemSpacing=64, fill visible=false → NO background */}
-            {/* Each Container: VERTICAL, itemSpacing=20, padding L=24 R=24 */}
-            {/* Icon: 80x80 (white on dark bg) */}
-            {/* Dividers: Line 5,4,3,2 — stroke white opacity=0.24, height ~148px */}
-            <div className="flex items-center w-full" style={{ gap: '24px' }}>
+            {/* Desktop: 5 items in a single row with dividers */}
+            {/* Mobile: wraps to a grid (3+2) with dividers hidden */}
+            <div className="hidden md:flex items-center w-full" style={{ gap: '24px' }}>
               <div className="flex items-center justify-between w-full">
                 {problemItems.map((item, index) => (
                   <div key={index} className="flex items-center">
@@ -99,6 +97,22 @@ export default function ProblemsFeaturesSection() {
                   </div>
                 ))}
               </div>
+            </div>
+
+            {/* Mobile: Problem icons in a wrapping grid */}
+            <div className="flex md:hidden flex-wrap justify-center w-full" style={{ gap: '24px' }}>
+              {problemItems.map((item, index) => (
+                <div key={`mobile-p-${index}`} className="flex flex-col items-center justify-center" style={{ gap: '12px', padding: '12px' }}>
+                  {/* Icon: 48x48 on mobile */}
+                  <div className="w-[48px] h-[48px] flex items-center justify-center">
+                    <Image src={item.icon} alt={lang === 'ar' ? item.ar : item.en} width={48} height={48} className="w-full h-full object-contain brightness-0 invert" />
+                  </div>
+                  {/* Text: fontSize=14 on mobile */}
+                  <p className="font-ibm-plex text-[14px] font-semibold text-white text-center" style={{ lineHeight: '22px' }}>
+                    {lang === 'ar' ? item.ar : item.en}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -147,20 +161,17 @@ export default function ProblemsFeaturesSection() {
             <div className="flex w-full items-center" style={{ gap: '24px' }}>
               {/* Phone Mockup */}
               {/* Figma: Group 1000004725 — 283x575 */}
-              <div className="flex-shrink-0" style={{ filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.15))' }}>
+              {/* Desktop only — hidden on mobile to let cards wrap freely */}
+              <div className="hidden md:block flex-shrink-0" style={{ filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.15))' }}>
                 <Image src="/phone-mockup.png" alt="Sparko App" width={283} height={575} className="h-auto object-contain" style={{ width: '283px', maxHeight: '575px' }} />
               </div>
 
               {/* Feature Cards Strip */}
               {/* Figma: Frame 1686552644 — HORIZONTAL, itemSpacing=16 */}
               {/* fill visible=false → NO dark background strip (per user rule!) */}
-              {/* Cards: VERTICAL, itemSpacing=20, padding=24, cornerRadius=24 */}
-              {/* border: rgba(0,0,0,0.24) */}
-              {/* fills=[] → transparent, inherits white from parent */}
-              {/* AR text: fontSize=20, wt=600, #2B2D2F, lh=32 */}
-              {/* EN text: fontSize=18, wt=600, #2B2D2F, lh=32 */}
-              {/* Icons: 80x80, ORIGINAL color (NOT inverted!) */}
-              <div className="flex gap-[16px] flex-1 min-w-0">
+              {/* Desktop: 6 cards in a row with phone mockup */}
+              {/* Mobile: cards wrap in a grid, phone hidden on smallest screens */}
+              <div className="hidden md:flex gap-[16px] flex-1 min-w-0">
                 {featureItems.map((card, index) => (
                   <div
                     key={index}
@@ -186,6 +197,40 @@ export default function ProblemsFeaturesSection() {
                         fontSize: lang === 'ar' ? '20px' : '18px',
                         fontWeight: 600,
                         lineHeight: '32px',
+                      }}
+                    >
+                      {lang === 'ar' ? card.ar : card.en}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Mobile: Feature cards in wrapping grid, phone hidden */}
+              <div className="flex md:hidden flex-wrap justify-center flex-1 min-w-0" style={{ gap: '12px' }}>
+                {featureItems.map((card, index) => (
+                  <div
+                    key={`mobile-f-${index}`}
+                    className="flex flex-col items-center justify-center"
+                    style={{
+                      padding: '16px',
+                      gap: '12px',
+                      borderRadius: '16px',
+                      border: '1px solid rgba(0, 0, 0, 0.24)',
+                      minWidth: '140px',
+                      flex: '1 1 140px',
+                    }}
+                  >
+                    {/* Icon: 48x48 on mobile */}
+                    <div className="w-[48px] h-[48px] flex items-center justify-center">
+                      <Image src={card.icon} alt={lang === 'ar' ? card.ar : card.en} width={48} height={48} className="w-full h-full object-contain" />
+                    </div>
+                    {/* Text: smaller on mobile */}
+                    <p
+                      className="font-ibm-plex text-[#2B2D2F] text-center"
+                      style={{
+                        fontSize: '13px',
+                        fontWeight: 600,
+                        lineHeight: '20px',
                       }}
                     >
                       {lang === 'ar' ? card.ar : card.en}
